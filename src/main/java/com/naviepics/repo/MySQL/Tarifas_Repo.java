@@ -1,5 +1,10 @@
 package com.naviepics.repo.MySQL;
 
-public class Tarifas_Repo {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.naviepics.model.MySQL.*;
+
+
+public interface Tarifas_Repo extends JpaRepository<Tarifas,Long>{
 
 }
