@@ -1,5 +1,10 @@
 package com.naviepics.repo.MySQL;
 
-public interface Espacio_Repo {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.naviepics.model.MySQL.Espacios;
+
+
+public interface Espacio_Repo extends JpaRepository<Espacios,Long>{
 
 }

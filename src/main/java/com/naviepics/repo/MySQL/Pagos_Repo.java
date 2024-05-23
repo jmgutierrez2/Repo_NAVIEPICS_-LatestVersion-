@@ -1,5 +1,10 @@
 package com.naviepics.repo.MySQL;
 
-public interface Pagos_Repo {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.naviepics.model.MySQL.Pagos;
+
+
+public interface Pagos_Repo extends JpaRepository<Pagos,Long>{
 
 }
