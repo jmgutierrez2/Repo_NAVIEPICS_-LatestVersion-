@@ -28,9 +28,9 @@ public class Devoluciones {
     @Column(name="Id_Devoluciones", nullable=false )
     private long id;
 	
-	/*@ManyToOne
+	@ManyToOne
 	@JoinColumn(name="Id_Usuario",  nullable=false)
-	private Usuario usuario;*/
+	private Usuario usuario;
 	
 	@ManyToOne
 	@JoinColumn(name="Id_Estacionamiento",  nullable=false)
@@ -52,10 +52,10 @@ public class Devoluciones {
     @Column(name="Monto_Devolucion", nullable=false)
     private double monto_devolucion;
     
-	public Devoluciones(long id /*Usuario usuario*/, Estacionamiento estacionamiento, String descripción, Date fecha_hora,
+	public Devoluciones(long id, Usuario usuario, Estacionamiento estacionamiento, String descripción, Date fecha_hora,
 			double monto_devolucion) {
 		this.id = id;
-		//this.usuario = usuario;
+		this.usuario = usuario;
 		this.estacionamiento = estacionamiento;
 		this.descripción = descripción;
 		this.fecha_hora = fecha_hora;
@@ -68,12 +68,12 @@ public class Devoluciones {
 		this.id = id;
 	}
 	
-	/*public Usuario getUsuario() {
+	public Usuario getUsuario() {
 		return usuario;
 	}
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
-	}*/
+	}
 	public Estacionamiento getEstacionamiento() {
 		return estacionamiento;
 	}
