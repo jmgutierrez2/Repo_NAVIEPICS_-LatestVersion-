@@ -2,6 +2,8 @@ package com.naviepics.model.Oracle;
 
 import java.util.List;
 
+import com.naviepics.model.MySQL.Historial_Sanciones;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -32,17 +34,19 @@ public class Proveedor {
 	
 	@Column(name="Correo", nullable=false)
 	private String correo;
-	/*
-	 @OneToMany(mappedBy="usuario")
-	 private List<Noticias> listaNoticia;*/
 	
+	@OneToMany(mappedBy="proveedor")
+	private List<Equipos_Estacionamiento> listaEquipos_Estacionamiento;
 
-	public Proveedor(long id, String nombre, String direccion, String telefono, String correo) {
+	public Proveedor(long id, String nombre, String direccion, String telefono, String correo,
+			List<Equipos_Estacionamiento> listaEquipos_Estacionamiento) {
+		super();
 		this.id = id;
 		this.nombre = nombre;
 		this.direccion = direccion;
 		this.telefono = telefono;
 		this.correo = correo;
+		this.listaEquipos_Estacionamiento = listaEquipos_Estacionamiento;
 	}
 
 	public long getId() {
@@ -84,6 +88,21 @@ public class Proveedor {
 	public void setCorreo(String correo) {
 		this.correo = correo;
 	}
+
+	public List<Equipos_Estacionamiento> getListaEquipos_Estacionamiento() {
+		return listaEquipos_Estacionamiento;
+	}
+
+	public void setListaEquipos_Estacionamiento(List<Equipos_Estacionamiento> listaEquipos_Estacionamiento) {
+		this.listaEquipos_Estacionamiento = listaEquipos_Estacionamiento;
+	}
 	
+	/*
+	 @OneToMany(mappedBy="usuario")
+	 private List<Noticias> listaNoticia;*/
+	
+
+	
+
 	
 }
