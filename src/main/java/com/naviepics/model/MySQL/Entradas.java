@@ -1,5 +1,12 @@
 package com.naviepics.model.MySQL;
 
-public class Entradas {
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
+@Entity
+@Table(name="Entradas")
+public class Entradas {
+	
+	private long id;
 }
