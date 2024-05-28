@@ -31,6 +31,7 @@ public class Tarifas {
 	private Estacionamiento estacionamiento;
 
 	public Tarifas(long id, String franja_Horario, Double valor_Hora, Estacionamiento estacionamiento) {
+		super();
 		this.id = id;
 		this.franja_Horario = franja_Horario;
 		this.valor_Hora = valor_Hora;
@@ -68,6 +69,8 @@ public class Tarifas {
 	public void setEstacionamiento(Estacionamiento estacionamiento) {
 		this.estacionamiento = estacionamiento;
 	}
+
+	
 	
 	
 	
