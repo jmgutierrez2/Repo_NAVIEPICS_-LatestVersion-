@@ -37,7 +37,7 @@ public class Estacionamiento {
 	
 	@OneToMany(mappedBy="estacionamiento")
 	private List<Tarifas> listaTarifas;
-	/*
+	
 	@OneToMany(mappedBy="estacionamiento")
 	private List<Espacios> listaEspacios;
 	
@@ -48,16 +48,24 @@ public class Estacionamiento {
 	private List<Historial_Sanciones> listaHistorial_Sanciones;
 	
 	@OneToMany(mappedBy="estacionamiento")
-	private List<Reservaciones> listaResevaciones;*/
+	private List<Reservaciones> listaResevaciones;
 
 	public Estacionamiento(long id, String nombre, String direccion, Integer capacidad, String horario_funcionamiento,
-			boolean estado) {
+			boolean estado, List<Tarifas> listaTarifas, List<Espacios> listaEspacios,
+			List<Devoluciones> listaDevoluciones, List<Historial_Sanciones> listaHistorial_Sanciones,
+			List<Reservaciones> listaResevaciones) {
+		super();
 		this.id = id;
 		this.nombre = nombre;
 		this.direccion = direccion;
 		this.capacidad = capacidad;
 		this.horario_funcionamiento = horario_funcionamiento;
 		this.estado = estado;
+		this.listaTarifas = listaTarifas;
+		this.listaEspacios = listaEspacios;
+		this.listaDevoluciones = listaDevoluciones;
+		this.listaHistorial_Sanciones = listaHistorial_Sanciones;
+		this.listaResevaciones = listaResevaciones;
 	}
 
 	public long getId() {
@@ -107,6 +115,48 @@ public class Estacionamiento {
 	public void setEstado(boolean estado) {
 		this.estado = estado;
 	}
+
+	public List<Tarifas> getListaTarifas() {
+		return listaTarifas;
+	}
+
+	public void setListaTarifas(List<Tarifas> listaTarifas) {
+		this.listaTarifas = listaTarifas;
+	}
+
+	public List<Espacios> getListaEspacios() {
+		return listaEspacios;
+	}
+
+	public void setListaEspacios(List<Espacios> listaEspacios) {
+		this.listaEspacios = listaEspacios;
+	}
+
+	public List<Devoluciones> getListaDevoluciones() {
+		return listaDevoluciones;
+	}
+
+	public void setListaDevoluciones(List<Devoluciones> listaDevoluciones) {
+		this.listaDevoluciones = listaDevoluciones;
+	}
+
+	public List<Historial_Sanciones> getListaHistorial_Sanciones() {
+		return listaHistorial_Sanciones;
+	}
+
+	public void setListaHistorial_Sanciones(List<Historial_Sanciones> listaHistorial_Sanciones) {
+		this.listaHistorial_Sanciones = listaHistorial_Sanciones;
+	}
+
+	public List<Reservaciones> getListaResevaciones() {
+		return listaResevaciones;
+	}
+
+	public void setListaResevaciones(List<Reservaciones> listaResevaciones) {
+		this.listaResevaciones = listaResevaciones;
+	}
+
+	
 	
 	
 }
