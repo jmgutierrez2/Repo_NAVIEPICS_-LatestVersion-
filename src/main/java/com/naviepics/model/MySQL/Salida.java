@@ -46,14 +46,10 @@ public class Salida {
     @OneToMany(mappedBy="salida")
 	private List<Reporte_Entrada_Salida> listaReporte_Entrada_Salida;
 
-	public Salida(long id, Date fecha_hora_salida, Entradas entradas, List<Recibo> listaRecibo,
-			List<Reporte_Entrada_Salida> listaReporte_Entrada_Salida) {
-		super();
+	public Salida(long id, Date fecha_hora_salida, Entradas entradas) {
 		this.id = id;
 		this.fecha_hora_salida = fecha_hora_salida;
 		this.entradas = entradas;
-		this.listaRecibo = listaRecibo;
-		this.listaReporte_Entrada_Salida = listaReporte_Entrada_Salida;
 	}
 
 	public long getId() {
