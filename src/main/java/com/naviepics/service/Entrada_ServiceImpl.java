@@ -20,4 +20,3 @@ public class Entrada_ServiceImpl implements Entrada_Service{
 	}
 
 }
-
