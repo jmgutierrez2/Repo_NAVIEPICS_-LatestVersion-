@@ -1,5 +1,11 @@
 package com.naviepics.service;
 
-public class Tarifas_Service {
+import java.util.List;
+
+import com.naviepics.model.MySQL.Tarifas;
+
+public interface Tarifas_Service {
+
+	public List<Tarifas> listarTarifas();
 
 }
