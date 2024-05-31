@@ -1,5 +1,11 @@
 package com.naviepics.service;
 
-public class Usuario_Service {
+import java.util.List;
+
+import com.naviepics.model.MySQL.Usuario;
+
+public interface Usuario_Service {
+
+	public List<Usuario> listarUsuario();
 
 }
