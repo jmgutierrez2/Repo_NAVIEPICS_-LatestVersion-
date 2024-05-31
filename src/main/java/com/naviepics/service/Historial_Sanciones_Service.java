@@ -1,5 +1,11 @@
 package com.naviepics.service;
 
-public class Historial_Sanciones_Service {
+import java.util.List;
+
+import com.naviepics.model.MySQL.Historial_Sanciones;
+
+public interface Historial_Sanciones_Service {
+
+	public List<Historial_Sanciones> listarHistorial_Sanciones();
 
 }
