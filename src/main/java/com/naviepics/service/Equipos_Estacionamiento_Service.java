@@ -1,5 +1,11 @@
 package com.naviepics.service;
 
-public class Equipos_Estacionamiento_Service {
+import java.util.List;
+
+import com.naviepics.model.Oracle.Equipos_Estacionamiento;
+
+public interface Equipos_Estacionamiento_Service {
+
+	public List<Equipos_Estacionamiento> listarEquipos_Estacionamiento();
 
 }
