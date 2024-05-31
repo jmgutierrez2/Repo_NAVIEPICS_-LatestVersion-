@@ -51,8 +51,10 @@ public class Devoluciones {
     @Column(name="Monto_Devolucion", nullable=false)
     private double monto_devolucion;
     
-	public Devoluciones(long id, Usuario usuario, Estacionamiento estacionamiento, String descripción, Date fecha_hora,
-			double monto_devolucion) {
+        
+	public Devoluciones() {
+	}
+	public Devoluciones(long id, Usuario usuario, Estacionamiento estacionamiento, String descripción, Date fecha_hora,double monto_devolucion) {
 		this.id = id;
 		this.usuario = usuario;
 		this.estacionamiento = estacionamiento;

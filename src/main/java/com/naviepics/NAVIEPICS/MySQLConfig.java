@@ -47,7 +47,6 @@ public class MySQLConfig {
 		Map<String,Object> properties= new HashMap<>();
 		properties.put("hibernate.hbm2ddl.auto",env.getProperty("mysql.jpa.hibernate.ddl-auto"));
 		properties.put("hibernate.show-sql",env.getProperty("mysql.jpa.show-sql"));
-		properties.put("hibernate.dialect",env.getProperty("mysql.jpa.database-platform"));
 		em.setJpaPropertyMap(properties);
 		
 		return em;
