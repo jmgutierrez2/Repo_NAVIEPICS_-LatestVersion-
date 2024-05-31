@@ -1,5 +1,11 @@
 package com.naviepics.service;
 
-public class Devoluciones_Service {
+import java.util.List;
 
+import com.naviepics.model.MySQL.Devoluciones;
+
+public interface Devoluciones_Service {
+
+	public List<Devoluciones> listarDevoluciones();
+	
 }
