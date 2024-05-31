@@ -5,7 +5,6 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.fia.proyecto.models.service.ContratoService;
 
 @SpringBootApplication
 public class NaviepicsApplication {
@@ -15,8 +14,8 @@ public class NaviepicsApplication {
 	}
 	/*@Autowired
     private ContratoService conSvc;*/
-        
-    public void run(String... args) throws Exception {
+      
+    //public void run(String... args) throws Exception {
        /*//Rol
         Roles usu=new Roles("Estudiante");
         Roles doc=new Roles("Docente");
@@ -82,9 +81,9 @@ public class NaviepicsApplication {
         nSvc.saveOrUpdate(I);
         System.out.println("Noticia guardado");*/
         
-    }
-    public static void escribir(String m){
+   // }
+    /*public static void escribir(String m){
         System.out.println(m);
-    }
+    }*/
 
 }
