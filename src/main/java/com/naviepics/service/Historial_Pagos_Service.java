@@ -1,5 +1,11 @@
 package com.naviepics.service;
 
-public class Historial_Pagos_Service {
+import java.util.List;
+
+import com.naviepics.model.MySQL.Historial_Pagos;
+
+public interface Historial_Pagos_Service {
+
+	public List<Historial_Pagos> listarHistorial_Pagos();
 
 }
