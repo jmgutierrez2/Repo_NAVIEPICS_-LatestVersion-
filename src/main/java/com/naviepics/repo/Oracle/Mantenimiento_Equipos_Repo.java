@@ -1,5 +1,9 @@
 package com.naviepics.repo.Oracle;
 
-public interface Mantenimiento_Equipos_Repo {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.naviepics.model.Oracle.Mantenimiento_Equipos;
+
+public interface Mantenimiento_Equipos_Repo extends JpaRepository<Mantenimiento_Equipos,Long>{
 
 }

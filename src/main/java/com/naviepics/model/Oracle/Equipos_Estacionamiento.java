@@ -2,8 +2,7 @@ package com.naviepics.model.Oracle;
 
 import java.util.List;
 
-import com.naviepics.model.MySQL.Recibo;
-import com.naviepics.model.MySQL.Usuario;
+
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

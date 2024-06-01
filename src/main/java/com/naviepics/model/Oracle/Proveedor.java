@@ -2,7 +2,6 @@ package com.naviepics.model.Oracle;
 
 import java.util.List;
 
-import com.naviepics.model.MySQL.Historial_Sanciones;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

@@ -1,5 +1,9 @@
 package com.naviepics.repo.Oracle;
 
-public interface Proveedor_Repo {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.naviepics.model.Oracle.Proveedor;
+
+public interface Proveedor_Repo extends JpaRepository<Proveedor,Long>{
 
 }

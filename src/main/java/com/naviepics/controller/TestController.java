@@ -8,17 +8,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.naviepics.model.MySQL.MySQL;
-import com.naviepics.model.Oracle.Oracle;
-import com.naviepics.service.MySQLService;
-import com.naviepics.service.OracleService;
 import org.springframework.http.HttpStatus;
 
 
 @RestController
 @RequestMapping("/databases")
 public class TestController {
-	@Autowired
+	/*@Autowired
 	private MySQLService mysqlService;
 	
 	@Autowired
@@ -34,5 +30,5 @@ public class TestController {
 	@PostMapping("/oracle")
 	public void registrarUsuarioMysql(@RequestBody Oracle oracle) {
 		oracleService.registrar(oracle);
-	}
+	}*/
 }

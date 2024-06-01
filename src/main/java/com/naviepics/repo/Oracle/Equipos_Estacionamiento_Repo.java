@@ -1,5 +1,10 @@
 package com.naviepics.repo.Oracle;
 
-public interface Equipos_Estacionamiento_Repo {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.naviepics.model.MySQL.Vehiculo;
+import com.naviepics.model.Oracle.Equipos_Estacionamiento;
+
+public interface Equipos_Estacionamiento_Repo extends JpaRepository<Equipos_Estacionamiento,Long>{
 
 }
