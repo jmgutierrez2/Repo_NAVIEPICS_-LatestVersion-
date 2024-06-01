@@ -54,20 +54,28 @@ public class Usuario {
 
     @OneToMany(mappedBy="usuario")
 	private List<Vehiculo> listaVehiculo;
+    
+    public Usuario() {
+    	
+    }
 
-	public Usuario(long id, String nombre, String apellido, Date fecha_creacion, String email, String password,
-			List<Devoluciones> listaDevoluciones, List<Reservaciones> listaReservaciones,
-			List<Vehiculo> listaVehiculo) {
-		super();
+	public Usuario(long id, String nombre, String apellido, Date fecha_creacion, String email, String password
+			) {
 		this.id = id;
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.fecha_creacion = fecha_creacion;
 		this.email = email;
 		this.password = password;
-		this.listaDevoluciones = listaDevoluciones;
-		this.listaReservaciones = listaReservaciones;
-		this.listaVehiculo = listaVehiculo;
+	}
+	
+	public Usuario(String nombre, String apellido, Date fecha_creacion, String email, String password
+			) {
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.fecha_creacion = fecha_creacion;
+		this.email = email;
+		this.password = password;
 	}
 
 	public long getId() {

@@ -57,10 +57,12 @@ public class Recibo {
     
     @OneToMany(mappedBy="recibo")
 	private List<Pagos> listaPagos;
-
+    
+    public Recibo() {
+    	
+    }
 	public Recibo(long id, Date fecha_emision, double monto, Vehiculo vehiculo, Entradas entradas, Salida salida,
-			Espacios espacios, List<Pagos> listaPagos) {
-		super();
+			Espacios espacios) {
 		this.id = id;
 		this.fecha_emision = fecha_emision;
 		this.monto = monto;
@@ -68,7 +70,15 @@ public class Recibo {
 		this.entradas = entradas;
 		this.salida = salida;
 		this.espacios = espacios;
-		this.listaPagos = listaPagos;
+	}
+	public Recibo(Date fecha_emision, double monto, Vehiculo vehiculo, Entradas entradas, Salida salida,
+			Espacios espacios) {
+		this.fecha_emision = fecha_emision;
+		this.monto = monto;
+		this.vehiculo = vehiculo;
+		this.entradas = entradas;
+		this.salida = salida;
+		this.espacios = espacios;
 	}
 
 	public long getId() {

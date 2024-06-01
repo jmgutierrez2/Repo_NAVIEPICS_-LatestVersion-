@@ -24,10 +24,15 @@ public class Tipo_Espacios {
 	
 	@OneToMany(mappedBy="tipo_espacios")
 	private List<Espacios> listaEspacios;
-
+	public Tipo_Espacios() {
+		
+	}
 	public Tipo_Espacios(long id, String descripcion, List<Espacios> listaEspacios) {
-		super();
 		this.id = id;
+		this.descripcion = descripcion;
+		this.listaEspacios = listaEspacios;
+	}
+	public Tipo_Espacios(String descripcion, List<Espacios> listaEspacios) {
 		this.descripcion = descripcion;
 		this.listaEspacios = listaEspacios;
 	}

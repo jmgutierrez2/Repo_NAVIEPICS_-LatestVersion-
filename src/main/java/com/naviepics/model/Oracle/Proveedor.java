@@ -9,9 +9,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
-import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.Size;
 
 @Entity
 @Table(name="Proveedor")
@@ -36,16 +34,26 @@ public class Proveedor {
 	
 	@OneToMany(mappedBy="proveedor")
 	private List<Equipos_Estacionamiento> listaEquipos_Estacionamiento;
+	
+	public Proveedor() {
+		
+	}
 
-	public Proveedor(long id, String nombre, String direccion, String telefono, String correo,
-			List<Equipos_Estacionamiento> listaEquipos_Estacionamiento) {
-		super();
+	public Proveedor(long id, String nombre, String direccion, String telefono, String correo
+			) {
 		this.id = id;
 		this.nombre = nombre;
 		this.direccion = direccion;
 		this.telefono = telefono;
 		this.correo = correo;
-		this.listaEquipos_Estacionamiento = listaEquipos_Estacionamiento;
+	}
+	
+	public Proveedor(String nombre, String direccion, String telefono, String correo
+			) {
+		this.nombre = nombre;
+		this.direccion = direccion;
+		this.telefono = telefono;
+		this.correo = correo;
 	}
 
 	public long getId() {

@@ -43,11 +43,22 @@ public class Mantenimiento_Equipos {
     @ManyToOne
 	@JoinColumn(name="Id_Equipos_Estacionamiento",  nullable=false)
 	private Equipos_Estacionamiento equipos_estacionamiento;
-
+    
+    public Mantenimiento_Equipos() {
+    	
+    }
+    
 	public Mantenimiento_Equipos(long id, Date fecha, String descripcion, String tecnico_responsable,
 			Equipos_Estacionamiento equipos_estacionamiento) {
-		super();
 		this.id = id;
+		this.fecha = fecha;
+		this.descripcion = descripcion;
+		this.tecnico_responsable = tecnico_responsable;
+		this.equipos_estacionamiento = equipos_estacionamiento;
+	}
+	
+	public Mantenimiento_Equipos(Date fecha, String descripcion, String tecnico_responsable,
+			Equipos_Estacionamiento equipos_estacionamiento) {
 		this.fecha = fecha;
 		this.descripcion = descripcion;
 		this.tecnico_responsable = tecnico_responsable;

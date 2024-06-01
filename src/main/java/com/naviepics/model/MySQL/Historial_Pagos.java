@@ -37,9 +37,16 @@ public class Historial_Pagos {
     @ManyToOne
 	@JoinColumn(name="Id_Pago",  nullable=false)
 	private Pagos pagos;
-
+    
+    public Historial_Pagos() {
+    	
+    }
+    public Historial_Pagos(Date fecha_cancelacion, Pagos pagos) {
+		this.fecha_cancelacion = fecha_cancelacion;
+		this.pagos = pagos;
+	}
+    
 	public Historial_Pagos(long id, Date fecha_cancelacion, Pagos pagos) {
-		super();
 		this.id = id;
 		this.fecha_cancelacion = fecha_cancelacion;
 		this.pagos = pagos;

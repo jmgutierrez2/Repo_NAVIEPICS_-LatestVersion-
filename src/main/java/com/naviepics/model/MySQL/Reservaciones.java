@@ -52,11 +52,20 @@ public class Reservaciones {
     @ManyToOne
 	@JoinColumn(name="Id_Usuario",  nullable=false)
 	private Usuario usuario;
-
+    public Reservaciones() {
+    	
+    }
 	public Reservaciones(long id, Date fecha_reserva, Date hora_reserva, Estacionamiento estacionamiento,
 			Espacios espacios, Usuario usuario) {
-		super();
 		this.id = id;
+		this.fecha_reserva = fecha_reserva;
+		this.hora_reserva = hora_reserva;
+		this.estacionamiento = estacionamiento;
+		this.espacios = espacios;
+		this.usuario = usuario;
+	}
+	public Reservaciones(Date fecha_reserva, Date hora_reserva, Estacionamiento estacionamiento,
+			Espacios espacios, Usuario usuario) {
 		this.fecha_reserva = fecha_reserva;
 		this.hora_reserva = hora_reserva;
 		this.estacionamiento = estacionamiento;

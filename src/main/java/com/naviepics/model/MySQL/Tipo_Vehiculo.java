@@ -24,14 +24,22 @@ public class Tipo_Vehiculo {
 	
 	@OneToMany(mappedBy="tipo_vehiculo")
 	private List<Vehiculo> listaVehiculo;
+	
+	public Tipo_Vehiculo() {
+		
+	}
 
 	public Tipo_Vehiculo(long id, String descripcion, List<Vehiculo> listaVehiculo) {
-		super();
 		this.id = id;
 		this.descripcion = descripcion;
 		this.listaVehiculo = listaVehiculo;
 	}
 
+	public Tipo_Vehiculo(String descripcion, List<Vehiculo> listaVehiculo) {
+		this.descripcion = descripcion;
+		this.listaVehiculo = listaVehiculo;
+	}
+	
 	public long getId() {
 		return id;
 	}

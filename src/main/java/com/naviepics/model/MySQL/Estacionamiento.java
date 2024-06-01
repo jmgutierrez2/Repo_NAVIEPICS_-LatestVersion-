@@ -48,23 +48,28 @@ public class Estacionamiento {
 	
 	@OneToMany(mappedBy="estacionamiento")
 	private List<Reservaciones> listaResevaciones;
+	
+	public Estacionamiento() {
+		
+	}
 
 	public Estacionamiento(long id, String nombre, String direccion, Integer capacidad, String horario_funcionamiento,
-			boolean estado, List<Tarifas> listaTarifas, List<Espacios> listaEspacios,
-			List<Devoluciones> listaDevoluciones, List<Historial_Sanciones> listaHistorial_Sanciones,
-			List<Reservaciones> listaResevaciones) {
-		super();
+			boolean estado) {
 		this.id = id;
 		this.nombre = nombre;
 		this.direccion = direccion;
 		this.capacidad = capacidad;
 		this.horario_funcionamiento = horario_funcionamiento;
 		this.estado = estado;
-		this.listaTarifas = listaTarifas;
-		this.listaEspacios = listaEspacios;
-		this.listaDevoluciones = listaDevoluciones;
-		this.listaHistorial_Sanciones = listaHistorial_Sanciones;
-		this.listaResevaciones = listaResevaciones;
+	}
+	
+	public Estacionamiento(String nombre, String direccion, Integer capacidad, String horario_funcionamiento,
+			boolean estado) {
+		this.nombre = nombre;
+		this.direccion = direccion;
+		this.capacidad = capacidad;
+		this.horario_funcionamiento = horario_funcionamiento;
+		this.estado = estado;
 	}
 
 	public long getId() {

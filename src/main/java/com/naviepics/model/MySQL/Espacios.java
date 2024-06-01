@@ -37,16 +37,21 @@ public class Espacios {
 	
 	@OneToMany(mappedBy="espacios")
 	private List<Reservaciones> listaReservaciones;
+	
+	public Espacios() {
+		
+	}
 
-	public Espacios(long id, Integer estado, Estacionamiento estacionamiento, Tipo_Espacios tipo_espacios,
-			List<Recibo> listaRecibo, List<Reservaciones> listaReservaciones) {
-		super();
+	public Espacios(long id, Integer estado, Estacionamiento estacionamiento, Tipo_Espacios tipo_espacios) {
 		this.id = id;
 		this.estado = estado;
 		this.estacionamiento = estacionamiento;
 		this.tipo_espacios = tipo_espacios;
-		this.listaRecibo = listaRecibo;
-		this.listaReservaciones = listaReservaciones;
+	}
+	public Espacios(Integer estado, Estacionamiento estacionamiento, Tipo_Espacios tipo_espacios) {
+		this.estado = estado;
+		this.estacionamiento = estacionamiento;
+		this.tipo_espacios = tipo_espacios;
 	}
 
 	public long getId() {

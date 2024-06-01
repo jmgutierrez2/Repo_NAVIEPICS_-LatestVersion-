@@ -41,17 +41,29 @@ public class Equipos_Estacionamiento {
 	
 	@OneToMany(mappedBy="equipos_estacionamiento")
 	private List<Mantenimiento_Equipos> listaMantenimiento_Equipos;
+	
+	public Equipos_Estacionamiento() {
+		
+	}
 
+	
 	public Equipos_Estacionamiento(long id, String tipo_equipo, String marca_equipo, String modelo_equipo,
-			String numero_equipo, Proveedor proveedor, List<Mantenimiento_Equipos> listaMantenimiento_Equipos) {
-		super();
+			String numero_equipo, Proveedor proveedor) {
 		this.id = id;
 		this.tipo_equipo = tipo_equipo;
 		this.marca_equipo = marca_equipo;
 		this.modelo_equipo = modelo_equipo;
 		this.numero_equipo = numero_equipo;
 		this.proveedor = proveedor;
-		this.listaMantenimiento_Equipos = listaMantenimiento_Equipos;
+	}
+	
+	public Equipos_Estacionamiento(String tipo_equipo, String marca_equipo, String modelo_equipo,
+			String numero_equipo, Proveedor proveedor) {
+		this.tipo_equipo = tipo_equipo;
+		this.marca_equipo = marca_equipo;
+		this.modelo_equipo = modelo_equipo;
+		this.numero_equipo = numero_equipo;
+		this.proveedor = proveedor;
 	}
 
 	public long getId() {

@@ -51,9 +51,12 @@ public class Pagos {
     
     @OneToMany(mappedBy="pagos")
 	private List<Historial_Pagos> listaHistorial_Pagos;
+	
+	public Pagos() {
+		
+	}
 
-	public Pagos(long id, Date fecha_pago, String metodo_pago, Integer estado, double monto, Recibo recibo,
-			List<Historial_Pagos> listaHistorial_Pagos) {
+	public Pagos(long id, Date fecha_pago, String metodo_pago, Integer estado, double monto, Recibo recibo) {
 		super();
 		this.id = id;
 		this.fecha_pago = fecha_pago;
@@ -61,7 +64,13 @@ public class Pagos {
 		this.estado = estado;
 		this.monto = monto;
 		this.recibo = recibo;
-		this.listaHistorial_Pagos = listaHistorial_Pagos;
+	}
+	public Pagos(Date fecha_pago, String metodo_pago, Integer estado, double monto, Recibo recibo) {
+		this.fecha_pago = fecha_pago;
+		this.metodo_pago = metodo_pago;
+		this.estado = estado;
+		this.monto = monto;
+		this.recibo = recibo;
 	}
 
 	public long getId() {

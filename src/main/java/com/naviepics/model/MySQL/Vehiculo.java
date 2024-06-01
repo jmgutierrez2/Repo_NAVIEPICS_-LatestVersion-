@@ -49,11 +49,13 @@ public class Vehiculo {
 
     @OneToMany(mappedBy="vehiculo")
 	private List<Reporte_Entrada_Salida> listaReporte_Entrada_Salida;
-
+	
+	public Vehiculo() {
+		
+	}
+	
 	public Vehiculo(long id, String placa, String modelo, String color, String fabricante, Usuario usuario,
-			Tipo_Vehiculo tipo_vehiculo, List<Historial_Sanciones> listaHistorial_Sanciones, List<Recibo> listaRecibo,
-			List<Reporte_Entrada_Salida> listaReporte_Entrada_Salida) {
-		super();
+			Tipo_Vehiculo tipo_vehiculo) {
 		this.id = id;
 		this.placa = placa;
 		this.modelo = modelo;
@@ -61,9 +63,16 @@ public class Vehiculo {
 		this.fabricante = fabricante;
 		this.usuario = usuario;
 		this.tipo_vehiculo = tipo_vehiculo;
-		this.listaHistorial_Sanciones = listaHistorial_Sanciones;
-		this.listaRecibo = listaRecibo;
-		this.listaReporte_Entrada_Salida = listaReporte_Entrada_Salida;
+	}
+	
+	public Vehiculo(String placa, String modelo, String color, String fabricante, Usuario usuario,
+			Tipo_Vehiculo tipo_vehiculo) {
+		this.placa = placa;
+		this.modelo = modelo;
+		this.color = color;
+		this.fabricante = fabricante;
+		this.usuario = usuario;
+		this.tipo_vehiculo = tipo_vehiculo;
 	}
 
 	public long getId() {

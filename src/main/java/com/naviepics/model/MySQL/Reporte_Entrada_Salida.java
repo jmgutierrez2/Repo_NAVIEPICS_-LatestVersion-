@@ -33,9 +33,17 @@ public class Reporte_Entrada_Salida {
 	@JoinColumn(name="Cod_Vehiculo",  nullable=false)
 	private Vehiculo vehiculo;
 
+	public Reporte_Entrada_Salida() {
+		
+	}
 	public Reporte_Entrada_Salida(long id, String metodo_pago, Entradas entradas, Salida salida, Vehiculo vehiculo) {
-		super();
 		this.id = id;
+		this.metodo_pago = metodo_pago;
+		this.entradas = entradas;
+		this.salida = salida;
+		this.vehiculo = vehiculo;
+	}
+	public Reporte_Entrada_Salida(String metodo_pago, Entradas entradas, Salida salida, Vehiculo vehiculo) {
 		this.metodo_pago = metodo_pago;
 		this.entradas = entradas;
 		this.salida = salida;

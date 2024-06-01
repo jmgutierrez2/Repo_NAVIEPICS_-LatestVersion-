@@ -47,11 +47,24 @@ public class Historial_Sanciones {
 	@ManyToOne
 	@JoinColumn(name="Id_Estacionamiento",  nullable=false)
 	private Estacionamiento estacionamiento;
+	
+	
+
+	public Historial_Sanciones() {
+	}
 
 	public Historial_Sanciones(long id, String descripcion, Date fecha_hora_incidencia, double monto_sancion,
 			Vehiculo vehiculo, Estacionamiento estacionamiento) {
-		super();
 		this.id = id;
+		this.descripcion = descripcion;
+		this.fecha_hora_incidencia = fecha_hora_incidencia;
+		this.monto_sancion = monto_sancion;
+		this.vehiculo = vehiculo;
+		this.estacionamiento = estacionamiento;
+	}
+	
+	public Historial_Sanciones(String descripcion, Date fecha_hora_incidencia, double monto_sancion,
+			Vehiculo vehiculo, Estacionamiento estacionamiento) {
 		this.descripcion = descripcion;
 		this.fecha_hora_incidencia = fecha_hora_incidencia;
 		this.monto_sancion = monto_sancion;

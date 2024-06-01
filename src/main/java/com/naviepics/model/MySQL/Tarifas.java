@@ -27,10 +27,18 @@ public class Tarifas {
 	@ManyToOne
 	@JoinColumn(name="Id_Estacionamiento", nullable=false)
 	private Estacionamiento estacionamiento;
+	
+	public Tarifas() {
+		
+	}
 
 	public Tarifas(long id, String franja_Horario, Double valor_Hora, Estacionamiento estacionamiento) {
-		super();
 		this.id = id;
+		this.franja_Horario = franja_Horario;
+		this.valor_Hora = valor_Hora;
+		this.estacionamiento = estacionamiento;
+	}
+	public Tarifas(String franja_Horario, Double valor_Hora, Estacionamiento estacionamiento) {
 		this.franja_Horario = franja_Horario;
 		this.valor_Hora = valor_Hora;
 		this.estacionamiento = estacionamiento;
