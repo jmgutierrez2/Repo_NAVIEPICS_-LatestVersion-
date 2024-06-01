@@ -1,5 +1,11 @@
 package com.naviepics.service;
 
-public class Vehiculo_Service {
+import java.util.List;
+
+import com.naviepics.model.MySQL.Vehiculo;
+
+public interface Vehiculo_Service {
+
+	public List<Vehiculo> listarVehiculo();
 
 }

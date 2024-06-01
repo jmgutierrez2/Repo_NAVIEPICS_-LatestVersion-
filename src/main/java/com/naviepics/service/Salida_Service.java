@@ -1,5 +1,11 @@
 package com.naviepics.service;
 
-public class Salida_Service {
+import java.util.List;
+
+import com.naviepics.model.MySQL.Salida;
+
+public interface Salida_Service {
+
+	public List<Salida> listarSalida();
 
 }

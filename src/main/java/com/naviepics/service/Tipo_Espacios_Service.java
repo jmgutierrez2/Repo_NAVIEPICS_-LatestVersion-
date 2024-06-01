@@ -1,5 +1,11 @@
 package com.naviepics.service;
 
-public class Tipo_Espacios_Service {
+import java.util.List;
+
+import com.naviepics.model.MySQL.Tipo_Espacios;
+
+public interface Tipo_Espacios_Service {
+
+	public List<Tipo_Espacios> listarTipo_Espacios();
 
 }

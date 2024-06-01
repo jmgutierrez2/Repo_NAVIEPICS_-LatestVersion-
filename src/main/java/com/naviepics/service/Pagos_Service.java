@@ -1,5 +1,11 @@
 package com.naviepics.service;
 
-public class Pagos_Service {
+import java.util.List;
+
+import com.naviepics.model.MySQL.Pagos;
+
+public interface Pagos_Service {
+
+	public List<Pagos> listarPagos();
 
 }

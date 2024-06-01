@@ -1,5 +1,11 @@
 package com.naviepics.service;
 
-public class Recibo_Service {
+import java.util.List;
 
+import com.naviepics.model.MySQL.Recibo;
+
+public interface Recibo_Service {
+
+	public List<Recibo> listarRecibo();
+	
 }
