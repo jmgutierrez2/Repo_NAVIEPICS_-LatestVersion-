@@ -7,13 +7,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.naviepics.model.MySQL.Devoluciones;
 import com.naviepics.model.MySQL.Entradas;
-import com.naviepics.model.Oracle.Equipos_Estacionamiento;
+import com.naviepics.repo.MySQL.Devoluciones_Repo;
 import com.naviepics.repo.MySQL.Entradas_Repo;
-import com.naviepics.repo.Oracle.Equipos_Estacionamiento_Repo;
 
 @Service
-public class Equipos_Estacionamiento_ServiceImpl {
+public class Entradas_Service{
 
 	@Autowired
 	private Entradas_Repo repo;
@@ -38,4 +38,5 @@ public class Equipos_Estacionamiento_ServiceImpl {
 	public void eliminar(long id) {
 		repo.deleteById(id);
 	}
+
 }
