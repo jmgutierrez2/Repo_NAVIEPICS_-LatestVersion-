@@ -1,4 +1,4 @@
-package com.naviepics.service;
+package com.naviepics.serviceImpl;
 
 import java.util.List;
 
@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.naviepics.model.MySQL.Reporte_Entrada_Salida;
 import com.naviepics.repo.MySQL.Reporte_Entrada_Salida_Repo;
+import com.naviepics.service.Reporte_Entrada_Salida_Service;
 
 @Service
 public class Reporte_Entrada_Salida_ServiceImpl implements Reporte_Entrada_Salida_Service{

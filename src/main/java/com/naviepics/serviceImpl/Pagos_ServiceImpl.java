@@ -1,4 +1,4 @@
-package com.naviepics.service;
+package com.naviepics.serviceImpl;
 
 import java.util.List;
 
@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.naviepics.model.MySQL.Pagos;
 import com.naviepics.repo.MySQL.Pagos_Repo;
+import com.naviepics.service.Pagos_Service;
 
 @Service
 public class Pagos_ServiceImpl implements Pagos_Service{

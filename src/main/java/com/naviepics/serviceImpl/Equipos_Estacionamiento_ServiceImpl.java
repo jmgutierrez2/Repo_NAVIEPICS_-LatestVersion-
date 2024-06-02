@@ -1,4 +1,4 @@
-package com.naviepics.service;
+package com.naviepics.serviceImpl;
 
 import java.util.List;
 import java.util.Optional;

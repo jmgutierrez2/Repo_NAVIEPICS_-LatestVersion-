@@ -1,4 +1,4 @@
-package com.naviepics.service;
+package com.naviepics.serviceImpl;
 
 import java.util.List;
 
@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.naviepics.model.MySQL.Estacionamiento;
 import com.naviepics.repo.MySQL.Estacionamiento_Repo;
+import com.naviepics.service.Estacionamiento_Service;
 
 @Service
 public class Estacionamiento_ServiceImpl implements Estacionamiento_Service{
