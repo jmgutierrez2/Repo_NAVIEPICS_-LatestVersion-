@@ -7,35 +7,34 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.naviepics.model.MySQL.Entradas;
 import com.naviepics.model.Oracle.Equipos_Estacionamiento;
-import com.naviepics.repo.MySQL.Entradas_Repo;
 import com.naviepics.repo.Oracle.Equipos_Estacionamiento_Repo;
+import com.naviepics.service.Equipos_Estacionamiento_Service;
+
 
 @Service
-public class Equipos_Estacionamiento_ServiceImpl {
+public class Equipos_Estacionamiento_ServiceImpl implements Equipos_Estacionamiento_Service {
 
 	@Autowired
-	private Entradas_Repo repo;
-	
+	private Equipos_Estacionamiento_Repo repo;
+
 	@Transactional
-	public void registrar(Entradas t) {
-		repo.save(t);
+	public List<Equipos_Estacionamiento> findAll() {
+        return (List<Equipos_Estacionamiento>)repo.findAll();
 	}
+
 	@Transactional
-	public Optional<Entradas> mostrarUno(long id) {
+	public Optional<Equipos_Estacionamiento> findOne(Long id) {
 		return repo.findById(id);
 	}
+
 	@Transactional
-	public List<Entradas> mostrarTodo(){
-		return repo.findAll();
+	public Equipos_Estacionamiento saveOrUpdate(Equipos_Estacionamiento administrador) {
+		return repo.save(administrador);
 	}
+
 	@Transactional
-	public Entradas actualizar(Entradas d) {
-		return repo.save(d);
-	}
-	@Transactional
-	public void eliminar(long id) {
+	public void delete(Long id) {
 		repo.deleteById(id);
 	}
 }

@@ -1,11 +1,15 @@
 package com.naviepics.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import com.naviepics.model.MySQL.Tipo_Espacios;
 
 public interface Tipo_Espacios_Service {
 
-	public List<Tipo_Espacios> listarTipo_Espacios();
+	List<Tipo_Espacios> findAll();
+    Optional<Tipo_Espacios>findOne(Long id);
+    Tipo_Espacios saveOrUpdate(Tipo_Espacios e);
+    void delete(Tipo_Espacios id);
 
 }

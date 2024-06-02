@@ -1,11 +1,15 @@
 package com.naviepics.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import com.naviepics.model.MySQL.Historial_Pagos;
 
 public interface Historial_Pagos_Service {
 
-	public List<Historial_Pagos> listarHistorial_Pagos();
+	List<Historial_Pagos> findAll();
+    Optional<Historial_Pagos>findOne(Long id);
+    Historial_Pagos saveOrUpdate(Historial_Pagos e);
+    void delete(Historial_Pagos id);
 
 }

@@ -14,6 +14,6 @@ public interface Devoluciones_Service {
 	
 	List<Devoluciones> findAll();
     Optional<Devoluciones>findOne(Long id);
-    Devoluciones saveOrUpdate(Devoluciones administrador);
+    Devoluciones saveOrUpdate(Devoluciones d);
     void delete(Long id);
 }
