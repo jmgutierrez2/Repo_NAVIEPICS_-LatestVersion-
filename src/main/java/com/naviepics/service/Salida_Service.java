@@ -10,6 +10,6 @@ public interface Salida_Service {
 	List<Salida> findAll();
     Optional<Salida>findOne(Long id);
     Salida saveOrUpdate(Salida e);
-    void delete(Salida id);
+    void delete(Long id);
 
 }

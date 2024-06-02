@@ -10,6 +10,6 @@ public interface Reservaciones_Service {
 	List<Reservaciones> findAll();
     Optional<Reservaciones>findOne(Long id);
     Reservaciones saveOrUpdate(Reservaciones e);
-    void delete(Reservaciones id);
+    void delete(Long id);
 
 }

@@ -10,6 +10,6 @@ public interface Historial_Pagos_Service {
 	List<Historial_Pagos> findAll();
     Optional<Historial_Pagos>findOne(Long id);
     Historial_Pagos saveOrUpdate(Historial_Pagos e);
-    void delete(Historial_Pagos id);
+    void delete(Long id);
 
 }

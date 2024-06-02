@@ -10,5 +10,5 @@ public interface Vehiculo_Service {
 	List<Vehiculo> findAll();
     Optional<Vehiculo>findOne(Long id);
     Vehiculo saveOrUpdate(Vehiculo e);
-    void delete(Vehiculo id);
+    void delete(Long id);
 }

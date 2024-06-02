@@ -10,6 +10,6 @@ public interface Proveedor_Service {
 	List<Proveedor> findAll();
     Optional<Proveedor>findOne(Long id);
     Proveedor saveOrUpdate(Proveedor e);
-    void delete(Proveedor id);
+    void delete(Long id);
 
 }

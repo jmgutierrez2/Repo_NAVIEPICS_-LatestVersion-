@@ -10,6 +10,6 @@ public interface Tipo_Espacios_Service {
 	List<Tipo_Espacios> findAll();
     Optional<Tipo_Espacios>findOne(Long id);
     Tipo_Espacios saveOrUpdate(Tipo_Espacios e);
-    void delete(Tipo_Espacios id);
+    void delete(Long id);
 
 }

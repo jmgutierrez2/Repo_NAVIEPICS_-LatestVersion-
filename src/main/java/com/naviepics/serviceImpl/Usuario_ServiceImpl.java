@@ -27,8 +27,8 @@ public class Usuario_ServiceImpl implements Usuario_Service{
     }
 
     @Transactional
-    public Usuario saveOrUpdate(Usuario administrador) {
-        return repo.save(administrador);
+    public Usuario saveOrUpdate(Usuario e) {
+        return repo.save(e);
     }
 
     @Transactional

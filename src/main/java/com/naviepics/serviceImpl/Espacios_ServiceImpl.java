@@ -27,8 +27,8 @@ public class Espacios_ServiceImpl implements Espacios_Service{
 	}
 
 	@Transactional
-	public Espacios saveOrUpdate(Espacios administrador) {
-		return repo.save(administrador);
+	public Espacios saveOrUpdate(Espacios e) {
+		return repo.save(e);
 	}
 
 	@Transactional

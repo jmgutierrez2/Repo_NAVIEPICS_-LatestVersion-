@@ -27,8 +27,8 @@ public class Pagos_ServiceImpl implements Pagos_Service{
     }
 
     @Transactional
-    public Pagos saveOrUpdate(Pagos administrador) {
-        return repo.save(administrador);
+    public Pagos saveOrUpdate(Pagos e) {
+        return repo.save(e);
     }
 
     @Transactional

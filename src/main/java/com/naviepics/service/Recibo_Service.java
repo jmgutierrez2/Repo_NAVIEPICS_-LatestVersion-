@@ -10,6 +10,6 @@ public interface Recibo_Service {
 	List<Recibo> findAll();
     Optional<Recibo>findOne(Long id);
     Recibo saveOrUpdate(Recibo e);
-    void delete(Recibo id);
+    void delete(Long id);
 	
 }

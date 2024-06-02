@@ -27,8 +27,8 @@ public class Devoluciones_ServiceImpl implements Devoluciones_Service{
 	}
 
 	@Transactional
-	public Devoluciones saveOrUpdate(Devoluciones administrador) {
-		return repo.save(administrador);
+	public Devoluciones saveOrUpdate(Devoluciones e) {
+		return repo.save(e);
 	}
 
 	@Transactional

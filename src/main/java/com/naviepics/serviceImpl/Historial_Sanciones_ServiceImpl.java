@@ -5,11 +5,12 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 import com.naviepics.model.MySQL.Historial_Sanciones;
 
 import com.naviepics.repo.MySQL.Historial_Sanciones_Repo;
 import com.naviepics.service.Historial_Sanciones_Service;
-import jakarta.transaction.Transactional;
 @Service
 public class Historial_Sanciones_ServiceImpl implements Historial_Sanciones_Service{
     
@@ -27,8 +28,8 @@ public class Historial_Sanciones_ServiceImpl implements Historial_Sanciones_Serv
     }
 
     @Transactional
-    public Historial_Sanciones saveOrUpdate(Historial_Sanciones administrador) {
-        return repo.save(administrador);
+    public Historial_Sanciones saveOrUpdate(Historial_Sanciones e) {
+        return repo.save(e);
     }
 
     @Transactional

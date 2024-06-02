@@ -27,8 +27,8 @@ public class Proveedor_ServiceImpl implements Proveedor_Service{
     }
 
     @Transactional
-    public Proveedor saveOrUpdate(Proveedor administrador) {
-        return repo.save(administrador);
+    public Proveedor saveOrUpdate(Proveedor e) {
+        return repo.save(e);
     }
 
     @Transactional

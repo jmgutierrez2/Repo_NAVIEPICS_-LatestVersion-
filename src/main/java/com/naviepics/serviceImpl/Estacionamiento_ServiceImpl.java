@@ -27,8 +27,8 @@ public class Estacionamiento_ServiceImpl implements Estacionamiento_Service{
     }
 
     @Transactional
-    public Estacionamiento saveOrUpdate(Estacionamiento administrador) {
-        return repo.save(administrador);
+    public Estacionamiento saveOrUpdate(Estacionamiento e) {
+        return repo.save(e);
     }
 
     @Transactional

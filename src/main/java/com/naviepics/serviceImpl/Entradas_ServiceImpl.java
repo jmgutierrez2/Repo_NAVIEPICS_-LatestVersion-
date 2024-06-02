@@ -27,8 +27,8 @@ public class Entradas_ServiceImpl implements Entradas_Service{
     }
 
     @Transactional
-    public Entradas saveOrUpdate(Entradas administrador) {
-        return repo.save(administrador);
+    public Entradas saveOrUpdate(Entradas e) {
+        return repo.save(e);
     }
 
     @Transactional

@@ -10,6 +10,6 @@ public interface Pagos_Service {
 	List<Pagos> findAll();
     Optional<Pagos>findOne(Long id);
     Pagos saveOrUpdate(Pagos e);
-    void delete(Pagos id);
+    void delete(Long id);
 
 }

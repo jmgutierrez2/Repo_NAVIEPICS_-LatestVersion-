@@ -10,6 +10,6 @@ public interface Tarifas_Service {
 	List<Tarifas> findAll();
     Optional<Tarifas>findOne(Long id);
     Tarifas saveOrUpdate(Tarifas e);
-    void delete(Tarifas id);
+    void delete(Long id);
 
 }

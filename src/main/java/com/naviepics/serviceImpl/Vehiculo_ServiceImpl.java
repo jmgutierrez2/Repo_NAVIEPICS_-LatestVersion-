@@ -27,8 +27,8 @@ public class Vehiculo_ServiceImpl implements Vehiculo_Service{
     }
 
     @Transactional
-    public Vehiculo saveOrUpdate(Vehiculo administrador) {
-        return repo.save(administrador);
+    public Vehiculo saveOrUpdate(Vehiculo e) {
+        return repo.save(e);
     }
 
     @Transactional

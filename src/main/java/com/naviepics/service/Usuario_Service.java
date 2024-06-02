@@ -10,5 +10,5 @@ public interface Usuario_Service {
 	List<Usuario> findAll();
     Optional<Usuario>findOne(Long id);
     Usuario saveOrUpdate(Usuario e);
-    void delete(Usuario id);
+    void delete(Long id);
 }

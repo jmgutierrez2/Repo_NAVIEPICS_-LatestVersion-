@@ -27,13 +27,14 @@ public class Historial_Pagos_ServiceImpl implements Historial_Pagos_Service{
     }
 
     @Transactional
-    public Historial_Pagos saveOrUpdate(Historial_Pagos administrador) {
-        return repo.save(administrador);
+    public Historial_Pagos saveOrUpdate(Historial_Pagos e) {
+        return repo.save(e);
     }
 
     @Transactional
     public void delete(Long id) {
         repo.deleteById(id);
     }
+	
     
 }

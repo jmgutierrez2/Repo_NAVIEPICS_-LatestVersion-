@@ -10,7 +10,7 @@ public interface Mantenimiento_Equipos_Service {
 	List<Mantenimiento_Equipos> findAll();
     Optional<Mantenimiento_Equipos>findOne(Long id);
     Mantenimiento_Equipos saveOrUpdate(Mantenimiento_Equipos e);
-    void delete(Mantenimiento_Equipos id);
+    void delete(Long id);
 
 
 }

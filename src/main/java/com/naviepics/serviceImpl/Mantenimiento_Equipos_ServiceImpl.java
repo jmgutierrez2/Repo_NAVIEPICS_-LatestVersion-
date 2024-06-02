@@ -27,8 +27,8 @@ public class Mantenimiento_Equipos_ServiceImpl implements Mantenimiento_Equipos_
     }
 
     @Transactional
-    public Mantenimiento_Equipos saveOrUpdate(Mantenimiento_Equipos administrador) {
-        return repo.save(administrador);
+    public Mantenimiento_Equipos saveOrUpdate(Mantenimiento_Equipos e) {
+        return repo.save(e);
     }
 
     @Transactional
