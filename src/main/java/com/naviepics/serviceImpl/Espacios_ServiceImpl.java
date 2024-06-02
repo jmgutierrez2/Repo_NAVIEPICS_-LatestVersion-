@@ -10,7 +10,6 @@ import org.springframework.transaction.annotation.Transactional;
 import com.naviepics.model.MySQL.Espacios;
 import com.naviepics.repo.MySQL.Espacio_Repo;
 import com.naviepics.service.Espacios_Service;
-
 @Service
 public class Espacios_ServiceImpl implements Espacios_Service{
 
@@ -36,4 +35,5 @@ public class Espacios_ServiceImpl implements Espacios_Service{
 	public void delete(Long id) {
 		repo.deleteById(id);
 	}
+	
 }

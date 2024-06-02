@@ -10,8 +10,6 @@ import org.springframework.transaction.annotation.Transactional;
 import com.naviepics.model.Oracle.Equipos_Estacionamiento;
 import com.naviepics.repo.Oracle.Equipos_Estacionamiento_Repo;
 import com.naviepics.service.Equipos_Estacionamiento_Service;
-
-
 @Service
 public class Equipos_Estacionamiento_ServiceImpl implements Equipos_Estacionamiento_Service {
 
@@ -37,4 +35,5 @@ public class Equipos_Estacionamiento_ServiceImpl implements Equipos_Estacionamie
 	public void delete(Long id) {
 		repo.deleteById(id);
 	}
+	
 }
