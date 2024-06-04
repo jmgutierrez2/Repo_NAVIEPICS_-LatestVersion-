@@ -11,6 +11,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.PrePersist;
+import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
@@ -22,8 +23,8 @@ import jakarta.persistence.JoinColumn;
 @Table (name ="Devoluciones")
 public class Devoluciones {
 	@Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY/*, generator = "secuencia_mi_entidad"*/)
-    //@SequenceGenerator(name = "secuencia_mi_entidad", sequenceName = "secuencia_mi_entidad", allocationSize = 1, initialValue = 10000)
+    @SequenceGenerator(name="secuencia_2001", sequenceName="secuencia_2001", initialValue=2001, allocationSize=1)
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "secuencia_2001")
     @Column(name="Id_Devoluciones", nullable=false )
     private long id;
 	
@@ -54,12 +55,18 @@ public class Devoluciones {
         
 	public Devoluciones() {
 	}
-	public Devoluciones(long id, Usuario usuario, Estacionamiento estacionamiento, String descripción, Date fecha_hora,double monto_devolucion) {
+	public Devoluciones(long id, Usuario usuario, Estacionamiento estacionamiento, String descripción, double monto_devolucion) {
 		this.id = id;
 		this.usuario = usuario;
 		this.estacionamiento = estacionamiento;
 		this.descripción = descripción;
-		this.fecha_hora = fecha_hora;
+		this.monto_devolucion = monto_devolucion;
+	}
+	public Devoluciones(Usuario usuario, Estacionamiento estacionamiento, String descripción, double monto_devolucion) {
+		this.id = id;
+		this.usuario = usuario;
+		this.estacionamiento = estacionamiento;
+		this.descripción = descripción;
 		this.monto_devolucion = monto_devolucion;
 	}
 	public long getId() {

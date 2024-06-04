@@ -16,22 +16,18 @@ public class Devoluciones_ServiceImpl implements Devoluciones_Service{
 	@Autowired
 	private Devoluciones_Repo repo;
 
-	@Transactional
 	public List<Devoluciones> findAll() {
         return (List<Devoluciones>)repo.findAll();
 	}
 
-	@Transactional
 	public Optional<Devoluciones> findOne(Long id) {
 		return repo.findById(id);
 	}
 
-	@Transactional
 	public Devoluciones saveOrUpdate(Devoluciones e) {
 		return repo.save(e);
 	}
 
-	@Transactional
 	public void delete(Long id) {
 		repo.deleteById(id);
 	}

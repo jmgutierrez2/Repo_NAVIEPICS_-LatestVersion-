@@ -16,22 +16,18 @@ public class Tarifas_ServiceImpl implements Tarifas_Service{
     @Autowired
     private Tarifas_Repo repo;
 
-    @Transactional
     public List<Tarifas> findAll() {
         return (List<Tarifas>)repo.findAll();
     }
 
-    @Transactional
     public Optional<Tarifas> findOne(Long id) {
         return repo.findById(id);
     }
 
-    @Transactional
     public Tarifas saveOrUpdate(Tarifas administrador) {
         return repo.save(administrador);
     }
 
-    @Transactional
     public void delete(Long id) {
         repo.deleteById(id);
     }

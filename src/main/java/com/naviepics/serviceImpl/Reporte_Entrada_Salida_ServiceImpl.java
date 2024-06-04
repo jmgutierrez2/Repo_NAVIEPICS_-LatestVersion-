@@ -16,22 +16,18 @@ public class Reporte_Entrada_Salida_ServiceImpl implements Reporte_Entrada_Salid
     @Autowired
     private Reporte_Entrada_Salida_Repo repo;
 
-    @Transactional
     public List<Reporte_Entrada_Salida> findAll() {
         return (List<Reporte_Entrada_Salida>)repo.findAll();
     }
 
-    @Transactional
     public Optional<Reporte_Entrada_Salida> findOne(Long id) {
         return repo.findById(id);
     }
 
-    @Transactional
     public Reporte_Entrada_Salida saveOrUpdate(Reporte_Entrada_Salida administrador) {
         return repo.save(administrador);
     }
 
-    @Transactional
     public void delete(Long id) {
         repo.deleteById(id);
     }

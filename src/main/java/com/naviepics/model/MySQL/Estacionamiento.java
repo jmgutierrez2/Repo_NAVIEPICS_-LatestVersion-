@@ -8,14 +8,15 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 
 @Entity
 @Table(name="Estacionamiento")
 public class Estacionamiento {
 	@Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY/*, generator = "secuencia_mi_entidad"*/)
-    //@SequenceGenerator(name = "secuencia_mi_entidad", sequenceName = "secuencia_mi_entidad", allocationSize = 1, initialValue = 10000)
+    @SequenceGenerator(name="secuencia_1001", sequenceName="secuencia_1001", initialValue=1001, allocationSize=1)
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "secuencia_1001")
 	@Column(name="Id_Estacionamiento")
     private long id;
 	

@@ -16,22 +16,18 @@ public class Proveedor_ServiceImpl implements Proveedor_Service{
     @Autowired
     private Proveedor_Repo repo;
 
-    @Transactional
     public List<Proveedor> findAll() {
         return (List<Proveedor>)repo.findAll();
     }
 
-    @Transactional
     public Optional<Proveedor> findOne(Long id) {
         return repo.findById(id);
     }
 
-    @Transactional
     public Proveedor saveOrUpdate(Proveedor e) {
         return repo.save(e);
     }
 
-    @Transactional
     public void delete(Long id) {
         repo.deleteById(id);
     }

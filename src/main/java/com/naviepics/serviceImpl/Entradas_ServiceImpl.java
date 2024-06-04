@@ -16,22 +16,18 @@ public class Entradas_ServiceImpl implements Entradas_Service{
     @Autowired
     private Entradas_Repo repo;
 
-    @Transactional
     public List<Entradas> findAll() {
         return (List<Entradas>)repo.findAll();
     }
 
-    @Transactional
     public Optional<Entradas> findOne(Long id) {
         return repo.findById(id);
     }
 
-    @Transactional
     public Entradas saveOrUpdate(Entradas e) {
         return repo.save(e);
     }
 
-    @Transactional
     public void delete(Long id) {
         repo.deleteById(id);
     }

@@ -16,22 +16,18 @@ public class Equipos_Estacionamiento_ServiceImpl implements Equipos_Estacionamie
 	@Autowired
 	private Equipos_Estacionamiento_Repo repo;
 
-	@Transactional
 	public List<Equipos_Estacionamiento> findAll() {
         return (List<Equipos_Estacionamiento>)repo.findAll();
 	}
 
-	@Transactional
 	public Optional<Equipos_Estacionamiento> findOne(Long id) {
 		return repo.findById(id);
 	}
 
-	@Transactional
 	public Equipos_Estacionamiento saveOrUpdate(Equipos_Estacionamiento e) {
 		return repo.save(e);
 	}
 
-	@Transactional
 	public void delete(Long id) {
 		repo.deleteById(id);
 	}

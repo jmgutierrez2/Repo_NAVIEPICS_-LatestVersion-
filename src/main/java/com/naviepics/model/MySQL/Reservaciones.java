@@ -12,6 +12,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.PrePersist;
+import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
@@ -21,8 +22,8 @@ import jakarta.persistence.TemporalType;
 public class Reservaciones {
 	
 	@Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="Id_Reserva")
+    @SequenceGenerator(name="secuencua_201", sequenceName="secuencia_201", initialValue=201, allocationSize=1)
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "secuencia_201")	@Column(name="Id_Reserva")
     private long id;
 
 	@PrePersist

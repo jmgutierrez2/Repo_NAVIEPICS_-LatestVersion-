@@ -16,22 +16,18 @@ public class Mantenimiento_Equipos_ServiceImpl implements Mantenimiento_Equipos_
     @Autowired
     private Mantenimiento_Equipos_Repo repo;
 
-    @Transactional
     public List<Mantenimiento_Equipos> findAll() {
         return (List<Mantenimiento_Equipos>)repo.findAll();
     }
 
-    @Transactional
     public Optional<Mantenimiento_Equipos> findOne(Long id) {
         return repo.findById(id);
     }
 
-    @Transactional
     public Mantenimiento_Equipos saveOrUpdate(Mantenimiento_Equipos e) {
         return repo.save(e);
     }
 
-    @Transactional
     public void delete(Long id) {
         repo.deleteById(id);
     }

@@ -16,22 +16,18 @@ public class Reservaciones_ServiceImpl implements Reservaciones_Service{
     @Autowired
     private Reservaciones_Repo repo;
 
-    @Transactional
     public List<Reservaciones> findAll() {
         return (List<Reservaciones>)repo.findAll();
     }
 
-    @Transactional
     public Optional<Reservaciones> findOne(Long id) {
         return repo.findById(id);
     }
 
-    @Transactional
     public Reservaciones saveOrUpdate(Reservaciones administrador) {
         return repo.save(administrador);
     }
 
-    @Transactional
     public void delete(Long id) {
         repo.deleteById(id);
     }

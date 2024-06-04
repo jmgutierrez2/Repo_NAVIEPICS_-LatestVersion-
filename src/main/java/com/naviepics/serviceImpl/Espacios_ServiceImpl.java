@@ -16,22 +16,18 @@ public class Espacios_ServiceImpl implements Espacios_Service{
 	@Autowired
 	private Espacio_Repo repo;
 
-	@Transactional
 	public List<Espacios> findAll() {
         return (List<Espacios>)repo.findAll();
 	}
 
-	@Transactional
 	public Optional<Espacios> findOne(Long id) {
 		return repo.findById(id);
 	}
 
-	@Transactional
 	public Espacios saveOrUpdate(Espacios e) {
 		return repo.save(e);
 	}
 
-	@Transactional
 	public void delete(Long id) {
 		repo.deleteById(id);
 	}

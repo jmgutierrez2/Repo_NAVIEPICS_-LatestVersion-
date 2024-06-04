@@ -12,6 +12,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.PrePersist;
+import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
@@ -21,8 +22,8 @@ import jakarta.persistence.TemporalType;
 public class Usuario {
 	
 	@Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="Id_Usuario")
+	@SequenceGenerator(name="secuencia_101", sequenceName="secuencia_101", initialValue=101, allocationSize=1)
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "secuencia_101")	@Column(name="Id_Usuario")
     private long id;
 	
 	@Column(name="Nombre", nullable=false)
@@ -59,21 +60,19 @@ public class Usuario {
     	
     }
 
-	public Usuario(long id, String nombre, String apellido, Date fecha_creacion, String email, String password
+	public Usuario(long id, String nombre, String apellido, String email, String password
 			) {
 		this.id = id;
 		this.nombre = nombre;
 		this.apellido = apellido;
-		this.fecha_creacion = fecha_creacion;
 		this.email = email;
 		this.password = password;
 	}
 	
-	public Usuario(String nombre, String apellido, Date fecha_creacion, String email, String password
+	public Usuario(String nombre, String apellido, String email, String password
 			) {
 		this.nombre = nombre;
 		this.apellido = apellido;
-		this.fecha_creacion = fecha_creacion;
 		this.email = email;
 		this.password = password;
 	}

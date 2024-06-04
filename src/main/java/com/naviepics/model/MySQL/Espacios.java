@@ -10,6 +10,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 
 @Entity
@@ -17,7 +18,8 @@ import jakarta.persistence.Table;
 public class Espacios {
 	
 	@Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+	@SequenceGenerator(name="secuencia_3001", sequenceName="secuencia_3001", initialValue=3001, allocationSize=1)
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "secuencia_3001")		
 	@Column(name="Id_Espacio")
     private long id;
 	
