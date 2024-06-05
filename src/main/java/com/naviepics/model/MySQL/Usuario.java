@@ -46,9 +46,6 @@ public class Usuario {
 	
 	@Column(name="Password", nullable=false)
 	private String password;
-	
-	@OneToMany(mappedBy="usuario")
-	private List<Devoluciones> listaDevoluciones;
     
     @OneToMany(mappedBy="usuario")
 	private List<Reservaciones> listaReservaciones;
@@ -125,13 +122,6 @@ public class Usuario {
 		this.password = password;
 	}
 
-	public List<Devoluciones> getListaDevoluciones() {
-		return listaDevoluciones;
-	}
-
-	public void setListaDevoluciones(List<Devoluciones> listaDevoluciones) {
-		this.listaDevoluciones = listaDevoluciones;
-	}
 
 	public List<Reservaciones> getListaReservaciones() {
 		return listaReservaciones;

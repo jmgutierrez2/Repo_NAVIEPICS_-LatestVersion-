@@ -35,17 +35,9 @@ public class Estacionamiento {
 	@Column(name="Estado", nullable=false)
     private boolean estado;
 	
-	@OneToMany(mappedBy="estacionamiento")
-	private List<Tarifas> listaTarifas;
+	@Column(name="Enlace", nullable=false)
+	private String enlace;
 	
-	@OneToMany(mappedBy="estacionamiento")
-	private List<Espacios> listaEspacios;
-	
-	@OneToMany(mappedBy="estacionamiento")
-	private List<Devoluciones> listaDevoluciones;
-	
-	@OneToMany(mappedBy="estacionamiento")
-	private List<Historial_Sanciones> listaHistorial_Sanciones;
 	
 	@OneToMany(mappedBy="estacionamiento")
 	private List<Reservaciones> listaResevaciones;
@@ -55,22 +47,24 @@ public class Estacionamiento {
 	}
 
 	public Estacionamiento(long id, String nombre, String direccion, Integer capacidad, String horario_funcionamiento,
-			boolean estado) {
+			boolean estado, String enlace) {
 		this.id = id;
 		this.nombre = nombre;
 		this.direccion = direccion;
 		this.capacidad = capacidad;
 		this.horario_funcionamiento = horario_funcionamiento;
 		this.estado = estado;
+		this.enlace=enlace;
 	}
 	
 	public Estacionamiento(String nombre, String direccion, Integer capacidad, String horario_funcionamiento,
-			boolean estado) {
+			boolean estado, String enlace) {
 		this.nombre = nombre;
 		this.direccion = direccion;
 		this.capacidad = capacidad;
 		this.horario_funcionamiento = horario_funcionamiento;
 		this.estado = estado;
+		this.enlace=enlace;
 	}
 
 	public long getId() {
@@ -108,6 +102,14 @@ public class Estacionamiento {
 	public String getHorario_funcionamiento() {
 		return horario_funcionamiento;
 	}
+	
+	public String getEnlace() {
+		return enlace;
+	}
+
+	public void setEnlace(String enlace) {
+		this.enlace = enlace;
+	}
 
 	public void setHorario_funcionamiento(String horario_funcionamiento) {
 		this.horario_funcionamiento = horario_funcionamiento;
@@ -119,38 +121,6 @@ public class Estacionamiento {
 
 	public void setEstado(boolean estado) {
 		this.estado = estado;
-	}
-
-	public List<Tarifas> getListaTarifas() {
-		return listaTarifas;
-	}
-
-	public void setListaTarifas(List<Tarifas> listaTarifas) {
-		this.listaTarifas = listaTarifas;
-	}
-
-	public List<Espacios> getListaEspacios() {
-		return listaEspacios;
-	}
-
-	public void setListaEspacios(List<Espacios> listaEspacios) {
-		this.listaEspacios = listaEspacios;
-	}
-
-	public List<Devoluciones> getListaDevoluciones() {
-		return listaDevoluciones;
-	}
-
-	public void setListaDevoluciones(List<Devoluciones> listaDevoluciones) {
-		this.listaDevoluciones = listaDevoluciones;
-	}
-
-	public List<Historial_Sanciones> getListaHistorial_Sanciones() {
-		return listaHistorial_Sanciones;
-	}
-
-	public void setListaHistorial_Sanciones(List<Historial_Sanciones> listaHistorial_Sanciones) {
-		this.listaHistorial_Sanciones = listaHistorial_Sanciones;
 	}
 
 	public List<Reservaciones> getListaResevaciones() {
