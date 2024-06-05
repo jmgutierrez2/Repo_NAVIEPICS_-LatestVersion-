@@ -35,9 +35,8 @@ public class Tipo_Vehiculo {
 		this.listaVehiculo = listaVehiculo;
 	}
 
-	public Tipo_Vehiculo(String descripcion, List<Vehiculo> listaVehiculo) {
+	public Tipo_Vehiculo(String descripcion) {
 		this.descripcion = descripcion;
-		this.listaVehiculo = listaVehiculo;
 	}
 	
 	public long getId() {

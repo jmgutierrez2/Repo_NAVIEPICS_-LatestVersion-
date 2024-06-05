@@ -32,9 +32,8 @@ public class Tipo_Espacios {
 		this.descripcion = descripcion;
 		this.listaEspacios = listaEspacios;
 	}
-	public Tipo_Espacios(String descripcion, List<Espacios> listaEspacios) {
+	public Tipo_Espacios(String descripcion) {
 		this.descripcion = descripcion;
-		this.listaEspacios = listaEspacios;
 	}
 
 	public long getId() {

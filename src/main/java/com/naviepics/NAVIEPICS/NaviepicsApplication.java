@@ -7,9 +7,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 import com.naviepics.model.MySQL.Estacionamiento;
+import com.naviepics.model.MySQL.Tipo_Vehiculo;
 import com.naviepics.model.MySQL.Usuario;
 import com.naviepics.service.Estacionamiento_Service;
 import com.naviepics.service.Tipo_Espacios_Service;
+import com.naviepics.service.Tipo_Vehiculo_Service;
 import com.naviepics.service.Usuario_Service;
 import com.naviepics.serviceImpl.Estacionamiento_ServiceImpl;
 
@@ -27,7 +29,9 @@ public class NaviepicsApplication implements CommandLineRunner{
 	@Autowired
 	private Usuario_Service usS;
 	@Autowired
-	private Tipo_Espacios_Service tespS;
+	private Tipo_Espacios_Service t_Esp;
+	@Autowired
+	private Tipo_Vehiculo_Service t_Vehi;
 	
     public void run(String... args) throws Exception {
     	insertarEstacionamientos();
@@ -89,6 +93,10 @@ public class NaviepicsApplication implements CommandLineRunner{
     	usu("Oscar", "Pineda", "oscar_pineda@gmail.com","oscarpineda");
     }
     
+    public void insertarTipoVehiculo() {
+    	
+    	
+    }
           
     //METODOS DE INSERCION DE DATOS
     public void est(String nom, String dir, Integer qEsp, String hor, boolean est) {
@@ -103,7 +111,14 @@ public class NaviepicsApplication implements CommandLineRunner{
 		usS.saveOrUpdate(e);
 		System.out.println("Insercion Exitosa");
 	}
-       
+    public void T_Vehiculo(String des) {
+    	Tipo_Vehiculo e=new Tipo_Vehiculo("Motocicletas");
+		escribir("Objeto creado");
+		System.out.println("Insercion Exitosa");
+	}
+    public void T_Espacio(String des) {
+    	
+    }
     
     
     public void escribir(String t) {
