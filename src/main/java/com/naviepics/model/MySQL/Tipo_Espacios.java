@@ -27,14 +27,12 @@ public class Tipo_Espacios {
 	public Tipo_Espacios() {
 		
 	}
-	public Tipo_Espacios(long id, String descripcion, List<Espacios> listaEspacios) {
+	public Tipo_Espacios(long id, String descripcion) {
 		this.id = id;
 		this.descripcion = descripcion;
-		this.listaEspacios = listaEspacios;
 	}
-	public Tipo_Espacios(String descripcion, List<Espacios> listaEspacios) {
+	public Tipo_Espacios(String descripcion) {
 		this.descripcion = descripcion;
-		this.listaEspacios = listaEspacios;
 	}
 
 	public long getId() {

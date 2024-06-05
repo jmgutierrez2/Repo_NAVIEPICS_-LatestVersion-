@@ -7,9 +7,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 import com.naviepics.model.MySQL.Estacionamiento;
+import com.naviepics.model.MySQL.Tipo_Espacios;
+import com.naviepics.model.MySQL.Tipo_Vehiculo;
 import com.naviepics.model.MySQL.Usuario;
 import com.naviepics.service.Estacionamiento_Service;
 import com.naviepics.service.Tipo_Espacios_Service;
+import com.naviepics.service.Tipo_Vehiculo_Service;
 import com.naviepics.service.Usuario_Service;
 import com.naviepics.serviceImpl.Estacionamiento_ServiceImpl;
 
@@ -27,11 +30,15 @@ public class NaviepicsApplication implements CommandLineRunner{
 	@Autowired
 	private Usuario_Service usS;
 	@Autowired
-	private Tipo_Espacios_Service tespS;
+	private Tipo_Espacios_Service t_Esp;
+	@Autowired
+	private Tipo_Vehiculo_Service t_Vehi;
 	
     public void run(String... args) throws Exception {
     	insertarEstacionamientos();
     	insertarUsuarios();
+    	insertarTipoVehiculo();
+    	insertarTipoEspacio();
     	  
     }
     //ESTACIONAMIENTOS---------------------------------- 
@@ -87,8 +94,37 @@ public class NaviepicsApplication implements CommandLineRunner{
     public void insertarUsuarios() {
     	usu("Mario", "Villanueva", "mario_villanueva@gmail.com","mariovillanueva");
     	usu("Oscar", "Pineda", "oscar_pineda@gmail.com","oscarpineda");
+    	usu("Rodrigo", "Barrios", "rodrigo_barrios@gmail.com","rodrigobarrios");
+    	usu("Laura", "Martínez", "laura_martinez@gmail.com", "lauramartinez");
+    	usu("Carlos", "López", "carlos_lopez@gmail.com", "carloslopez");
+    	usu("Ana", "García", "ana_garcia@gmail.com", "anagarcia");
+    	usu("José", "Pérez", "jose_perez@gmail.com", "joseperez");
+    	usu("María", "Rodríguez", "maria_rodriguez@gmail.com", "mariarodriguez");
+    	usu("Gustavo", "Fernández", "gustavo_fernandez@gmail.com", "gustavofernandez");
+    	usu("Elena", "Gómez", "elena_gomez@gmail.com", "elenagomez");
+    	usu("Jorge", "Díaz", "jorge_diaz@gmail.com", "jorgediaz");
+    	usu("Sofía", "Morales", "sofia_morales@gmail.com", "sofiamorales");
+    	usu("Pablo", "Hernández", "pablo_hernandez@gmail.com", "pablohernandez");
+    	usu("Marta", "Ruiz", "marta_ruiz@gmail.com", "martaruiz");
+    	usu("Fernando", "Jiménez", "fernando_jimenez@gmail.com", "fernandojimenez");
+    	usu("Isabel", "Sánchez", "isabel_sanchez@gmail.com", "isabelsanchez");
+    	usu("Ricardo", "Torres", "ricardo_torres@gmail.com", "ricardotorres");
+    	usu("Patricia", "Ramírez", "patricia_ramirez@gmail.com", "patriciaramirez");
+    	usu("Andrés", "Flores", "andres_flores@gmail.com", "andresflores");
+    	usu("Hugo", "Castillo", "hugo_castillo@gmail.com", "hugocastillo");
     }
     
+    //TIPOS DE VEHICULO -------------------------------------------
+    public void insertarTipoVehiculo() {
+    	T_Vehiculo("Motocicleta");
+    	T_Vehiculo("Automovil");
+    }
+    
+  //TIPOS DE ESPACIO -------------------------------------------
+    public void insertarTipoEspacio() {
+    	T_Espacio("Estandar");
+    	T_Espacio("Para motocicletas");
+    }
           
     //METODOS DE INSERCION DE DATOS
     public void est(String nom, String dir, Integer qEsp, String hor, boolean est) {
@@ -103,7 +139,18 @@ public class NaviepicsApplication implements CommandLineRunner{
 		usS.saveOrUpdate(e);
 		System.out.println("Insercion Exitosa");
 	}
-       
+    public void T_Vehiculo(String des) {
+    	Tipo_Vehiculo e=new Tipo_Vehiculo(des);
+		escribir("Objeto creado");
+    	t_Vehi.saveOrUpdate(e);
+		System.out.println("Insercion Exitosa");
+	}
+    public void T_Espacio(String des) {
+    	Tipo_Espacios e=new Tipo_Espacios(des);
+		escribir("Objeto creado");
+		t_Esp.saveOrUpdate(e);
+		System.out.println("Insercion Exitosa");
+    }
     
     
     public void escribir(String t) {
