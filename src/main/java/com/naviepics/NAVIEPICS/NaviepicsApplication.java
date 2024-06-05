@@ -37,6 +37,8 @@ public class NaviepicsApplication implements CommandLineRunner{
     public void run(String... args) throws Exception {
     	insertarEstacionamientos();
     	insertarUsuarios();
+    	insertarTipoVehiculo();
+    	insertarTipoEspacio();
     	  
     }
     //ESTACIONAMIENTOS---------------------------------- 
@@ -112,10 +114,13 @@ public class NaviepicsApplication implements CommandLineRunner{
     	usu("Hugo", "Castillo", "hugo_castillo@gmail.com", "hugocastillo");
     }
     
+    //TIPOS DE VEHICULO -------------------------------------------
     public void insertarTipoVehiculo() {
     	T_Vehiculo("Motocicleta");
-    	T_Vehiculo("Motocicleta");
+    	T_Vehiculo("Automovil");
     }
+    
+  //TIPOS DE ESPACIO -------------------------------------------
     public void insertarTipoEspacio() {
     	T_Espacio("Estandar");
     	T_Espacio("Para motocicletas");
@@ -137,11 +142,13 @@ public class NaviepicsApplication implements CommandLineRunner{
     public void T_Vehiculo(String des) {
     	Tipo_Vehiculo e=new Tipo_Vehiculo(des);
 		escribir("Objeto creado");
+    	t_Vehi.saveOrUpdate(e);
 		System.out.println("Insercion Exitosa");
 	}
     public void T_Espacio(String des) {
     	Tipo_Espacios e=new Tipo_Espacios(des);
 		escribir("Objeto creado");
+		t_Esp.saveOrUpdate(e);
 		System.out.println("Insercion Exitosa");
     }
     
