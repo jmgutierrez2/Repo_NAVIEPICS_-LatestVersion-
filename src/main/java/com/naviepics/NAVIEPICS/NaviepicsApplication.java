@@ -7,14 +7,16 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 import com.naviepics.model.MySQL.Estacionamiento;
-import com.naviepics.model.MySQL.Tipo_Espacios;
+import com.naviepics.model.MySQL.Tarifas;
 import com.naviepics.model.MySQL.Tipo_Vehiculo;
 import com.naviepics.model.MySQL.Usuario;
+import com.naviepics.model.Oracle.Proveedor;
+import com.naviepics.service.Equipos_Estacionamiento_Service;
 import com.naviepics.service.Estacionamiento_Service;
-import com.naviepics.service.Tipo_Espacios_Service;
+import com.naviepics.service.Proveedor_Service;
+import com.naviepics.service.Tarifas_Service;
 import com.naviepics.service.Tipo_Vehiculo_Service;
 import com.naviepics.service.Usuario_Service;
-import com.naviepics.serviceImpl.Estacionamiento_ServiceImpl;
 
 
 @SpringBootApplication
@@ -30,20 +32,23 @@ public class NaviepicsApplication implements CommandLineRunner{
 	@Autowired
 	private Usuario_Service usS;
 	@Autowired
-	private Tipo_Espacios_Service t_Esp;
-	@Autowired
 	private Tipo_Vehiculo_Service t_Vehi;
+	@Autowired
+	private Tarifas_Service tarifas_S;
+	@Autowired
+	private Proveedor_Service proveedores_S;
+	@Autowired
+	private Equipos_Estacionamiento_Service eq_est_S;
 	
     public void run(String... args) throws Exception {
     	insertarEstacionamientos();
     	insertarUsuarios();
     	insertarTipoVehiculo();
-    	insertarTipoEspacio();
     	  
     }
     //ESTACIONAMIENTOS---------------------------------- 
-    public void insertarEstacionamientos() {
-    	est("Playa de estacionamiento", "Paucarpata 128, Arequipa 04001", 50, "Lunes a viernes - 24 horas", false);
+   public void insertarEstacionamientos() {
+    	/*est("Playa de estacionamiento", "Paucarpata 128, Arequipa 04001", 50, "Lunes a viernes - 24 horas", false, "PONA AQUI LOS ENLACES :)");
     	est("Playa de Estacionamiento", "Paucarpata 140, Arequipa 04001", 30, "Lunes a sábado 7:00 - 22:00", false);
     	est("Playa de Estacionamiento", "Tronchadero 209, Arequipa 04001", 45, "Lunes a viernes 6:00 - 20:00", true);
     	est("Playa de Estacionamiento", "C. San José 131, Arequipa 04001", 40, "Lunes a domingo 9:00 - 20:00", false);
@@ -86,7 +91,7 @@ public class NaviepicsApplication implements CommandLineRunner{
     	est("Playa de Estacionamiento ALEMERCED", "HFW6+22H, C. la Merced, Arequipa 04001", 30, "Lunes a domingo - 24 horas", true);
     	est("Playa", "C. Jerusalén 521, Cercado De Arequipa 04001", 50, "Lunes a domingo 8:00 - 18:00", true);
     	est("Playa", "Calle Nueva 415, Arequipa 04001", 35, "Lunes a domingo 8:00 - 21:00", false);
-    	est("Playa de Estacionamiento San Nicolás", "C. Piérola 318a, Arequipa 04001", 30, "Lunes a sábado 10:00 - 23:00", false);
+    	est("Playa de Estacionamiento San Nicolás", "C. Piérola 318a, Arequipa 04001", 30, "Lunes a sábado 10:00 - 23:00", false);*/
     	
     }
     
@@ -120,39 +125,73 @@ public class NaviepicsApplication implements CommandLineRunner{
     	T_Vehiculo("Automovil");
     }
     
-  //TIPOS DE ESPACIO -------------------------------------------
-    public void insertarTipoEspacio() {
-    	T_Espacio("Estandar");
-    	T_Espacio("Para motocicletas");
+    //TARIFAS
+    public void insertarTarifas() {
+    	tarifas( "6:00 a.m. - 6:00 p.m.", 5.00);
     }
-          
+    
+    public void insertarProveedores() {
+    	proveedores("NOMBRE DEL PROVEEDOR", "DIRECCION INVETADA", "TELEFONO" , "CORREO");
+    }
+    
+    
+    
+    
+    
+    
+    
+    
     //METODOS DE INSERCION DE DATOS
-    public void est(String nom, String dir, Integer qEsp, String hor, boolean est) {
-		Estacionamiento e=new Estacionamiento(nom,dir,qEsp,hor,est);
+    
+    //ESTACIONAMIENTO
+    public Estacionamiento est(String nom, String dir, Integer qEsp, String hor, boolean est, String enlace) {
+		Estacionamiento e=new Estacionamiento(nom,dir,qEsp,hor,est,enlace);
 		escribir("Objeto creado");
 		estS.saveOrUpdate(e);
 		System.out.println("Insercion Exitosa");
+		return e;
 	}
-    public void usu(String nom, String ape, String email,String pass) {
+    
+    //USUARIO
+    public Usuario usu(String nom, String ape, String email,String pass) {
 		Usuario e=new Usuario(nom,ape,email,pass);
+		
 		escribir("Objeto creado");
 		usS.saveOrUpdate(e);
 		System.out.println("Insercion Exitosa");
+		return e;
 	}
-    public void T_Vehiculo(String des) {
+    
+    //TIPO DE VEHICULO
+    public Tipo_Vehiculo T_Vehiculo(String des) {
     	Tipo_Vehiculo e=new Tipo_Vehiculo(des);
 		escribir("Objeto creado");
     	t_Vehi.saveOrUpdate(e);
 		System.out.println("Insercion Exitosa");
+		return e;
 	}
-    public void T_Espacio(String des) {
-    	Tipo_Espacios e=new Tipo_Espacios(des);
+           
+    //TARIFAS
+    public void tarifas(String franja_Horario, Double valor_Hora) {
+    	Tarifas e=new Tarifas(franja_Horario,valor_Hora);
 		escribir("Objeto creado");
-		t_Esp.saveOrUpdate(e);
-		System.out.println("Insercion Exitosa");
+		tarifas_S.saveOrUpdate(e);
+		escribir("Objeto creado");
+    }
+   
+    
+    //PROVEEDORES
+    public void proveedores(String nombre,String dir, String telefono,String correo) {
+    	Proveedor e=new Proveedor(nombre,dir,telefono,correo);
+    	escribir("Objeto creado");
+		proveedores_S.saveOrUpdate(e);
+		escribir("Objeto creado");
     }
     
     
+    
+     
+    //ESCRITURA EN CONSOLA
     public void escribir(String t) {
     	System.out.println(t);
     }

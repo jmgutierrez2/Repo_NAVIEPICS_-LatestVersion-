@@ -32,15 +32,10 @@ public class Equipos_Estacionamiento {
 	@Column(name="Modelo_Equipo", nullable=false)
 	private String modelo_equipo;
 	
-	@Column(name="Numero_Equipo")
-	private String numero_equipo;
 	
 	@ManyToOne
 	@JoinColumn(name="Id_Proveedor",  nullable=false)
 	private Proveedor proveedor;
-	
-	@OneToMany(mappedBy="equipos_estacionamiento")
-	private List<Mantenimiento_Equipos> listaMantenimiento_Equipos;
 	
 	public Equipos_Estacionamiento() {
 		
@@ -48,21 +43,19 @@ public class Equipos_Estacionamiento {
 
 	
 	public Equipos_Estacionamiento(long id, String tipo_equipo, String marca_equipo, String modelo_equipo,
-			String numero_equipo, Proveedor proveedor) {
+			Proveedor proveedor) {
 		this.id = id;
 		this.tipo_equipo = tipo_equipo;
 		this.marca_equipo = marca_equipo;
 		this.modelo_equipo = modelo_equipo;
-		this.numero_equipo = numero_equipo;
 		this.proveedor = proveedor;
 	}
 	
 	public Equipos_Estacionamiento(String tipo_equipo, String marca_equipo, String modelo_equipo,
-			String numero_equipo, Proveedor proveedor) {
+			Proveedor proveedor) {
 		this.tipo_equipo = tipo_equipo;
 		this.marca_equipo = marca_equipo;
 		this.modelo_equipo = modelo_equipo;
-		this.numero_equipo = numero_equipo;
 		this.proveedor = proveedor;
 	}
 
@@ -98,14 +91,6 @@ public class Equipos_Estacionamiento {
 		this.modelo_equipo = modelo_equipo;
 	}
 
-	public String getNumero_equipo() {
-		return numero_equipo;
-	}
-
-	public void setNumero_equipo(String numero_equipo) {
-		this.numero_equipo = numero_equipo;
-	}
-
 	public Proveedor getProveedor() {
 		return proveedor;
 	}
@@ -114,13 +99,4 @@ public class Equipos_Estacionamiento {
 		this.proveedor = proveedor;
 	}
 
-	public List<Mantenimiento_Equipos> getListaMantenimiento_Equipos() {
-		return listaMantenimiento_Equipos;
-	}
-
-	public void setListaMantenimiento_Equipos(List<Mantenimiento_Equipos> listaMantenimiento_Equipos) {
-		this.listaMantenimiento_Equipos = listaMantenimiento_Equipos;
-	}
-	
-	
 }

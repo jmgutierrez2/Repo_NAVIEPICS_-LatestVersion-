@@ -41,15 +41,6 @@ public class Vehiculo {
 	@JoinColumn(name="Id_Tipo_Vehiculo",  nullable=false)
 	private Tipo_Vehiculo tipo_vehiculo;
 	
-	@OneToMany(mappedBy="vehiculo")
-	private List<Historial_Sanciones> listaHistorial_Sanciones;
-    
-    @OneToMany(mappedBy="vehiculo")
-	private List<Recibo> listaRecibo;
-
-    @OneToMany(mappedBy="vehiculo")
-	private List<Reporte_Entrada_Salida> listaReporte_Entrada_Salida;
-	
 	public Vehiculo() {
 		
 	}
@@ -130,31 +121,6 @@ public class Vehiculo {
 	public void setTipo_vehiculo(Tipo_Vehiculo tipo_vehiculo) {
 		this.tipo_vehiculo = tipo_vehiculo;
 	}
-
-	public List<Historial_Sanciones> getListaHistorial_Sanciones() {
-		return listaHistorial_Sanciones;
-	}
-
-	public void setListaHistorial_Sanciones(List<Historial_Sanciones> listaHistorial_Sanciones) {
-		this.listaHistorial_Sanciones = listaHistorial_Sanciones;
-	}
-
-	public List<Recibo> getListaRecibo() {
-		return listaRecibo;
-	}
-
-	public void setListaRecibo(List<Recibo> listaRecibo) {
-		this.listaRecibo = listaRecibo;
-	}
-
-	public List<Reporte_Entrada_Salida> getListaReporte_Entrada_Salida() {
-		return listaReporte_Entrada_Salida;
-	}
-
-	public void setListaReporte_Entrada_Salida(List<Reporte_Entrada_Salida> listaReporte_Entrada_Salida) {
-		this.listaReporte_Entrada_Salida = listaReporte_Entrada_Salida;
-	}
-	
 	
 
 }
