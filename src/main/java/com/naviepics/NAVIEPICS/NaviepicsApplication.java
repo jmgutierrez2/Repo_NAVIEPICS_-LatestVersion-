@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 import com.naviepics.model.MySQL.Estacionamiento;
+import com.naviepics.model.MySQL.Tipo_Espacios;
 import com.naviepics.model.MySQL.Tipo_Vehiculo;
 import com.naviepics.model.MySQL.Usuario;
 import com.naviepics.service.Estacionamiento_Service;
@@ -112,8 +113,12 @@ public class NaviepicsApplication implements CommandLineRunner{
     }
     
     public void insertarTipoVehiculo() {
-    	
-    	
+    	T_Vehiculo("Motocicleta");
+    	T_Vehiculo("Motocicleta");
+    }
+    public void insertarTipoEspacio() {
+    	T_Espacio("Estandar");
+    	T_Espacio("Para motocicletas");
     }
           
     //METODOS DE INSERCION DE DATOS
@@ -130,12 +135,14 @@ public class NaviepicsApplication implements CommandLineRunner{
 		System.out.println("Insercion Exitosa");
 	}
     public void T_Vehiculo(String des) {
-    	Tipo_Vehiculo e=new Tipo_Vehiculo("Motocicletas");
+    	Tipo_Vehiculo e=new Tipo_Vehiculo(des);
 		escribir("Objeto creado");
 		System.out.println("Insercion Exitosa");
 	}
     public void T_Espacio(String des) {
-    	
+    	Tipo_Espacios e=new Tipo_Espacios(des);
+		escribir("Objeto creado");
+		System.out.println("Insercion Exitosa");
     }
     
     
