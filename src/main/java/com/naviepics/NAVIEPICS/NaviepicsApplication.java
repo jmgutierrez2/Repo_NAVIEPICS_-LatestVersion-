@@ -91,6 +91,24 @@ public class NaviepicsApplication implements CommandLineRunner{
     public void insertarUsuarios() {
     	usu("Mario", "Villanueva", "mario_villanueva@gmail.com","mariovillanueva");
     	usu("Oscar", "Pineda", "oscar_pineda@gmail.com","oscarpineda");
+    	usu("Rodrigo", "Barrios", "rodrigo_barrios@gmail.com","rodrigobarrios");
+    	usu("Laura", "Martínez", "laura_martinez@gmail.com", "lauramartinez");
+    	usu("Carlos", "López", "carlos_lopez@gmail.com", "carloslopez");
+    	usu("Ana", "García", "ana_garcia@gmail.com", "anagarcia");
+    	usu("José", "Pérez", "jose_perez@gmail.com", "joseperez");
+    	usu("María", "Rodríguez", "maria_rodriguez@gmail.com", "mariarodriguez");
+    	usu("Gustavo", "Fernández", "gustavo_fernandez@gmail.com", "gustavofernandez");
+    	usu("Elena", "Gómez", "elena_gomez@gmail.com", "elenagomez");
+    	usu("Jorge", "Díaz", "jorge_diaz@gmail.com", "jorgediaz");
+    	usu("Sofía", "Morales", "sofia_morales@gmail.com", "sofiamorales");
+    	usu("Pablo", "Hernández", "pablo_hernandez@gmail.com", "pablohernandez");
+    	usu("Marta", "Ruiz", "marta_ruiz@gmail.com", "martaruiz");
+    	usu("Fernando", "Jiménez", "fernando_jimenez@gmail.com", "fernandojimenez");
+    	usu("Isabel", "Sánchez", "isabel_sanchez@gmail.com", "isabelsanchez");
+    	usu("Ricardo", "Torres", "ricardo_torres@gmail.com", "ricardotorres");
+    	usu("Patricia", "Ramírez", "patricia_ramirez@gmail.com", "patriciaramirez");
+    	usu("Andrés", "Flores", "andres_flores@gmail.com", "andresflores");
+    	usu("Hugo", "Castillo", "hugo_castillo@gmail.com", "hugocastillo");
     }
     
     public void insertarTipoVehiculo() {

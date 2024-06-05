@@ -29,10 +29,9 @@ public class Tipo_Vehiculo {
 		
 	}
 
-	public Tipo_Vehiculo(long id, String descripcion, List<Vehiculo> listaVehiculo) {
+	public Tipo_Vehiculo(long id, String descripcion) {
 		this.id = id;
 		this.descripcion = descripcion;
-		this.listaVehiculo = listaVehiculo;
 	}
 
 	public Tipo_Vehiculo(String descripcion) {
