@@ -10,6 +10,8 @@ import com.naviepics.model.MySQL.Estacionamiento;
 import com.naviepics.model.MySQL.Tarifas;
 import com.naviepics.model.MySQL.Tipo_Vehiculo;
 import com.naviepics.model.MySQL.Usuario;
+import com.naviepics.model.MySQL.Vehiculo;
+import com.naviepics.model.Oracle.Equipos_Estacionamiento;
 import com.naviepics.model.Oracle.Proveedor;
 import com.naviepics.service.Equipos_Estacionamiento_Service;
 import com.naviepics.service.Estacionamiento_Service;
@@ -166,6 +168,16 @@ public class NaviepicsApplication implements CommandLineRunner{
     	proveedores("Julio", "Calle Beaterio 951", "956874148", "julio32@gmail.com");
     }
     
+    //EQUIPOS_ESTACIONAMIENTO
+    public void insertarEquipos_Estacionamiento(Proveedor p) {
+    	equi_est("tipos equipo", "marca", "modelo", p);
+    }
+    
+    //VEHICULO
+    public void insertarVehiculos(Usuario u, Tipo_Vehiculo t_Vehi) {
+    	vehiculo("marca", "modelo", "color", "fabricante", u, t_Vehi);
+    }
+    
     
     
     
@@ -187,7 +199,6 @@ public class NaviepicsApplication implements CommandLineRunner{
     //USUARIO
     public Usuario usu(String nom, String ape, String email,String pass) {
 		Usuario e=new Usuario(nom,ape,email,pass);
-		
 		escribir("Objeto creado");
 		usS.saveOrUpdate(e);
 		System.out.println("Insercion Exitosa");
@@ -213,14 +224,41 @@ public class NaviepicsApplication implements CommandLineRunner{
    
     
     //PROVEEDORES
-    public void proveedores(String nombre,String dir, String telefono,String correo) {
+    public Proveedor proveedores(String nombre,String dir, String telefono,String correo) {
     	Proveedor e=new Proveedor(nombre,dir,telefono,correo);
     	escribir("Objeto creado");
+    	//AQUI LLAMO AL METODO DIRECTAMENTE PARA QUE ADICIONEN LOS DATOS
+    	insertarEquipos_Estacionamiento(e);
 		proveedores_S.saveOrUpdate(e);
+		escribir("Objeto creado");
+		return e;
+    }
+    
+    //EQUIPOS_ESTACIONAMIENTO
+    public void equi_est(String tip_equip,String marca, String modelo,Proveedor prov) {
+    	Equipos_Estacionamiento e=new Equipos_Estacionamiento(tip_equip,marca,modelo,prov);
+    	escribir("Objeto creado");
+		eq_est_S.saveOrUpdate(e);
+		escribir("Objeto creado");
+    }
+    
+    //RESERVACIONES
+    public void reserv(String tip_equip,String marca, String modelo,Proveedor prov) {
+    	Equipos_Estacionamiento e=new Equipos_Estacionamiento(tip_equip,marca,modelo,prov);
+    	escribir("Objeto creado");
+		eq_est_S.saveOrUpdate(e);
 		escribir("Objeto creado");
     }
     
     
+    //VEHICULO
+    public void vehiculo(String placa, String modelo, String color, String fabricante, Usuario usuario,
+			Tipo_Vehiculo tipo_vehiculo) {
+    	Vehiculo e=new Vehiculo(placa,modelo,color,fabricante,usuario,tipo_vehiculo);
+    	escribir("Objeto creado");
+		vehi_S.saveOrUpdate(e);
+		escribir("Objeto creado");
+    }
     
      
     //ESCRITURA EN CONSOLA
