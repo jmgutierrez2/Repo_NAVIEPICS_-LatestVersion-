@@ -14,9 +14,11 @@ import com.naviepics.model.Oracle.Proveedor;
 import com.naviepics.service.Equipos_Estacionamiento_Service;
 import com.naviepics.service.Estacionamiento_Service;
 import com.naviepics.service.Proveedor_Service;
+import com.naviepics.service.Reservaciones_Service;
 import com.naviepics.service.Tarifas_Service;
 import com.naviepics.service.Tipo_Vehiculo_Service;
 import com.naviepics.service.Usuario_Service;
+import com.naviepics.service.Vehiculo_Service;
 
 
 @SpringBootApplication
@@ -39,6 +41,11 @@ public class NaviepicsApplication implements CommandLineRunner{
 	private Proveedor_Service proveedores_S;
 	@Autowired
 	private Equipos_Estacionamiento_Service eq_est_S;
+	@Autowired
+	private Vehiculo_Service vehi_S;
+	@Autowired
+	private Reservaciones_Service reserv_S;
+	
 	
     public void run(String... args) throws Exception {
     	insertarEstacionamientos();
