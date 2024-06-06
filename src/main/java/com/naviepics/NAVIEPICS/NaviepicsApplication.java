@@ -130,8 +130,33 @@ public class NaviepicsApplication implements CommandLineRunner{
     	tarifas( "6:00 a.m. - 6:00 p.m.", 5.00);
     }
     
+    //PROVEEDORES
     public void insertarProveedores() {
-    	proveedores("NOMBRE DEL PROVEEDOR", "DIRECCION INVETADA", "TELEFONO" , "CORREO");
+    	proveedores("Carlos", "Calle Mercaderes 120", "956874124", "carlos8@gmail.com");
+    	proveedores("María", "Av. Dolores 502", "956874125", "maria9@gmail.com");
+    	proveedores("Ana", "Calle San Francisco 219", "956874126", "ana10@gmail.com");
+    	proveedores("Luis", "Av. La Marina 301", "956874127", "luis11@gmail.com");
+    	proveedores("Jorge", "Calle Jerusalén 410", "956874128", "jorge12@gmail.com");
+    	proveedores("Lucía", "Av. Independencia 212", "956874129", "lucia13@gmail.com");
+    	proveedores("Pedro", "Calle Santa Catalina 105", "956874130", "pedro14@gmail.com");
+    	proveedores("Sofía", "Av. Venezuela 999", "956874131", "sofia15@gmail.com");
+    	proveedores("Juan", "Calle San José 312", "956874132", "juan16@gmail.com");
+    	proveedores("Andrea", "Av. Parra 123", "956874133", "andrea17@gmail.com");
+    	proveedores("Miguel", "Calle Dean Valdivia 456", "956874134", "miguel18@gmail.com");
+    	proveedores("Diana", "Av. Goyeneche 789", "956874135", "diana19@gmail.com");
+    	proveedores("Fernando", "Calle Consuelo 321", "956874136", "fernando20@gmail.com");
+    	proveedores("Rodrigo", "Av. Ejército 101", "956874123", "rodrigo7@gmail.com");
+    	proveedores("Laura", "Av. Progreso 654", "956874137", "laura21@gmail.com");
+    	proveedores("David", "Calle Zela 987", "956874138", "david22@gmail.com");
+    	proveedores("Claudia", "Av. Juan de la Torre 147", "956874139", "claudia23@gmail.com");
+    	proveedores("Raúl", "Calle Peral 258", "956874140", "raul24@gmail.com");
+    	proveedores("Patricia", "Av. San Juan de Dios 369", "956874141", "patricia25@gmail.com");
+    	proveedores("Francisco", "Calle Cruz Verde 741", "956874142", "francisco26@gmail.com");
+    	proveedores("Elena", "Av. Salaverry 852", "956874143", "elena27@gmail.com");
+    	proveedores("Antonio", "Calle Paucarpata 963", "956874144", "antonio28@gmail.com");
+    	proveedores("Gabriela", "Av. Ejército 159", "956874145", "gabriela29@gmail.com");
+    	proveedores("Hugo", "Calle Rivero 753", "956874146", "hugo30@gmail.com");
+    	proveedores("Julio", "Calle Beaterio 951", "956874148", "julio32@gmail.com");
     }
     
     
