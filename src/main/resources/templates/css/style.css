@@ -110,16 +110,6 @@ a:focus {
   color: #0b0f11;
 }
 
-.custom_nav-container .nav_search-btn {
-  background-image: url(../images/search-icon.png);
-  background-size: 22px;
-  background-repeat: no-repeat;
-  background-position-y: 7px;
-  width: 35px;
-  height: 35px;
-  padding: 0;
-  border: none;
-}
 
 .navbar-brand {
   display: -webkit-box;
@@ -224,7 +214,7 @@ a:focus {
 }
 
 .slider_img-box img {
-  width: 100%;
+  width: 50%;
 }
 
 .carousel-indicators {
