@@ -9,7 +9,6 @@ import com.naviepics.model.MySQL.Usuario;
 
 import com.naviepics.repo.MySQL.Usuario_Repo;
 import com.naviepics.service.Usuario_Service;
-import jakarta.transaction.Transactional;
 @Service
 public class Usuario_ServiceImpl implements Usuario_Service{
     
