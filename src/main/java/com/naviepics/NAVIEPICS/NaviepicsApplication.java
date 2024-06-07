@@ -53,7 +53,6 @@ public class NaviepicsApplication implements CommandLineRunner{
     	insertarEstacionamientos();
     	insertarUsuarios();
     	insertarTipoVehiculo();
-    	  
     }
     //ESTACIONAMIENTOS---------------------------------- 
    public void insertarEstacionamientos() {
@@ -190,9 +189,7 @@ public class NaviepicsApplication implements CommandLineRunner{
     //ESTACIONAMIENTO
     public Estacionamiento est(String nom, String dir, Integer qEsp, String hor, boolean est, String enlace) {
 		Estacionamiento e=new Estacionamiento(nom,dir,qEsp,hor,est,enlace);
-		escribir("Objeto creado");
 		estS.saveOrUpdate(e);
-		System.out.println("Insercion Exitosa");
 		return e;
 	}
     
@@ -261,6 +258,11 @@ public class NaviepicsApplication implements CommandLineRunner{
     }
     
      
+    
+    
+    
+    
+    
     //ESCRITURA EN CONSOLA
     public void escribir(String t) {
     	System.out.println(t);
