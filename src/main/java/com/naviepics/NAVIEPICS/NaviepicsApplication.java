@@ -212,12 +212,20 @@ public class NaviepicsApplication implements CommandLineRunner{
     }
     
 	//INSERTAR REPORTES
-	
+	public void Reporte_Incidencias(Estacionamiento estacionamiento, Usuario usuario){
+		Reporte_Incidencias(new Date(2024,6,7,20,5),estacionamiento, usuario);
+	}
     //METODOS DE INSERCION DE DATOS
     
 
 	//REPORTE INCIDENCIAS
-	
+	public Reporte_Incidencias report(String descripcion, Date fecha_hora_incidencia, Estacionamiento estacionamiento, Usuario usuario) {
+		Reporte_Incidencias e=new Reporte_Incidencias(descripcion, fecha_hora_incidencia, estacionamiento, usuario);
+		escribir("Objeto creado");
+		reportS.saveOrUpdate(e);
+		System.out.println("Insercion Exitosa");
+		return e;
+	}
     //ESTACIONAMIENTO
     public Estacionamiento est(String nom, String dir, Integer qEsp, String hor, boolean est, String enlace) {
 		Estacionamiento e=new Estacionamiento(nom,dir,qEsp,hor,est,enlace);
