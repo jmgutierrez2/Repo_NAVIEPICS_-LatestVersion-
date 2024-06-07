@@ -1,7 +1,7 @@
 body {
   font-family: "Poppins", sans-serif;
-  color: #0c0c0c;
-  background-color: #ffffff;
+  color: #f5f5f5;
+  background-color: #6fbfbc;
 }
 
 .layout_padding {
@@ -29,11 +29,11 @@ body {
 }
 
 .custom_heading {
-  color: #030404;
+  color: #f2f2f2;
 }
 
 .custom_heading span {
-  color: #21d7ff;
+  color: #021323;
 }
 
 /*header section*/
@@ -47,7 +47,7 @@ body {
   position: absolute;
   width: 100%;
   height: 15px;
-  background-color: #023b48;
+  background-color: #021323;
 }
 
 .sub_page .hero_area {
@@ -59,7 +59,7 @@ body {
 }
 
 .header_section {
-  background-color: #f6f8f7;
+  background-color: #021323;
   padding-top: 15px;
 }
 
@@ -73,13 +73,13 @@ body {
 }
 
 .header_section .quote_btn-container a {
-  color: #434242;
+  color: #ffffff;
   text-transform: uppercase;
 }
 
 .custom_nav-container.navbar-expand-lg .navbar-nav .nav-link {
   padding: 10px 30px;
-  color: #434242;
+  color: #fdfbfb;
   text-align: center;
   text-transform: uppercase;
 }
@@ -107,19 +107,9 @@ a:focus {
   text-transform: uppercase;
   font-weight: bold;
   font-size: 24px;
-  color: #fafcfd;
+  color: #0b0f11;
 }
 
-.custom_nav-container .nav_search-btn {
-  background-image: url(../images/search-icon.png);
-  background-size: 22px;
-  background-repeat: no-repeat;
-  background-position-y: 7px;
-  width: 35px;
-  height: 35px;
-  padding: 0;
-  border: none;
-}
 
 .navbar-brand {
   display: -webkit-box;
@@ -135,8 +125,8 @@ a:focus {
 }
 
 .navbar-brand img {
-  width: 30px;
-  margin-right: 5px;
+  width: 90px;
+  margin-right: 2px;
 }
 
 .navbar-brand span {
@@ -163,7 +153,7 @@ a:focus {
 /*end header section*/
 /* slider section */
 .slider_section {
-  background-image: url(../images/hero.jpg);
+  background-image: url(../images/cochera.jpg);
   padding: 6% 0;
   background-size: cover;
   background-repeat: no-repeat;
@@ -176,7 +166,7 @@ a:focus {
 }
 
 .slider_detail-box h1 {
-  color: #ffffff;
+  color: #1d1818;
   font-size: 52px;
 }
 
@@ -187,7 +177,7 @@ a:focus {
 }
 
 .slider_detail-box p {
-  color: #f6f8f7;
+  color: #000000;
   margin-top: 45px;
   margin-bottom: 40px;
 }
@@ -224,7 +214,7 @@ a:focus {
 }
 
 .slider_img-box img {
-  width: 100%;
+  width: 50%;
 }
 
 .carousel-indicators {
@@ -292,7 +282,7 @@ a:focus {
   width: 110px;
   height: 110px;
   border-radius: 100%;
-  background-color: #18d3ff;
+  background-color: #021323;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -330,7 +320,7 @@ a:focus {
 }
 
 .gallery-section {
-  background-color: #0dc3ff;
+  background-color: #021323;
 }
 
 .gallery-section .container {
@@ -432,7 +422,7 @@ a:focus {
 }
 
 .client_section .carousel-indicators li {
-  background-color: #0dc3ff;
+  background-color: #021323;
 }
 
 .client_section .carousel-indicators .active {
@@ -489,7 +479,7 @@ a:focus {
 }
 
 .info_section {
-  background-color: #0dc3ff;
+  background-color: #021323;
 }
 
 .info_items {
