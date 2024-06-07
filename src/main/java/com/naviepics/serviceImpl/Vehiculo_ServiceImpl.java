@@ -9,7 +9,6 @@ import com.naviepics.model.MySQL.Vehiculo;
 
 import com.naviepics.repo.MySQL.Vehiculo_Repo;
 import com.naviepics.service.Vehiculo_Service;
-import jakarta.transaction.Transactional;
 @Service
 public class Vehiculo_ServiceImpl implements Vehiculo_Service{
     

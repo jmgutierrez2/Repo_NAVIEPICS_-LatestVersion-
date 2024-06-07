@@ -9,7 +9,6 @@ import com.naviepics.model.Oracle.Proveedor;
 
 import com.naviepics.repo.Oracle.Proveedor_Repo;
 import com.naviepics.service.Proveedor_Service;
-import jakarta.transaction.Transactional;
 @Service
 public class Proveedor_ServiceImpl implements Proveedor_Service{
     

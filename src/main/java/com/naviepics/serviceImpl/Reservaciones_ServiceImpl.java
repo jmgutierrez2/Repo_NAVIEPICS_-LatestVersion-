@@ -9,7 +9,6 @@ import com.naviepics.model.MySQL.Reservaciones;
 
 import com.naviepics.repo.MySQL.Reservaciones_Repo;
 import com.naviepics.service.Reservaciones_Service;
-import jakarta.transaction.Transactional;
 @Service
 public class Reservaciones_ServiceImpl implements Reservaciones_Service{
     

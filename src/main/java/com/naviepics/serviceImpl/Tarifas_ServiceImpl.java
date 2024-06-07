@@ -9,7 +9,6 @@ import com.naviepics.model.MySQL.Tarifas;
 
 import com.naviepics.repo.MySQL.Tarifas_Repo;
 import com.naviepics.service.Tarifas_Service;
-import jakarta.transaction.Transactional;
 @Service
 public class Tarifas_ServiceImpl implements Tarifas_Service{
     

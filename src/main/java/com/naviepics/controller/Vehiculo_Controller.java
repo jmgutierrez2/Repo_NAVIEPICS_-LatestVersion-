@@ -10,5 +10,6 @@ public class Vehiculo_Controller {
 	@GetMapping
     public String verUsuario(){
         return "vehiculo";
+        
     }
 }
