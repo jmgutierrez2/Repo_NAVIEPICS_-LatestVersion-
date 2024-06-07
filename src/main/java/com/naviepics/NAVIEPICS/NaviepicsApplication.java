@@ -1,6 +1,10 @@
 package com.naviepics.NAVIEPICS;
 
+<<<<<<< Updated upstream
 import java.util.Date;
+=======
+import java.sql.Date;
+>>>>>>> Stashed changes
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -20,6 +24,7 @@ import com.naviepics.service.Equipos_Estacionamiento_Service;
 import com.naviepics.service.Estacionamiento_Service;
 import com.naviepics.service.Feedback_Service;
 import com.naviepics.service.Proveedor_Service;
+import com.naviepics.service.Reporte_Incidencias_Service;
 import com.naviepics.service.Reservaciones_Service;
 import com.naviepics.service.Tarifas_Service;
 import com.naviepics.service.Tipo_Vehiculo_Service;
@@ -52,7 +57,12 @@ public class NaviepicsApplication implements CommandLineRunner{
 	@Autowired
 	private Reservaciones_Service reserv_S;
 	@Autowired
+<<<<<<< Updated upstream
 	private Feedback_Service feed_S;
+=======
+	private Reporte_Incidencias_Service reportS;
+
+>>>>>>> Stashed changes
 	
 	
     public void run(String... args) throws Exception {
@@ -299,6 +309,18 @@ public class NaviepicsApplication implements CommandLineRunner{
     
     //METODOS DE INSERCION DE DATOS
     
+<<<<<<< Updated upstream
+=======
+
+	//REPORTE INCIDENCIAS
+	public Reporte_Incidencias report(String descripcion, Date fecha_hora_incidencia, Estacionamiento estacionamiento, Usuario usuario) {
+		Reporte_Incidencias e=new Reporte_Incidencias(descripcion, fecha_hora_incidencia, estacionamiento, usuario);
+		escribir("Objeto creado");
+		reportS.saveOrUpdate(e);
+		System.out.println("Insercion Exitosa");
+		return e;
+	}
+>>>>>>> Stashed changes
     //ESTACIONAMIENTO
     public Estacionamiento est(String nom, String dir, Integer qEsp, String hor, boolean est, String enlace) {
 		Estacionamiento e=new Estacionamiento(nom,dir,qEsp,hor,est,enlace);
