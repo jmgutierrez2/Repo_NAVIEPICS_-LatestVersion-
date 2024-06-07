@@ -8,6 +8,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 import com.naviepics.model.MySQL.Estacionamiento;
+import com.naviepics.model.MySQL.Feedback;
+import com.naviepics.model.MySQL.Reservaciones;
 import com.naviepics.model.MySQL.Tarifas;
 import com.naviepics.model.MySQL.Tipo_Vehiculo;
 import com.naviepics.model.MySQL.Usuario;
@@ -16,6 +18,7 @@ import com.naviepics.model.Oracle.Equipos_Estacionamiento;
 import com.naviepics.model.Oracle.Proveedor;
 import com.naviepics.service.Equipos_Estacionamiento_Service;
 import com.naviepics.service.Estacionamiento_Service;
+import com.naviepics.service.Feedback_Service;
 import com.naviepics.service.Proveedor_Service;
 import com.naviepics.service.Reservaciones_Service;
 import com.naviepics.service.Tarifas_Service;
@@ -48,6 +51,8 @@ public class NaviepicsApplication implements CommandLineRunner{
 	private Vehiculo_Service vehi_S;
 	@Autowired
 	private Reservaciones_Service reserv_S;
+	@Autowired
+	private Feedback_Service feed_S;
 	
 	
     public void run(String... args) throws Exception {
@@ -203,7 +208,94 @@ public class NaviepicsApplication implements CommandLineRunner{
        
     //VEHICULO
     public void insertarVehiculos(Usuario u, Tipo_Vehiculo t_Vehi) {
-    	vehiculo("marca", "modelo", "color", "fabricante", u, t_Vehi);
+    	 vehiculo("Toyota", "Corolla", "Blanco", "Toyota Motor Corporation", u, t_Vehi);
+    	    vehiculo("Honda", "Civic", "Negro", "Honda Motor Co., Ltd.", u, t_Vehi);
+    	    vehiculo("Ford", "Mustang", "Rojo", "Ford Motor Company", u, t_Vehi);
+    	    vehiculo("Chevrolet", "Camaro", "Azul", "General Motors", u, t_Vehi);
+    	    vehiculo("Tesla", "Model 3", "Gris", "Tesla, Inc.", u, t_Vehi);
+    	    vehiculo("Nissan", "Altima", "Plata", "Nissan Motor Corporation", u, t_Vehi);
+    	    vehiculo("BMW", "X5", "Negro", "Bayerische Motoren Werke AG", u, t_Vehi);
+    	    vehiculo("Mercedes-Benz", "C-Class", "Blanco", "Daimler AG", u, t_Vehi);
+    	    vehiculo("Audi", "A4", "Rojo", "Audi AG", u, t_Vehi);
+    	    vehiculo("Volkswagen", "Jetta", "Azul", "Volkswagen AG", u, t_Vehi);
+    	    vehiculo("Hyundai", "Elantra", "Gris", "Hyundai Motor Company", u, t_Vehi);
+    	    vehiculo("Kia", "Optima", "Plata", "Kia Corporation", u, t_Vehi);
+    	    vehiculo("Subaru", "Impreza", "Blanco", "Subaru Corporation", u, t_Vehi);
+    	    vehiculo("Mazda", "Mazda3", "Negro", "Mazda Motor Corporation", u, t_Vehi);
+    	    vehiculo("Lexus", "RX", "Rojo", "Toyota Motor Corporation", u, t_Vehi);
+    	    vehiculo("Infiniti", "Q50", "Azul", "Nissan Motor Corporation", u, t_Vehi);
+    	    vehiculo("Jaguar", "XE", "Gris", "Jaguar Land Rover", u, t_Vehi);
+    	    vehiculo("Land Rover", "Range Rover", "Negro", "Jaguar Land Rover", u, t_Vehi);
+    	    vehiculo("Volvo", "S60", "Blanco", "Volvo Cars", u, t_Vehi);
+    	    vehiculo("Porsche", "911", "Rojo", "Porsche AG", u, t_Vehi);
+    	    vehiculo("Ferrari", "488", "Rojo", "Ferrari N.V.", u, t_Vehi);
+    	    vehiculo("Lamborghini", "Huracan", "Amarillo", "Automobili Lamborghini S.p.A.", u, t_Vehi);
+    	    vehiculo("Maserati", "Ghibli", "Azul", "Maserati S.p.A.", u, t_Vehi);
+    	    vehiculo("Aston Martin", "DB11", "Verde", "Aston Martin Lagonda Global Holdings plc", u, t_Vehi);
+    	    vehiculo("Bentley", "Continental GT", "Negro", "Bentley Motors Limited", u, t_Vehi);
+    	    vehiculo("Rolls-Royce", "Phantom", "Blanco", "Rolls-Royce Motor Cars Limited", u, t_Vehi);
+    	}
+    
+    //RESERVACIONES
+    public void insertarReservaciones(Estacionamiento est, Usuario u) {
+    	reserv(java.sql.Date.valueOf("06-10-2024"), java.sql.Time.valueOf("14:35:00"), est, u);
+    	reserv(java.sql.Date.valueOf("18-07-2024"), java.sql.Time.valueOf("09:25:00"), est, u);
+    	reserv(java.sql.Date.valueOf("23-08-2024"), java.sql.Time.valueOf("17:45:00"), est, u);
+    	reserv(java.sql.Date.valueOf("01-09-2024"), java.sql.Time.valueOf("12:30:00"), est, u);
+    	reserv(java.sql.Date.valueOf("14-10-2024"), java.sql.Time.valueOf("08:50:00"), est, u);
+    	reserv(java.sql.Date.valueOf("07-11-2024"), java.sql.Time.valueOf("13:40:00"), est, u);
+    	reserv(java.sql.Date.valueOf("20-12-2024"), java.sql.Time.valueOf("18:10:00"), est, u);
+    	reserv(java.sql.Date.valueOf("31-12-2024"), java.sql.Time.valueOf("11:55:00"), est, u);
+    	reserv(java.sql.Date.valueOf("15-01-2025"), java.sql.Time.valueOf("15:20:00"), est, u);
+    	reserv(java.sql.Date.valueOf("28-02-2025"), java.sql.Time.valueOf("10:45:00"), est, u);
+    	reserv(java.sql.Date.valueOf("14-03-2025"), java.sql.Time.valueOf("14:10:00"), est, u);
+    	reserv(java.sql.Date.valueOf("22-04-2025"), java.sql.Time.valueOf("07:30:00"), est, u);
+    	reserv(java.sql.Date.valueOf("03-05-2025"), java.sql.Time.valueOf("16:40:00"), est, u);
+    	reserv(java.sql.Date.valueOf("05-06-2025"), java.sql.Time.valueOf("09:10:00"), est, u);
+    	reserv(java.sql.Date.valueOf("30-06-2024"), java.sql.Time.valueOf("13:50:00"), est, u);
+    	reserv(java.sql.Date.valueOf("25-07-2024"), java.sql.Time.valueOf("10:20:00"), est, u);
+    	reserv(java.sql.Date.valueOf("09-08-2024"), java.sql.Time.valueOf("11:45:00"), est, u);
+    	reserv(java.sql.Date.valueOf("18-09-2024"), java.sql.Time.valueOf("17:30:00"), est, u);
+    	reserv(java.sql.Date.valueOf("02-10-2024"), java.sql.Time.valueOf("08:25:00"), est, u);
+    	reserv(java.sql.Date.valueOf("10-11-2024"), java.sql.Time.valueOf("12:15:00"), est, u);
+    	reserv(java.sql.Date.valueOf("01-12-2024"), java.sql.Time.valueOf("19:00:00"), est, u);
+    	reserv(java.sql.Date.valueOf("05-01-2025"), java.sql.Time.valueOf("14:45:00"), est, u);
+    	reserv(java.sql.Date.valueOf("19-02-2025"), java.sql.Time.valueOf("09:35:00"), est, u);
+    	reserv(java.sql.Date.valueOf("28-03-2025"), java.sql.Time.valueOf("16:00:00"), est, u);
+    	reserv(java.sql.Date.valueOf("15-04-2025"), java.sql.Time.valueOf("07:55:00"), est, u);
+    	reserv(java.sql.Date.valueOf("30-05-2025"), java.sql.Time.valueOf("11:30:00"), est, u);
+
+
+    }
+    
+    //Feedback
+    public void insertarFeedback(Usuario u, Estacionamiento est) {
+    	feed(3, "Buen servicio.", u, est);
+    	feed(5, "Excelente experiencia.", u, est);
+    	feed(2, "Podría mejorar la limpieza.", u, est);
+    	feed(4, "Muy conveniente.", u, est);
+    	feed(1, "Mal servicio, no lo recomiendo.", u, est);
+    	feed(3, "Precio razonable.", u, est);
+    	feed(4, "Personal amable y atento.", u, est);
+    	feed(2, "Difícil de encontrar estacionamiento libre.", u, est);
+    	feed(5, "Volveré seguro.", u, est);
+    	feed(1, "Mala señalización.", u, est);
+    	feed(3, "Espacios amplios.", u, est);
+    	feed(2, "Precio demasiado alto.", u, est);
+    	feed(4, "Buena ubicación.", u, est);
+    	feed(5, "¡El mejor estacionamiento de la ciudad!", u, est);
+    	feed(3, "Fácil acceso.", u, est);
+    	feed(1, "Estacionamiento lleno, no pude encontrar lugar.", u, est);
+    	feed(4, "Limpio y bien iluminado.", u, est);
+    	feed(2, "Problemas con el sistema de pago.", u, est);
+    	feed(5, "Altamente recomendado.", u, est);
+    	feed(3, "Tarifas competitivas.", u, est);
+    	feed(1, "Servicio al cliente deficiente.", u, est);
+    	feed(2, "Mal olor en el estacionamiento.", u, est);
+    	feed(4, "Rápido y eficiente.", u, est);
+    	feed(5, "¡Increíblemente conveniente!", u, est);
+    	feed(3, "Buenas opciones de seguridad.", u, est);
+
     }
     
     //METODOS DE INSERCION DE DATOS
@@ -259,10 +351,10 @@ public class NaviepicsApplication implements CommandLineRunner{
     }
     
     //RESERVACIONES
-    public void reserv(String tip_equip,String marca, String modelo,Proveedor prov) {
-    	Equipos_Estacionamiento e=new Equipos_Estacionamiento(tip_equip,marca,modelo,prov);
+    public void reserv(Date fec_res, Date hor_res, Estacionamiento estac, Usuario usua) {
+    	Reservaciones e=new Reservaciones(fec_res,hor_res,estac,usua);
     	escribir("Objeto creado");
-		eq_est_S.saveOrUpdate(e);
+		reserv_S.saveOrUpdate(e);
 		System.out.println("Insercion Exitosa");
     }
     
@@ -273,6 +365,15 @@ public class NaviepicsApplication implements CommandLineRunner{
     	Vehiculo e=new Vehiculo(placa,modelo,color,fabricante,usuario,tipo_vehiculo);
     	escribir("Objeto creado");
 		vehi_S.saveOrUpdate(e);
+		System.out.println("Insercion Exitosa");
+    }
+    
+    
+    //Feedback
+    public void feed(Integer calificacion, String comentario,Usuario usua, Estacionamiento estac) {
+    	Feedback e=new Feedback(calificacion,comentario,usua,estac);
+    	escribir("Objeto creado");
+		feed_S.saveOrUpdate(e);
 		System.out.println("Insercion Exitosa");
     }
     
