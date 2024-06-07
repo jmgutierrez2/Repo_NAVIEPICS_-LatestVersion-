@@ -70,6 +70,14 @@ public class Feedback {
 		this.usuario = usuario;
 		this.estacionamiento = estacionamiento;
 	}
+	
+	public Feedback(Integer calificacion, String comentario, Usuario usuario, Estacionamiento estacionamiento) {
+		super();
+		this.calificacion = calificacion;
+		this.comentario = comentario;
+		this.usuario = usuario;
+		this.estacionamiento = estacionamiento;
+	}
 
 	public long getId() {
 		return id;

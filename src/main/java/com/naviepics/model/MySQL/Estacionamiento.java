@@ -35,7 +35,7 @@ public class Estacionamiento {
 	@Column(name="Estado", nullable=false)
     private boolean estado;
 	
-	@Column(name="Enlace", nullable=false)
+	@Column(name="Enlace", nullable=true)
 	private String enlace;
 	
 	
