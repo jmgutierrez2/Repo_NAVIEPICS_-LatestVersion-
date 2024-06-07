@@ -28,10 +28,6 @@ public class Reporte_Incidencias {
 	@Column(name="Descripcion", nullable=false)
 	private String descripcion;
 	
-	@PrePersist
-    public void prePersist() {
-        fecha_hora_incidencia = new Date();
-    }
     @Column(name = "Fecha_Hora_Incidencia",  nullable=false)
     @DateTimeFormat(pattern = "dd-MM-yyyy hh:mm:ss")
     @Temporal(TemporalType.TIMESTAMP)

@@ -1,11 +1,19 @@
 package com.naviepics.NAVIEPICS;
 
+<<<<<<< Updated upstream
+import java.util.Date;
+=======
+import java.sql.Date;
+>>>>>>> Stashed changes
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 import com.naviepics.model.MySQL.Estacionamiento;
+import com.naviepics.model.MySQL.Feedback;
+import com.naviepics.model.MySQL.Reservaciones;
 import com.naviepics.model.MySQL.Tarifas;
 import com.naviepics.model.MySQL.Tipo_Vehiculo;
 import com.naviepics.model.MySQL.Usuario;
@@ -14,7 +22,9 @@ import com.naviepics.model.Oracle.Equipos_Estacionamiento;
 import com.naviepics.model.Oracle.Proveedor;
 import com.naviepics.service.Equipos_Estacionamiento_Service;
 import com.naviepics.service.Estacionamiento_Service;
+import com.naviepics.service.Feedback_Service;
 import com.naviepics.service.Proveedor_Service;
+import com.naviepics.service.Reporte_Incidencias_Service;
 import com.naviepics.service.Reservaciones_Service;
 import com.naviepics.service.Tarifas_Service;
 import com.naviepics.service.Tipo_Vehiculo_Service;
@@ -46,60 +56,68 @@ public class NaviepicsApplication implements CommandLineRunner{
 	private Vehiculo_Service vehi_S;
 	@Autowired
 	private Reservaciones_Service reserv_S;
+	@Autowired
+<<<<<<< Updated upstream
+	private Feedback_Service feed_S;
+=======
+	private Reporte_Incidencias_Service reportS;
+
+>>>>>>> Stashed changes
 	
 	
     public void run(String... args) throws Exception {
     	insertarEstacionamientos();
     	insertarUsuarios();
     	insertarTipoVehiculo();
-    	  
+    	insertarProveedores();
+    	insertarTarifas();
     }
     //ESTACIONAMIENTOS---------------------------------- 
    public void insertarEstacionamientos() {
-    	est("Playa de estacionamiento", "Paucarpata 128, Arequipa 04001", 50, "Lunes a viernes - 24 horas", false, "https://g.co/kgs/pY3YzPR");
-    	est("Playa de Estacionamiento", "Paucarpata 140, Arequipa 04001", 30, "Lunes a sábado 7:00 - 22:00", false, "https://g.co/kgs/ox4kCex");
-    	est("Playa de Estacionamiento", "Tronchadero 209, Arequipa 04001", 45, "Lunes a viernes 6:00 - 20:00", true, "https://g.co/kgs/aj5KYPm");
-    	est("Playa de Estacionamiento", "C. San José 131, Arequipa 04001", 40, "Lunes a domingo 9:00 - 20:00", false, "https://g.co/kgs/KQogAtj");
-    	est("Playa de Estacionamiento", "C. Rivero 312, Arequipa 04001", 50, "Lunes a sábado 10:00 - 22:30", true, "https://g.co/kgs/vvLwKYB");
-    	est("Playa de Estacionamiento", "C. Palacio Viejo 416, Arequipa 04001", 55, "Lunes a domingo 7:00 - 19:00", true, "https://g.co/kgs/ZyBE1Ag");
-    	est("Playa de Estacionamiento", "C. Rivero 200, Cercado De Arequipa 04001", 60, "Lunes a sábado 10:00 - 23:00", false, "https://g.co/kgs/FmwAuAC");
-    	est("Playa de Estacionamiento", "Calle Nueva 519, Cercado de Arequipa 04001", 60, "Lunes a viernes - 24 horas", true, "https://g.co/kgs/Dwhm6Lf");
-    	est("Playa de Estacionamiento", "04001, Arequipa 04001", 100, "Lunes a sábado 9:00 - 21:00", true, "https://g.co/kgs/GC4mFop");
-    	est("Playa de Estacionamiento", "Av. Siglo XX 218, Arequipa 04001", 25, "Lunes a sábado 7:00 - 20:00", false, "https://g.co/kgs/Xs524Qr");
-    	est("Playa de Estacionamiento Perú", "C. Perú 520a, Arequipa 04001", 30, "Lunes a sábado 7:00 - 22:00", false, "https://g.co/kgs/u78WKTk");
-    	est("Playa de Estacionamiento", "Calle Nueva 327- A, Cercado De Arequipa 04001", 45, "Lunes a viernes 8:00 - 20:00", false, "https://g.co/kgs/JHkyz2w");
-    	est("Playa de Estacionamiento", "28 de Julio 106, Arequipa 04001", 40, "Lunes a sábado 8:00 - 18:00", true, "https://g.co/kgs/k4oXBjk");
-    	est("Playa de Estacionamiento", "C. Álvarez Thomas 462, Cercado De Arequipa 04001", 30, "Lunes a sábado 9:30 - 19:00", false, "https://g.co/kgs/tS9zn1i");
-    	est("Playa de Estacionamiento El Sol", "C. Álvarez Thomas 466, Arequipa 04001", 35, "Lunes a domingo - 24 horas", true, "https://g.co/kgs/Nhq5tWi");
-    	est("Playa de Estacionamiento", "Pizarro 210, Arequipa 04001", 40, "Lunes a sábado 10:00 - 22:00", true, "https://g.co/kgs/Q6jmf5Z");
-    	est("Playa de Estacionamiento Moral", "C. Moral 403, Arequipa 04001", 45, "Lunes a sábado 7:00 - 21:00", false, "https://g.co/kgs/DNURCP7");
-    	est("Playa de Estacionamiento", "C. Palacio Viejo 511, Arequipa 04001", 30, "Lunes a viernes 10:00 - 22:00", false, "https://g.co/kgs/gTxVC3c");
-    	est("Playa", "Ricardo Palma 203, Cercado De Arequipa 04013", 55, "Lunes a domingo 6:00 - 23:00", true, "https://g.co/kgs/iptR92e");
-    	est("Playa de Estacionamiento", "C. la Merced 509, Arequipa 04001", 50, "Lunes a domingo - 24 horas", false, "https://g.co/kgs/Vj1gQ9y");
-    	est("Playa de Estacionamiento Moral / San Francisco", "C. Moral 205, Arequipa 04001", 55, "Lunes a sábado 7:00 - 22:00", false, "https://g.co/kgs/Xaw673M");
-    	est("Playa", "C. Santo Domingo 215a, Arequipa 04001", 40, "Lunes a sábado 8:30 - 23:30", true, "https://g.co/kgs/xvzodA3");
-    	est("Playa de Estacionamiento", "C. Peral 315, Cercado De Arequipa 04001", 30, "Lunes a domingo 9:30 - 19:30", false, "https://g.co/kgs/BfEsXZC");
-    	est("Playa", "Calle, República de Chile 103, Cercado De Arequipa 04001", 35, "Lunes a sábado 7:00 - 22:00", false, "https://g.co/kgs/WBE289a");
-    	est("Playa", "Mz, Los Angeles 11, Cercado De Arequipa 04013", 40, "Lunes a sábado 8:00 - 22:00", true, "https://g.co/kgs/uk5acxP");
-    	est("Playa", "C. San José 309, Arequipa 04001", 50, "Lunes a viernes 7:00 - 20:00", false, "https://g.co/kgs/StrL5B5");
-    	est("Playa de Estacionamiento", "Cuarto Piso, Pje. Sta. Rosa 104, Arequipa 04000", 35, "Lunes a sábado - 24 horas", false, "https://g.co/kgs/1CJ9xNr");
-    	est("Playa Paucarpata", "Paucarpata 333, Arequipa 04001", 60, "Lunes a domingo - 24 horas", true, "https://g.co/kgs/jMfTnqC");
-    	est("Playa Club Arequipa Cochera Aparcamiento", "C. Álvarez Thomas 111, Arequipa 04001", 40, "Lunes a domingo 7:00 - 22:00", false, "https://g.co/kgs/is6H4x4");
-    	est("Playa de Estacionamiento", "Ca. Consuelo 417, Arequipa 04001", 40, "Lunes a domingo 7:00 - 23:00", true, "https://g.co/kgs/f6ZYQPk");
-    	est("Playa", "C. el Palomar 109, Cercado Arequipa 04002", 30, "Lunes a sábado 9:00 - 21:00", true, "https://g.co/kgs/EtLwGfQ");
-    	est("Playa de Estacionamiento", "Calle Jerusalén 512, Yanahuara, Cercado De Arequipa 04017", 35, "Lunes a viernes 8:00 - 22:30", false, "https://g.co/kgs/9NW1bw5");
-    	est("Playa de Estacionamiento Peral", "C. Peral 205, Arequipa 04001", 60, "Lunes a sábado 9:30 - 21:00", false, "https://g.co/kgs/GT9pdRn");
-    	est("Playa Nicolás de Piérola", "C. Piérola 117, Arequipa 04001", 55, "Lunes a sábado - 24 horas", false, "https://g.co/kgs/g8mA1GR");
-    	est("Playa", "Av.Emmel 216, Yanahuara, Cercado De Arequipa 04013", 25, "Lunes a sábado 8:00 - 20:00", true, "https://g.co/kgs/qRsNUHy");
-    	est("Playa Central", "C. Rivero 232, Arequipa 04001", 35, "Lunes a domingo - 24 horas", true, "https://g.co/kgs/HjCHG2o");
-    	est("Playa", "JF36+8GP, Villalba, Cercado de Arequipa 04001", 25, "Lunes a viernes - 24 horas", false, "https://g.co/kgs/Zm2Wzao");
-    	est("Playa", "Castilla 126, Arequipa 04001", 60, "Lunes a sábado 10:00 - 22:00", true, "https://g.co/kgs/U5hANZa");
-    	est("Playa de Estacionamiento LA MERCED Parqueo vehicular", "Calle, Octavio Muñoz Najar 137, Cercado De Arequipa 04001", 50, "Lunes a sábado 8:00 - 20:30", true, "https://g.co/kgs/GT3TJ6i");
-    	est("Playa Pública", "Calle Nueva 223, Cercado De Arequipa 04001", 35, "Lunes a viernes 10:00 - 20:00", false, "https://g.co/kgs/ZdQd69q");
-    	est("Playa de Estacionamiento ALEMERCED", "HFW6+22H, C. la Merced, Arequipa 04001", 30, "Lunes a domingo - 24 horas", true, "https://g.co/kgs/kPB2UAg");
-    	est("Playa", "C. Jerusalén 521, Cercado De Arequipa 04001", 50, "Lunes a domingo 8:00 - 18:00", true, "https://g.co/kgs/htq7d84");
-    	est("Playa", "Calle Nueva 415, Arequipa 04001", 35, "Lunes a domingo 8:00 - 21:00", false, "https://g.co/kgs/2ad2diR");
-    	est("Playa de Estacionamiento San Nicolás", "C. Piérola 318a, Arequipa 04001", 30, "Lunes a sábado 10:00 - 23:00", false, "https://g.co/kgs/axTfsfV");
+	   Estacionamiento est1 = est("Playa de estacionamiento", "Paucarpata 128, Arequipa 04001", 50, "Lunes a viernes - 24 horas", false, "https://g.co/kgs/pY3YzPR");
+	   Estacionamiento est2 = est("Playa de Estacionamiento", "Paucarpata 140, Arequipa 04001", 30, "Lunes a sábado 7:00 - 22:00", false, "https://g.co/kgs/ox4kCex");
+	   Estacionamiento est3 = est("Playa de Estacionamiento", "Tronchadero 209, Arequipa 04001", 45, "Lunes a viernes 6:00 - 20:00", true, "https://g.co/kgs/aj5KYPm");
+	   Estacionamiento est4 = est("Playa de Estacionamiento", "C. San José 131, Arequipa 04001", 40, "Lunes a domingo 9:00 - 20:00", false, "https://g.co/kgs/KQogAtj");
+	   Estacionamiento est5 = est("Playa de Estacionamiento", "C. Rivero 312, Arequipa 04001", 50, "Lunes a sábado 10:00 - 22:30", true, "https://g.co/kgs/vvLwKYB");
+	   Estacionamiento est6 = est("Playa de Estacionamiento", "C. Palacio Viejo 416, Arequipa 04001", 55, "Lunes a domingo 7:00 - 19:00", true, "https://g.co/kgs/ZyBE1Ag");
+	   Estacionamiento est7 = est("Playa de Estacionamiento", "C. Rivero 200, Cercado De Arequipa 04001", 60, "Lunes a sábado 10:00 - 23:00", false, "https://g.co/kgs/FmwAuAC");
+	   Estacionamiento est8 = est("Playa de Estacionamiento", "Calle Nueva 519, Cercado de Arequipa 04001", 60, "Lunes a viernes - 24 horas", true, "https://g.co/kgs/Dwhm6Lf");
+	   Estacionamiento est9 = est("Playa de Estacionamiento", "04001, Arequipa 04001", 100, "Lunes a sábado 9:00 - 21:00", true, "https://g.co/kgs/GC4mFop");
+	   Estacionamiento est10 = est("Playa de Estacionamiento", "Av. Siglo XX 218, Arequipa 04001", 25, "Lunes a sábado 7:00 - 20:00", false, "https://g.co/kgs/Xs524Qr");
+	   Estacionamiento est11 = est("Playa de Estacionamiento Perú", "C. Perú 520a, Arequipa 04001", 30, "Lunes a sábado 7:00 - 22:00", false, "https://g.co/kgs/u78WKTk");
+	   Estacionamiento est12 = est("Playa de Estacionamiento", "Calle Nueva 327- A, Cercado De Arequipa 04001", 45, "Lunes a viernes 8:00 - 20:00", false, "https://g.co/kgs/JHkyz2w");
+	   Estacionamiento est13 = est("Playa de Estacionamiento", "28 de Julio 106, Arequipa 04001", 40, "Lunes a sábado 8:00 - 18:00", true, "https://g.co/kgs/k4oXBjk");
+	   Estacionamiento est14 = est("Playa de Estacionamiento", "C. Álvarez Thomas 462, Cercado De Arequipa 04001", 30, "Lunes a sábado 9:30 - 19:00", false, "https://g.co/kgs/tS9zn1i");
+	   Estacionamiento est15 = est("Playa de Estacionamiento El Sol", "C. Álvarez Thomas 466, Arequipa 04001", 35, "Lunes a domingo - 24 horas", true, "https://g.co/kgs/Nhq5tWi");
+	   Estacionamiento est16 = est("Playa de Estacionamiento", "Pizarro 210, Arequipa 04001", 40,  "Lunes a sábado 10:00 - 22:00", true, "https://g.co/kgs/Q6jmf5Z");
+	   Estacionamiento est17 = est("Playa de Estacionamiento Moral", "C. Moral 403, Arequipa 04001", 45, "Lunes a sábado 7:00 - 21:00", false, "https://g.co/kgs/DNURCP7");
+	   Estacionamiento est18 = est("Playa de Estacionamiento", "C. Palacio Viejo 511, Arequipa 04001", 30, "Lunes a viernes 10:00 - 22:00", false, "https://g.co/kgs/gTxVC3c");
+	   Estacionamiento est19 = est("Playa", "Ricardo Palma 203, Cercado De Arequipa 04013", 55, "Lunes a domingo 6:00 - 23:00", true, "https://g.co/kgs/iptR92e");
+	   Estacionamiento est20 = est("Playa de Estacionamiento", "C. la Merced 509, Arequipa 04001", 50, "Lunes a domingo - 24 horas", false, "https://g.co/kgs/Vj1gQ9y");
+	   Estacionamiento est21 = est("Playa de Estacionamiento Moral / San Francisco", "C. Moral 205, Arequipa 04001", 55, "Lunes a sábado 7:00 - 22:00", false, "https://g.co/kgs/Xaw673M");
+	   Estacionamiento est22 = est("Playa", "C. Santo Domingo 215a, Arequipa 04001", 40, "Lunes a sábado 8:30 - 23:30", true, "https://g.co/kgs/xvzodA3");
+	   Estacionamiento est23 = est("Playa de Estacionamiento", "C. Peral 315, Cercado De Arequipa 04001", 30, "Lunes a domingo 9:30 - 19:30", false, "https://g.co/kgs/BfEsXZC");
+	   Estacionamiento est24 = est("Playa", "Calle, República de Chile 103, Cercado De Arequipa 04001", 35, "Lunes a sábado 7:00 - 22:00", false, "https://g.co/kgs/WBE289a");
+	   Estacionamiento est25 = est("Playa", "Mz, Los Angeles 11, Cercado De Arequipa 04013", 40, "Lunes a sábado 8:00 - 22:00", true, "https://g.co/kgs/uk5acxP");
+	   Estacionamiento est26 = est("Playa", "C. San José 309, Arequipa 04001", 50, "Lunes a viernes 7:00 - 20:00", false, "https://g.co/kgs/StrL5B5");
+	   Estacionamiento est27 = est("Playa de Estacionamiento", "Cuarto Piso, Pje. Sta. Rosa 104, Arequipa 04000", 35, "Lunes a sábado - 24 horas", false, "https://g.co/kgs/1CJ9xNr");
+	   Estacionamiento est28 = est("Playa Paucarpata", "Paucarpata 333, Arequipa 04001", 60, "Lunes a domingo - 24 horas", true, "https://g.co/kgs/jMfTnqC");
+	   Estacionamiento est29 = est("Playa Club Arequipa Cochera Aparcamiento", "C. Álvarez Thomas 111, Arequipa 04001", 40, "Lunes a domingo 7:00 - 22:00", false, "https://g.co/kgs/is6H4x4");
+	   Estacionamiento est30 = est("Playa de Estacionamiento", "Ca. Consuelo 417, Arequipa 04001", 40, "Lunes a domingo 7:00 - 23:00", true, "https://g.co/kgs/f6ZYQPk");
+	   Estacionamiento est31 = est("Playa", "C. el Palomar 109, Cercado Arequipa 04002", 30, "Lunes a sábado 9:00 - 21:00", true, "https://g.co/kgs/EtLwGfQ");
+	   Estacionamiento est32 = est("Playa de Estacionamiento", "Calle Jerusalén 512, Yanahuara, Cercado De Arequipa 04017", 35, "Lunes a viernes 8:00 - 22:30", false, "https://g.co/kgs/9NW1bw5");
+	   Estacionamiento est33 = est("Playa de Estacionamiento Peral", "C. Peral 205, Arequipa 04001", 60, "Lunes a sábado 9:30 - 21:00", false, "https://g.co/kgs/GT9pdRn");
+	   Estacionamiento est34 = est("Playa Nicolás de Piérola", "C. Piérola 117, Arequipa 04001", 55, "Lunes a sábado - 24 horas", false, "https://g.co/kgs/g8mA1GR");
+	   Estacionamiento est35 = est("Playa", "Av.Emmel 216, Yanahuara, Cercado De Arequipa 04013", 25, "Lunes a sábado 8:00 - 20:00", true, "https://g.co/kgs/qRsNUHy");
+	   Estacionamiento est36 = est("Playa Central", "C. Rivero 232, Arequipa 04001", 35, "Lunes a domingo - 24 horas", true, "https://g.co/kgs/HjCHG2o");
+	   Estacionamiento est37 = est("Playa", "JF36+8GP, Villalba, Cercado de Arequipa 04001", 25, "Lunes a viernes - 24 horas", false, "https://g.co/kgs/Zm2Wzao");
+	   Estacionamiento est38 = est("Playa", "Castilla 126, Arequipa 04001", 60, "Lunes a sábado 10:00 - 22:00", true, "https://g.co/kgs/U5hANZa");
+	   Estacionamiento est39 = est("Playa de Estacionamiento LA MERCED Parqueo vehicular", "Calle, Octavio Muñoz Najar 137, Cercado De Arequipa 04001", 50, "Lunes a sábado 8:00 - 20:30", true, "https://g.co/kgs/GT3TJ6i");
+	   Estacionamiento est40 = est("Playa Pública", "Calle Nueva 223, Cercado De Arequipa 04001", 35, "Lunes a viernes 10:00 - 20:00", false, "https://g.co/kgs/ZdQd69q");
+	   Estacionamiento est41 = est("Playa de Estacionamiento ALEMERCED", "HFW6+22H, C. la Merced, Arequipa 04001", 30, "Lunes a domingo - 24 horas", true, "https://g.co/kgs/kPB2UAg");
+	   Estacionamiento est42 = est("Playa", "C. Jerusalén 521, Cercado De Arequipa 04001", 50, "Lunes a domingo 8:00 - 18:00", true, "https://g.co/kgs/htq7d84");
+	   Estacionamiento est43 = est("Playa", "Calle Nueva 415, Arequipa 04001", 35, "Lunes a domingo 8:00 - 21:00", false, "https://g.co/kgs/2ad2diR");
+	   Estacionamiento est44 = est("Playa de Estacionamiento San Nicolás", "C. Piérola 318a, Arequipa 04001", 30, "Lunes a sábado 10:00 - 23:00", false, "https://g.co/kgs/axTfsfV");
     }
     
     //USUARIO -------------------------------------------
@@ -143,82 +161,166 @@ public class NaviepicsApplication implements CommandLineRunner{
     
     //PROVEEDORES
     public void insertarProveedores() {
-    	proveedores("Carlos", "Calle Mercaderes 120", "956874124", "carlos8@gmail.com");
-    	proveedores("María", "Av. Dolores 502", "956874125", "maria9@gmail.com");
-    	proveedores("Ana", "Calle San Francisco 219", "956874126", "ana10@gmail.com");
-    	proveedores("Luis", "Av. La Marina 301", "956874127", "luis11@gmail.com");
-    	proveedores("Jorge", "Calle Jerusalén 410", "956874128", "jorge12@gmail.com");
-    	proveedores("Lucía", "Av. Independencia 212", "956874129", "lucia13@gmail.com");
-    	proveedores("Pedro", "Calle Santa Catalina 105", "956874130", "pedro14@gmail.com");
-    	proveedores("Sofía", "Av. Venezuela 999", "956874131", "sofia15@gmail.com");
-    	proveedores("Juan", "Calle San José 312", "956874132", "juan16@gmail.com");
-    	proveedores("Andrea", "Av. Parra 123", "956874133", "andrea17@gmail.com");
-    	proveedores("Miguel", "Calle Dean Valdivia 456", "956874134", "miguel18@gmail.com");
-    	proveedores("Diana", "Av. Goyeneche 789", "956874135", "diana19@gmail.com");
-    	proveedores("Fernando", "Calle Consuelo 321", "956874136", "fernando20@gmail.com");
-    	proveedores("Rodrigo", "Av. Ejército 101", "956874123", "rodrigo7@gmail.com");
-    	proveedores("Laura", "Av. Progreso 654", "956874137", "laura21@gmail.com");
-    	proveedores("David", "Calle Zela 987", "956874138", "david22@gmail.com");
-    	proveedores("Claudia", "Av. Juan de la Torre 147", "956874139", "claudia23@gmail.com");
-    	proveedores("Raúl", "Calle Peral 258", "956874140", "raul24@gmail.com");
-    	proveedores("Patricia", "Av. San Juan de Dios 369", "956874141", "patricia25@gmail.com");
-    	proveedores("Francisco", "Calle Cruz Verde 741", "956874142", "francisco26@gmail.com");
-    	proveedores("Elena", "Av. Salaverry 852", "956874143", "elena27@gmail.com");
-    	proveedores("Antonio", "Calle Paucarpata 963", "956874144", "antonio28@gmail.com");
-    	proveedores("Gabriela", "Av. Ejército 159", "956874145", "gabriela29@gmail.com");
-    	proveedores("Hugo", "Calle Rivero 753", "956874146", "hugo30@gmail.com");
-    	proveedores("Julio", "Calle Beaterio 951", "956874148", "julio32@gmail.com");
+    	//INSERTANDO PROVEEDORES
+    	Proveedor carlos = proveedores("Carlos", "Calle Mercaderes 120", "956874124", "carlos8@gmail.com");
+    	Proveedor maria = proveedores("María", "Av. Dolores 502", "956874125", "maria9@gmail.com");
+    	Proveedor luis = proveedores("Luis", "Av. La Marina 301", "956874127", "luis11@gmail.com");
+    	Proveedor jorge = proveedores("Jorge", "Calle Jerusalén 410", "956874128", "jorge12@gmail.com");
+    	Proveedor lucia = proveedores("Lucía", "Av. Independencia 212", "956874129", "lucia13@gmail.com");
+    	Proveedor pedro = proveedores("Pedro", "Calle Santa Catalina 105", "956874130", "pedro14@gmail.com");
+    	Proveedor sofia = proveedores("Sofía", "Av. Venezuela 999", "956874131", "sofia15@gmail.com");
+    	Proveedor juan = proveedores("Juan", "Calle San José 312", "956874132", "juan16@gmail.com");
+    	Proveedor andrea = proveedores("Andrea", "Av. Parra 123", "956874133", "andrea17@gmail.com");
+    	Proveedor miguel = proveedores("Miguel", "Calle Dean Valdivia 456", "956874134", "miguel18@gmail.com");
+    	Proveedor diana = proveedores("Diana", "Av. Goyeneche 789", "956874135", "diana19@gmail.com");
+    	Proveedor fernando = proveedores("Fernando", "Calle Consuelo 321", "956874136", "fernando20@gmail.com");
+    	Proveedor rodrigo = proveedores("Rodrigo", "Av. Ejército 101", "956874123", "rodrigo7@gmail.com");
+    	Proveedor laura = proveedores("Laura", "Av. Progreso 654", "956874137", "laura21@gmail.com");
+    	Proveedor david = proveedores("David", "Calle Zela 987", "956874138", "david22@gmail.com");
+    	Proveedor claudia = proveedores("Claudia", "Av. Juan de la Torre 147", "956874139", "claudia23@gmail.com");
+    	Proveedor raul = proveedores("Raúl", "Calle Peral 258", "956874140", "raul24@gmail.com");
+    	Proveedor patricia = proveedores("Patricia", "Av. San Juan de Dios 369", "956874141", "patricia25@gmail.com");
+    	Proveedor francisco = proveedores("Francisco", "Calle Cruz Verde 741", "956874142", "francisco26@gmail.com");
+    	Proveedor elena = proveedores("Elena", "Av. Salaverry 852", "956874143", "elena27@gmail.com");
+    	Proveedor antonio = proveedores("Antonio", "Calle Paucarpata 963", "956874144", "antonio28@gmail.com");
+    	Proveedor gabriela = proveedores("Gabriela", "Av. Ejército 159", "956874145", "gabriela29@gmail.com");
+    	Proveedor hugo = proveedores("Hugo", "Calle Rivero 753", "956874146", "hugo30@gmail.com");
+    	Proveedor julio = proveedores("Julio", "Calle Beaterio 951", "956874148", "julio32@gmail.com");
+    	
+    	//INSERTANDO EQUIPOS DE ESTACIONAMIENTO
+    	equi_est("Sensores de Ocupación de Plazas", "Nedap", "SENSIT", carlos);
+    	equi_est("Plumas Automáticas", "Nice", "M-Bar", maria);
+    	equi_est("Sistemas de Videovigilancia", "Hikvision", "DS-2CD2387G2-LU", luis);
+    	equi_est("Sistemas de Reconocimiento de Matrículas (LPR)", "Tattile", "Vega Basic", jorge);
+    	equi_est("Terminales de Entrada/Salida", "Designa", "PM ABACUS", lucia);
+    	equi_est("Sistemas de Pago Móvil", "ParkMobile", "App v9.9", pedro);
+    	equi_est("Parquímetros", " Cale", "CWT Compact", sofia);
+    	equi_est("Estacionamientos Automatizados", "Wohr", "Multiparker 730", juan);
+    	equi_est("Sistemas de Protección contra Colisiones", "A-Safe", "iFlex", andrea);
+    	equi_est("Bicicletarios Automáticos", "Bikeep", "B2", miguel);
+    	equi_est("Cámaras de Monitoreo de Espacios", "Axis Communications", "P1445-LE", diana);
+    	equi_est("Lectoras de Tarjetas RFID", "HID Global", "iCLASS SE", fernando);
+    	equi_est("Señalización Digital", "Daktronics", "modelo", rodrigo);
+    	equi_est("Estaciones de Carga para Vehículos Eléctricos", "ChargePoint", "CT4000", laura);
+    	equi_est("Sistemas de Validación de Tickets", "Amano McGann", "OPUSeries", david);
+    	equi_est("Automatización de Barreras de Estacionamiento", "Magnetic Autocontrol", "Access Pro-H", claudia);
+    	equi_est("Torniquetes de Acceso", "Gunnebo", "SpeedStile FP", raul);
+    	equi_est("Software de Gestión de Estacionamientos", "TIBA Parking", "SmartPark", patricia);
+    	equi_est("Detectores de Proximidad", "Indect", "ULD", francisco);
+    	equi_est("Plataformas Elevadoras de Vehículos", "Klaus Multiparking", "TrendVario 4300", elena);
+    	equi_est("Cámaras Termográficas", "FLIR Systems", "A400/A700", antonio);
+    	equi_est("Sistemas de Bloqueo de Estacionamiento", "Parklio", "Smart Parking Barrier", gabriela);
+    	equi_est("Paneles de Información LED", "Swarco", "FUTUR LED", hugo);
+    	equi_est("Sistemas de Control de Humos y Ventilación", "Colt", "Cyclone", julio);
+    	equi_est("Sistemas de Reservas de Estacionamiento", " SpotHero", "SpotHero App", gabriela);
     }
     
-    //EQUIPOS_ESTACIONAMIENTO
-    public void insertarEquipos_Estacionamiento(Proveedor p) {
-		equi_est("tipos equipo", "marca", "modelo", p);
-		equi_est("Barreras de Estacionamiento", "FAAC", "B614", p);
-		equi_est("Sistemas de Control de Acceso", "Came", "GARD 4", p);
-		equi_est("Máquinas de Pago Automático", "Parkeon", "Strada", p);
-		equi_est("Sistemas de Guiado de Estacionamiento", "ParkHelp", "PG70", p);
-		equi_est("Sistemas de Control de Ticket", "Scheidt & Bachmann", "entervo", p);
-		equi_est("Sensores de Ocupación de Plazas", "Nedap", "SENSIT", p);
-		equi_est("Plumas Automáticas", "Nice", "M-Bar", p);
-		equi_est("Sistemas de Videovigilancia", "Hikvision", "DS-2CD2387G2-LU", p);
-		equi_est("Sistemas de Reconocimiento de Matrículas (LPR)", "Tattile", "Vega Basic", p);
-		equi_est("Terminales de Entrada/Salida", "Designa", "PM ABACUS", p);
-		equi_est("Sistemas de Pago Móvil", "ParkMobile", "App v9.9", p);
-		equi_est("Parquímetros", " Cale", "CWT Compact", p);
-		equi_est("Estacionamientos Automatizados", "Wohr", "Multiparker 730", p);
-		equi_est("Sistemas de Protección contra Colisiones", "A-Safe", "iFlex", p);
-		equi_est("Bicicletarios Automáticos", "Bikeep", "B2", p);
-		equi_est("Cámaras de Monitoreo de Espacios", "Axis Communications", "P1445-LE", p);
-		equi_est("Lectoras de Tarjetas RFID", "HID Global", "iCLASS SE", p);
-		equi_est("Señalización Digital", "Daktronics", "modelo", p);
-		equi_est("Estaciones de Carga para Vehículos Eléctricos", "ChargePoint", "CT4000", p);
-		equi_est("Sistemas de Validación de Tickets", "Amano McGann", "OPUSeries", p);
-		equi_est("Automatización de Barreras de Estacionamiento", "Magnetic Autocontrol", "Access Pro-H", p);
-		equi_est("Torniquetes de Acceso", "Gunnebo", "SpeedStile FP", p);
-		equi_est("Software de Gestión de Estacionamientos", "TIBA Parking", "SmartPark", p);
-		equi_est("Detectores de Proximidad", "Indect", "ULD", p);
-		equi_est("Plataformas Elevadoras de Vehículos", "Klaus Multiparking", "TrendVario 4300", p);
-		equi_est("Cámaras Termográficas", "FLIR Systems", "A400/A700", p);
-		equi_est("Sistemas de Bloqueo de Estacionamiento", "Parklio", "Smart Parking Barrier", p);
-		equi_est("Paneles de Información LED", "Swarco", "FUTUR LED", p);
-		equi_est("Sistemas de Control de Humos y Ventilación", "Colt", "Cyclone", p);
-		equi_est("Sistemas de Reservas de Estacionamiento", " SpotHero", "SpotHero App", p);
-    }
-    
+       
     //VEHICULO
     public void insertarVehiculos(Usuario u, Tipo_Vehiculo t_Vehi) {
-    	vehiculo("marca", "modelo", "color", "fabricante", u, t_Vehi);
+    	 vehiculo("Toyota", "Corolla", "Blanco", "Toyota Motor Corporation", u, t_Vehi);
+    	    vehiculo("Honda", "Civic", "Negro", "Honda Motor Co., Ltd.", u, t_Vehi);
+    	    vehiculo("Ford", "Mustang", "Rojo", "Ford Motor Company", u, t_Vehi);
+    	    vehiculo("Chevrolet", "Camaro", "Azul", "General Motors", u, t_Vehi);
+    	    vehiculo("Tesla", "Model 3", "Gris", "Tesla, Inc.", u, t_Vehi);
+    	    vehiculo("Nissan", "Altima", "Plata", "Nissan Motor Corporation", u, t_Vehi);
+    	    vehiculo("BMW", "X5", "Negro", "Bayerische Motoren Werke AG", u, t_Vehi);
+    	    vehiculo("Mercedes-Benz", "C-Class", "Blanco", "Daimler AG", u, t_Vehi);
+    	    vehiculo("Audi", "A4", "Rojo", "Audi AG", u, t_Vehi);
+    	    vehiculo("Volkswagen", "Jetta", "Azul", "Volkswagen AG", u, t_Vehi);
+    	    vehiculo("Hyundai", "Elantra", "Gris", "Hyundai Motor Company", u, t_Vehi);
+    	    vehiculo("Kia", "Optima", "Plata", "Kia Corporation", u, t_Vehi);
+    	    vehiculo("Subaru", "Impreza", "Blanco", "Subaru Corporation", u, t_Vehi);
+    	    vehiculo("Mazda", "Mazda3", "Negro", "Mazda Motor Corporation", u, t_Vehi);
+    	    vehiculo("Lexus", "RX", "Rojo", "Toyota Motor Corporation", u, t_Vehi);
+    	    vehiculo("Infiniti", "Q50", "Azul", "Nissan Motor Corporation", u, t_Vehi);
+    	    vehiculo("Jaguar", "XE", "Gris", "Jaguar Land Rover", u, t_Vehi);
+    	    vehiculo("Land Rover", "Range Rover", "Negro", "Jaguar Land Rover", u, t_Vehi);
+    	    vehiculo("Volvo", "S60", "Blanco", "Volvo Cars", u, t_Vehi);
+    	    vehiculo("Porsche", "911", "Rojo", "Porsche AG", u, t_Vehi);
+    	    vehiculo("Ferrari", "488", "Rojo", "Ferrari N.V.", u, t_Vehi);
+    	    vehiculo("Lamborghini", "Huracan", "Amarillo", "Automobili Lamborghini S.p.A.", u, t_Vehi);
+    	    vehiculo("Maserati", "Ghibli", "Azul", "Maserati S.p.A.", u, t_Vehi);
+    	    vehiculo("Aston Martin", "DB11", "Verde", "Aston Martin Lagonda Global Holdings plc", u, t_Vehi);
+    	    vehiculo("Bentley", "Continental GT", "Negro", "Bentley Motors Limited", u, t_Vehi);
+    	    vehiculo("Rolls-Royce", "Phantom", "Blanco", "Rolls-Royce Motor Cars Limited", u, t_Vehi);
+    	}
+    
+    //RESERVACIONES
+    public void insertarReservaciones(Estacionamiento est, Usuario u) {
+    	reserv(java.sql.Date.valueOf("06-10-2024"), java.sql.Time.valueOf("14:35:00"), est, u);
+    	reserv(java.sql.Date.valueOf("18-07-2024"), java.sql.Time.valueOf("09:25:00"), est, u);
+    	reserv(java.sql.Date.valueOf("23-08-2024"), java.sql.Time.valueOf("17:45:00"), est, u);
+    	reserv(java.sql.Date.valueOf("01-09-2024"), java.sql.Time.valueOf("12:30:00"), est, u);
+    	reserv(java.sql.Date.valueOf("14-10-2024"), java.sql.Time.valueOf("08:50:00"), est, u);
+    	reserv(java.sql.Date.valueOf("07-11-2024"), java.sql.Time.valueOf("13:40:00"), est, u);
+    	reserv(java.sql.Date.valueOf("20-12-2024"), java.sql.Time.valueOf("18:10:00"), est, u);
+    	reserv(java.sql.Date.valueOf("31-12-2024"), java.sql.Time.valueOf("11:55:00"), est, u);
+    	reserv(java.sql.Date.valueOf("15-01-2025"), java.sql.Time.valueOf("15:20:00"), est, u);
+    	reserv(java.sql.Date.valueOf("28-02-2025"), java.sql.Time.valueOf("10:45:00"), est, u);
+    	reserv(java.sql.Date.valueOf("14-03-2025"), java.sql.Time.valueOf("14:10:00"), est, u);
+    	reserv(java.sql.Date.valueOf("22-04-2025"), java.sql.Time.valueOf("07:30:00"), est, u);
+    	reserv(java.sql.Date.valueOf("03-05-2025"), java.sql.Time.valueOf("16:40:00"), est, u);
+    	reserv(java.sql.Date.valueOf("05-06-2025"), java.sql.Time.valueOf("09:10:00"), est, u);
+    	reserv(java.sql.Date.valueOf("30-06-2024"), java.sql.Time.valueOf("13:50:00"), est, u);
+    	reserv(java.sql.Date.valueOf("25-07-2024"), java.sql.Time.valueOf("10:20:00"), est, u);
+    	reserv(java.sql.Date.valueOf("09-08-2024"), java.sql.Time.valueOf("11:45:00"), est, u);
+    	reserv(java.sql.Date.valueOf("18-09-2024"), java.sql.Time.valueOf("17:30:00"), est, u);
+    	reserv(java.sql.Date.valueOf("02-10-2024"), java.sql.Time.valueOf("08:25:00"), est, u);
+    	reserv(java.sql.Date.valueOf("10-11-2024"), java.sql.Time.valueOf("12:15:00"), est, u);
+    	reserv(java.sql.Date.valueOf("01-12-2024"), java.sql.Time.valueOf("19:00:00"), est, u);
+    	reserv(java.sql.Date.valueOf("05-01-2025"), java.sql.Time.valueOf("14:45:00"), est, u);
+    	reserv(java.sql.Date.valueOf("19-02-2025"), java.sql.Time.valueOf("09:35:00"), est, u);
+    	reserv(java.sql.Date.valueOf("28-03-2025"), java.sql.Time.valueOf("16:00:00"), est, u);
+    	reserv(java.sql.Date.valueOf("15-04-2025"), java.sql.Time.valueOf("07:55:00"), est, u);
+    	reserv(java.sql.Date.valueOf("30-05-2025"), java.sql.Time.valueOf("11:30:00"), est, u);
+
     }
     
-    
-    
-    
-    
-    
-    
+    //Feedback
+    public void insertarFeedback(Usuario u, Estacionamiento est) {
+    	feed(3, "Buen servicio.", u, est);
+    	feed(5, "Excelente experiencia.", u, est);
+    	feed(2, "Podría mejorar la limpieza.", u, est);
+    	feed(4, "Muy conveniente.", u, est);
+    	feed(1, "Mal servicio, no lo recomiendo.", u, est);
+    	feed(3, "Precio razonable.", u, est);
+    	feed(4, "Personal amable y atento.", u, est);
+    	feed(2, "Difícil de encontrar estacionamiento libre.", u, est);
+    	feed(5, "Volveré seguro.", u, est);
+    	feed(1, "Mala señalización.", u, est);
+    	feed(3, "Espacios amplios.", u, est);
+    	feed(2, "Precio demasiado alto.", u, est);
+    	feed(4, "Buena ubicación.", u, est);
+    	feed(5, "¡El mejor estacionamiento de la ciudad!", u, est);
+    	feed(3, "Fácil acceso.", u, est);
+    	feed(1, "Estacionamiento lleno, no pude encontrar lugar.", u, est);
+    	feed(4, "Limpio y bien iluminado.", u, est);
+    	feed(2, "Problemas con el sistema de pago.", u, est);
+    	feed(5, "Altamente recomendado.", u, est);
+    	feed(3, "Tarifas competitivas.", u, est);
+    	feed(1, "Servicio al cliente deficiente.", u, est);
+    	feed(2, "Mal olor en el estacionamiento.", u, est);
+    	feed(4, "Rápido y eficiente.", u, est);
+    	feed(5, "¡Increíblemente conveniente!", u, est);
+    	feed(3, "Buenas opciones de seguridad.", u, est);
+
+    }
     
     //METODOS DE INSERCION DE DATOS
     
+<<<<<<< Updated upstream
+=======
+
+	//REPORTE INCIDENCIAS
+	public Reporte_Incidencias report(String descripcion, Date fecha_hora_incidencia, Estacionamiento estacionamiento, Usuario usuario) {
+		Reporte_Incidencias e=new Reporte_Incidencias(descripcion, fecha_hora_incidencia, estacionamiento, usuario);
+		escribir("Objeto creado");
+		reportS.saveOrUpdate(e);
+		System.out.println("Insercion Exitosa");
+		return e;
+	}
+>>>>>>> Stashed changes
     //ESTACIONAMIENTO
     public Estacionamiento est(String nom, String dir, Integer qEsp, String hor, boolean est, String enlace) {
 		Estacionamiento e=new Estacionamiento(nom,dir,qEsp,hor,est,enlace);
@@ -228,7 +330,6 @@ public class NaviepicsApplication implements CommandLineRunner{
 		return e;
 	}
     
-    //USUARIO
     public Usuario usu(String nom, String ape, String email,String pass) {
 		Usuario e=new Usuario(nom,ape,email,pass);
 		escribir("Objeto creado");
@@ -251,18 +352,15 @@ public class NaviepicsApplication implements CommandLineRunner{
     	Tarifas e=new Tarifas(franja_Horario,valor_Hora);
 		escribir("Objeto creado");
 		tarifas_S.saveOrUpdate(e);
-		escribir("Objeto creado");
+		System.out.println("Insercion Exitosa");
     }
    
-    
     //PROVEEDORES
     public Proveedor proveedores(String nombre,String dir, String telefono,String correo) {
     	Proveedor e=new Proveedor(nombre,dir,telefono,correo);
     	escribir("Objeto creado");
-    	//AQUI LLAMO AL METODO DIRECTAMENTE PARA QUE ADICIONEN LOS DATOS
-    	insertarEquipos_Estacionamiento(e);
-		proveedores_S.saveOrUpdate(e);
-		escribir("Objeto creado");
+   		proveedores_S.saveOrUpdate(e);
+		System.out.println("Insercion Exitosa");
 		return e;
     }
     
@@ -271,15 +369,15 @@ public class NaviepicsApplication implements CommandLineRunner{
     	Equipos_Estacionamiento e=new Equipos_Estacionamiento(tip_equip,marca,modelo,prov);
     	escribir("Objeto creado");
 		eq_est_S.saveOrUpdate(e);
-		escribir("Objeto creado");
+		System.out.println("Insercion Exitosa");
     }
     
     //RESERVACIONES
-    public void reserv(String tip_equip,String marca, String modelo,Proveedor prov) {
-    	Equipos_Estacionamiento e=new Equipos_Estacionamiento(tip_equip,marca,modelo,prov);
+    public void reserv(Date fec_res, Date hor_res, Estacionamiento estac, Usuario usua) {
+    	Reservaciones e=new Reservaciones(fec_res,hor_res,estac,usua);
     	escribir("Objeto creado");
-		eq_est_S.saveOrUpdate(e);
-		escribir("Objeto creado");
+		reserv_S.saveOrUpdate(e);
+		System.out.println("Insercion Exitosa");
     }
     
     
@@ -289,7 +387,16 @@ public class NaviepicsApplication implements CommandLineRunner{
     	Vehiculo e=new Vehiculo(placa,modelo,color,fabricante,usuario,tipo_vehiculo);
     	escribir("Objeto creado");
 		vehi_S.saveOrUpdate(e);
-		escribir("Objeto creado");
+		System.out.println("Insercion Exitosa");
+    }
+    
+    
+    //Feedback
+    public void feed(Integer calificacion, String comentario,Usuario usua, Estacionamiento estac) {
+    	Feedback e=new Feedback(calificacion,comentario,usua,estac);
+    	escribir("Objeto creado");
+		feed_S.saveOrUpdate(e);
+		System.out.println("Insercion Exitosa");
     }
     
      

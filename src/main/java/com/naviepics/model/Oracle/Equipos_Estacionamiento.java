@@ -34,7 +34,7 @@ public class Equipos_Estacionamiento {
 	
 	
 	@ManyToOne
-	@JoinColumn(name="Id_Proveedor",  nullable=false)
+	@JoinColumn(name="Id_Proveedor",nullable=false)
 	private Proveedor proveedor;
 	
 	public Equipos_Estacionamiento() {
