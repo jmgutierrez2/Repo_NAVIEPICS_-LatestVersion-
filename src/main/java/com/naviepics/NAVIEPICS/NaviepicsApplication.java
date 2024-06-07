@@ -5,7 +5,6 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
-
 import com.naviepics.model.MySQL.Estacionamiento;
 import com.naviepics.model.MySQL.Tarifas;
 import com.naviepics.model.MySQL.Tipo_Vehiculo;
@@ -53,6 +52,7 @@ public class NaviepicsApplication implements CommandLineRunner{
     	insertarEstacionamientos();
     	insertarUsuarios();
     	insertarTipoVehiculo();
+    	  
     }
     //ESTACIONAMIENTOS---------------------------------- 
    public void insertarEstacionamientos() {
@@ -100,7 +100,6 @@ public class NaviepicsApplication implements CommandLineRunner{
     	est("Playa", "C. Jerusalén 521, Cercado De Arequipa 04001", 50, "Lunes a domingo 8:00 - 18:00", true, "https://g.co/kgs/htq7d84");
     	est("Playa", "Calle Nueva 415, Arequipa 04001", 35, "Lunes a domingo 8:00 - 21:00", false, "https://g.co/kgs/2ad2diR");
     	est("Playa de Estacionamiento San Nicolás", "C. Piérola 318a, Arequipa 04001", 30, "Lunes a sábado 10:00 - 23:00", false, "https://g.co/kgs/axTfsfV");
-    	
     }
     
     //USUARIO -------------------------------------------
@@ -136,6 +135,10 @@ public class NaviepicsApplication implements CommandLineRunner{
     //TARIFAS
     public void insertarTarifas() {
     	tarifas( "6:00 a.m. - 6:00 p.m.", 5.00);
+		tarifas( "6:00 a.m. - 8:00 p.m.", 4.00);
+		tarifas( "7:00 a.m. - 8:00 p.m.", 4.50);
+		tarifas( "8:00 a.m. - 6:00 p.m.", 6.00);
+		tarifas( "6:00 a.m. - 5:59 a.m.", 10.00);
     }
     
     //PROVEEDORES
@@ -169,7 +172,37 @@ public class NaviepicsApplication implements CommandLineRunner{
     
     //EQUIPOS_ESTACIONAMIENTO
     public void insertarEquipos_Estacionamiento(Proveedor p) {
-    	equi_est("tipos equipo", "marca", "modelo", p);
+		equi_est("tipos equipo", "marca", "modelo", p);
+		equi_est("Barreras de Estacionamiento", "FAAC", "B614", p);
+		equi_est("Sistemas de Control de Acceso", "Came", "GARD 4", p);
+		equi_est("Máquinas de Pago Automático", "Parkeon", "Strada", p);
+		equi_est("Sistemas de Guiado de Estacionamiento", "ParkHelp", "PG70", p);
+		equi_est("Sistemas de Control de Ticket", "Scheidt & Bachmann", "entervo", p);
+		equi_est("Sensores de Ocupación de Plazas", "Nedap", "SENSIT", p);
+		equi_est("Plumas Automáticas", "Nice", "M-Bar", p);
+		equi_est("Sistemas de Videovigilancia", "Hikvision", "DS-2CD2387G2-LU", p);
+		equi_est("Sistemas de Reconocimiento de Matrículas (LPR)", "Tattile", "Vega Basic", p);
+		equi_est("Terminales de Entrada/Salida", "Designa", "PM ABACUS", p);
+		equi_est("Sistemas de Pago Móvil", "ParkMobile", "App v9.9", p);
+		equi_est("Parquímetros", " Cale", "CWT Compact", p);
+		equi_est("Estacionamientos Automatizados", "Wohr", "Multiparker 730", p);
+		equi_est("Sistemas de Protección contra Colisiones", "A-Safe", "iFlex", p);
+		equi_est("Bicicletarios Automáticos", "Bikeep", "B2", p);
+		equi_est("Cámaras de Monitoreo de Espacios", "Axis Communications", "P1445-LE", p);
+		equi_est("Lectoras de Tarjetas RFID", "HID Global", "iCLASS SE", p);
+		equi_est("Señalización Digital", "Daktronics", "modelo", p);
+		equi_est("Estaciones de Carga para Vehículos Eléctricos", "ChargePoint", "CT4000", p);
+		equi_est("Sistemas de Validación de Tickets", "Amano McGann", "OPUSeries", p);
+		equi_est("Automatización de Barreras de Estacionamiento", "Magnetic Autocontrol", "Access Pro-H", p);
+		equi_est("Torniquetes de Acceso", "Gunnebo", "SpeedStile FP", p);
+		equi_est("Software de Gestión de Estacionamientos", "TIBA Parking", "SmartPark", p);
+		equi_est("Detectores de Proximidad", "Indect", "ULD", p);
+		equi_est("Plataformas Elevadoras de Vehículos", "Klaus Multiparking", "TrendVario 4300", p);
+		equi_est("Cámaras Termográficas", "FLIR Systems", "A400/A700", p);
+		equi_est("Sistemas de Bloqueo de Estacionamiento", "Parklio", "Smart Parking Barrier", p);
+		equi_est("Paneles de Información LED", "Swarco", "FUTUR LED", p);
+		equi_est("Sistemas de Control de Humos y Ventilación", "Colt", "Cyclone", p);
+		equi_est("Sistemas de Reservas de Estacionamiento", " SpotHero", "SpotHero App", p);
     }
     
     //VEHICULO
@@ -189,7 +222,9 @@ public class NaviepicsApplication implements CommandLineRunner{
     //ESTACIONAMIENTO
     public Estacionamiento est(String nom, String dir, Integer qEsp, String hor, boolean est, String enlace) {
 		Estacionamiento e=new Estacionamiento(nom,dir,qEsp,hor,est,enlace);
+		escribir("Objeto creado");
 		estS.saveOrUpdate(e);
+		System.out.println("Insercion Exitosa");
 		return e;
 	}
     
@@ -258,11 +293,6 @@ public class NaviepicsApplication implements CommandLineRunner{
     }
     
      
-    
-    
-    
-    
-    
     //ESCRITURA EN CONSOLA
     public void escribir(String t) {
     	System.out.println(t);
