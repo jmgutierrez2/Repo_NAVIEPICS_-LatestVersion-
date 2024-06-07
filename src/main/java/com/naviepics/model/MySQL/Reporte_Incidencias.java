@@ -31,7 +31,12 @@ public class Reporte_Incidencias {
     @Column(name = "Fecha_Hora_Incidencia",  nullable=false)
     @DateTimeFormat(pattern = "dd-MM-yyyy hh:mm:ss")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date fecha_hora_incidencia;
+    private Date fecha_incidencia;
+    
+    @Column(name = "Hora_Incidencia",  nullable=false)
+    @DateTimeFormat(pattern = "hh:mm:ss")
+    @Temporal(TemporalType.TIME)
+    private Date hora_incidencia;
     
     @ManyToOne
 	@JoinColumn(name="Id_Estacionamiento",  nullable=false)
@@ -45,18 +50,20 @@ public class Reporte_Incidencias {
 		
 	}
 
-	public Reporte_Incidencias(long id, String descripcion, Date fecha_hora_incidencia, Estacionamiento estacionamiento,
+	public Reporte_Incidencias(long id, String descripcion, Date fecha_incidencia,Date hora_incidencia, Estacionamiento estacionamiento,
 			Usuario usuario) {
 		this.id = id;
 		this.descripcion = descripcion;
-		this.fecha_hora_incidencia = fecha_hora_incidencia;
+		this.fecha_incidencia = fecha_incidencia;
+		this.hora_incidencia=hora_incidencia;
 		this.estacionamiento = estacionamiento;
 		this.usuario = usuario;
 	}
 
-	public Reporte_Incidencias(String descripcion, Date fecha_hora_incidencia, Estacionamiento estacionamiento, Usuario usuario) {
+	public Reporte_Incidencias(String descripcion, Date fecha_incidencia,Date hora_incidencia,Estacionamiento estacionamiento, Usuario usuario) {
 		this.descripcion = descripcion;
-		this.fecha_hora_incidencia = fecha_hora_incidencia;
+		this.fecha_incidencia = fecha_incidencia;
+		this.hora_incidencia=hora_incidencia;
 		this.estacionamiento = estacionamiento;
 		this.usuario = usuario;
 	}
@@ -77,12 +84,21 @@ public class Reporte_Incidencias {
 		this.descripcion = descripcion;
 	}
 
-	public Date getFecha_hora_incidencia() {
-		return fecha_hora_incidencia;
+	public Date getFecha_incidencia() {
+		return fecha_incidencia;
 	}
 
-	public void setFecha_hora_incidencia(Date fecha_hora_incidencia) {
-		this.fecha_hora_incidencia = fecha_hora_incidencia;
+	public void setFecha_incidencia(Date fecha_hora_incidencia) {
+		this.fecha_incidencia = fecha_hora_incidencia;
+	}
+
+	
+	public Date getHora_incidencia() {
+		return hora_incidencia;
+	}
+
+	public void setHora_incidencia(Date hora_incidencia) {
+		this.hora_incidencia = hora_incidencia;
 	}
 
 	public Estacionamiento getEstacionamiento() {

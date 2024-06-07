@@ -27,8 +27,8 @@ public class Reservaciones {
     private long id;
 
     @Column(name = "Fecha_Reserva",  nullable=false)
-    @DateTimeFormat(pattern = "dd-MM-yyyy")
-    @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern = "dd-MM-yyyy hh:mm:ss")
+    @Temporal(TemporalType.TIMESTAMP)
     private Date fecha_reserva;
     
     @Column(name = "Hora_Reserva",  nullable=false)
