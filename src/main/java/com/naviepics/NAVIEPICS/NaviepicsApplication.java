@@ -83,7 +83,7 @@ public class NaviepicsApplication implements CommandLineRunner{
     	Usuario usuario20 = usu("Hugo", "Castillo", "hugo_castillo@gmail.com", "hugocastillo");
     	System.out.println("USUARIOS INSERTADOS");
     	//------------------------------------------INSERTANDO ESTACIONAMIENTOS------------------------------------------------------------------------------------------------
-    	 Estacionamiento est1 = est("Playa de estacionamiento", "Paucarpata 128, Arequipa 04001", 50, "Lunes a viernes - 24 horas", false, "https://g.co/kgs/pY3YzPR");
+    Estacionamiento est1 = est("Playa de estacionamiento", "Paucarpata 128, Arequipa 04001", 50, "Lunes a viernes - 24 horas", false, "https://g.co/kgs/pY3YzPR");
   	   Estacionamiento est2 = est("Playa de Estacionamiento", "Paucarpata 140, Arequipa 04001", 30, "Lunes a sábado 7:00 - 22:00", false, "https://g.co/kgs/ox4kCex");
   	   Estacionamiento est3 = est("Playa de Estacionamiento", "Tronchadero 209, Arequipa 04001", 45, "Lunes a viernes 6:00 - 20:00", true, "https://g.co/kgs/aj5KYPm");
   	   Estacionamiento est4 = est("Playa de Estacionamiento", "C. San José 131, Arequipa 04001", 40, "Lunes a domingo 9:00 - 20:00", false, "https://g.co/kgs/KQogAtj");

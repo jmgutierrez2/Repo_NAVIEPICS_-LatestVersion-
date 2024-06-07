@@ -15,18 +15,17 @@
   <title>Naviepics</title>
 
   <!-- slider stylesheet -->
-  <link rel="stylesheet" type="text/css"
-    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
+  <link rel="stylesheet" type="text/css" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css]" />
 
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
 
   <!-- fonts style -->
-  <link href="https://fonts.googleapis.com/css?family=Dosis:400,500|Poppins:400,700&display=swap" rel="stylesheet">
+  <link th:href="@{https://fonts.googleapis.com/css?family=Dosis:400,500|Poppins:400,700&display=swap}" rel="stylesheet">
   <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet" />
+  <link th:href="@{css/style.css}" rel="stylesheet" />
   <!-- responsive style -->
-  <link href="css/responsive.css" rel="stylesheet" />
+  <link th:ref="@{css/responsive.css}" rel="stylesheet" />
 </head>
 
 <body>
@@ -35,7 +34,7 @@
     <header class="header_section">
       <div class="container-fluid">
         <nav class="navbar navbar-expand-lg custom_nav-container ">
-          <a class="navbar-brand" href="index.html">
+          <a class="navbar-brand" th:href="@{/}">
             <img th:src="@{/images/logo.jpg}" alt="">
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -131,7 +130,7 @@
                 </div>
                 <div class="col-md-6">
                   <div class="slider_img-box">
-                    <img src="images/reservado.png" alt="">
+                    <img th:src="@{images/reservado.png" alt="">
                   </div>
                 </div>
               </div>
@@ -200,7 +199,7 @@
             <div class="row">
               <div class="col-md-4">
                 <div class="img_box">
-                  <img src="images/s-1.png" alt="">
+                  <img th:src="@{images/s-1.png}" alt="">
                 </div>
                 <div class="detail_box">
                   <h6>
@@ -213,7 +212,7 @@
               </div>
               <div class="col-md-4">
                 <div class="img_box">
-                  <img src="images/s-2.png" alt="">
+                  <img th:src="@{/images/s-2.png}" alt="">
                 </div>
                 <div class="detail_box">
                   <h6>
@@ -226,7 +225,7 @@
               </div>
               <div class="col-md-4">
                 <div class="img_box">
-                  <img src="images/s-3.png" alt="">
+                  <img th:src="@{/images/s-3.png}" alt="">
                 </div>
                 <div class="detail_box">
                   <h6>
@@ -247,7 +246,7 @@
           </div>
         </div>
         <div class="col-md-4">
-          <img src="images/carro1.png" alt="" class="w-100">
+          <img th:src="@{/images/carro1.png}" alt="" class="w-100">
         </div>
       </div>
     </div>
@@ -266,19 +265,19 @@
     </div>
     <div class="container ">
       <div class="img_box box-1">
-        <img src="images/g-1.png" alt="">
+        <img th:src="@{/images/g-1.png}" alt="">
       </div>
       <div class="img_box box-2">
-        <img src="images/g-2.png" alt="">
+        <img src="@{/images/g-2.png}" alt="">
       </div>
       <div class="img_box box-3">
-        <img src="images/g-3.png" alt="">
+        <img src="@{/images/g-3.png}" alt="">
       </div>
       <div class="img_box box-4">
-        <img src="images/g-4.png" alt="">
+        <img src="@{/images/g-4.png}" alt="">
       </div>
       <div class="img_box box-5">
-        <img src="images/g-5.png" alt="">
+        <img src="@{/images/g-5.png}" alt="">
       </div>
     </div>
   </section>
@@ -292,7 +291,7 @@
   <section class="client_section layout_padding-bottom">
     <div class="container">
       <div class="text-center">
-        <img src="images/usmp.png" alt="Descripción de la imagen" style="max-width: 100%; height: auto;">
+        <img th:src="@{/images/usmp.png}" alt="Descripción de la imagen" style="max-width: 100%; height: auto;">
       </div>
       <h2 class="custom_heading text-center">
         Que Dicen Nuestros 
@@ -318,7 +317,7 @@
             <div class="layout_padding2 pl-100">
               <div class="client_container ">
                 <div class="img_box">
-                  <img src="images/docente.jpg" alt="" width="150" height="150">
+                  <img th:src="@{/images/docente.jpg}" alt="" width="150" height="150">
                 </div>
                 <div class="detail_box">
                   <h5>
