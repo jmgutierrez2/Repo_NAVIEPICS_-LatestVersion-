@@ -52,7 +52,8 @@ public class NaviepicsApplication implements CommandLineRunner{
     	insertarEstacionamientos();
     	insertarUsuarios();
     	insertarTipoVehiculo();
-    	  
+    	insertarProveedores();
+    	insertarTarifas();
     }
     //ESTACIONAMIENTOS---------------------------------- 
    public void insertarEstacionamientos() {
@@ -143,79 +144,65 @@ public class NaviepicsApplication implements CommandLineRunner{
     
     //PROVEEDORES
     public void insertarProveedores() {
-    	proveedores("Carlos", "Calle Mercaderes 120", "956874124", "carlos8@gmail.com");
-    	proveedores("María", "Av. Dolores 502", "956874125", "maria9@gmail.com");
-    	proveedores("Ana", "Calle San Francisco 219", "956874126", "ana10@gmail.com");
-    	proveedores("Luis", "Av. La Marina 301", "956874127", "luis11@gmail.com");
-    	proveedores("Jorge", "Calle Jerusalén 410", "956874128", "jorge12@gmail.com");
-    	proveedores("Lucía", "Av. Independencia 212", "956874129", "lucia13@gmail.com");
-    	proveedores("Pedro", "Calle Santa Catalina 105", "956874130", "pedro14@gmail.com");
-    	proveedores("Sofía", "Av. Venezuela 999", "956874131", "sofia15@gmail.com");
-    	proveedores("Juan", "Calle San José 312", "956874132", "juan16@gmail.com");
-    	proveedores("Andrea", "Av. Parra 123", "956874133", "andrea17@gmail.com");
-    	proveedores("Miguel", "Calle Dean Valdivia 456", "956874134", "miguel18@gmail.com");
-    	proveedores("Diana", "Av. Goyeneche 789", "956874135", "diana19@gmail.com");
-    	proveedores("Fernando", "Calle Consuelo 321", "956874136", "fernando20@gmail.com");
-    	proveedores("Rodrigo", "Av. Ejército 101", "956874123", "rodrigo7@gmail.com");
-    	proveedores("Laura", "Av. Progreso 654", "956874137", "laura21@gmail.com");
-    	proveedores("David", "Calle Zela 987", "956874138", "david22@gmail.com");
-    	proveedores("Claudia", "Av. Juan de la Torre 147", "956874139", "claudia23@gmail.com");
-    	proveedores("Raúl", "Calle Peral 258", "956874140", "raul24@gmail.com");
-    	proveedores("Patricia", "Av. San Juan de Dios 369", "956874141", "patricia25@gmail.com");
-    	proveedores("Francisco", "Calle Cruz Verde 741", "956874142", "francisco26@gmail.com");
-    	proveedores("Elena", "Av. Salaverry 852", "956874143", "elena27@gmail.com");
-    	proveedores("Antonio", "Calle Paucarpata 963", "956874144", "antonio28@gmail.com");
-    	proveedores("Gabriela", "Av. Ejército 159", "956874145", "gabriela29@gmail.com");
-    	proveedores("Hugo", "Calle Rivero 753", "956874146", "hugo30@gmail.com");
-    	proveedores("Julio", "Calle Beaterio 951", "956874148", "julio32@gmail.com");
+    	//INSERTANDO PROVEEDORES
+    	Proveedor carlos = proveedores("Carlos", "Calle Mercaderes 120", "956874124", "carlos8@gmail.com");
+    	Proveedor maria = proveedores("María", "Av. Dolores 502", "956874125", "maria9@gmail.com");
+    	Proveedor luis = proveedores("Luis", "Av. La Marina 301", "956874127", "luis11@gmail.com");
+    	Proveedor jorge = proveedores("Jorge", "Calle Jerusalén 410", "956874128", "jorge12@gmail.com");
+    	Proveedor lucia = proveedores("Lucía", "Av. Independencia 212", "956874129", "lucia13@gmail.com");
+    	Proveedor pedro = proveedores("Pedro", "Calle Santa Catalina 105", "956874130", "pedro14@gmail.com");
+    	Proveedor sofia = proveedores("Sofía", "Av. Venezuela 999", "956874131", "sofia15@gmail.com");
+    	Proveedor juan = proveedores("Juan", "Calle San José 312", "956874132", "juan16@gmail.com");
+    	Proveedor andrea = proveedores("Andrea", "Av. Parra 123", "956874133", "andrea17@gmail.com");
+    	Proveedor miguel = proveedores("Miguel", "Calle Dean Valdivia 456", "956874134", "miguel18@gmail.com");
+    	Proveedor diana = proveedores("Diana", "Av. Goyeneche 789", "956874135", "diana19@gmail.com");
+    	Proveedor fernando = proveedores("Fernando", "Calle Consuelo 321", "956874136", "fernando20@gmail.com");
+    	Proveedor rodrigo = proveedores("Rodrigo", "Av. Ejército 101", "956874123", "rodrigo7@gmail.com");
+    	Proveedor laura = proveedores("Laura", "Av. Progreso 654", "956874137", "laura21@gmail.com");
+    	Proveedor david = proveedores("David", "Calle Zela 987", "956874138", "david22@gmail.com");
+    	Proveedor claudia = proveedores("Claudia", "Av. Juan de la Torre 147", "956874139", "claudia23@gmail.com");
+    	Proveedor raul = proveedores("Raúl", "Calle Peral 258", "956874140", "raul24@gmail.com");
+    	Proveedor patricia = proveedores("Patricia", "Av. San Juan de Dios 369", "956874141", "patricia25@gmail.com");
+    	Proveedor francisco = proveedores("Francisco", "Calle Cruz Verde 741", "956874142", "francisco26@gmail.com");
+    	Proveedor elena = proveedores("Elena", "Av. Salaverry 852", "956874143", "elena27@gmail.com");
+    	Proveedor antonio = proveedores("Antonio", "Calle Paucarpata 963", "956874144", "antonio28@gmail.com");
+    	Proveedor gabriela = proveedores("Gabriela", "Av. Ejército 159", "956874145", "gabriela29@gmail.com");
+    	Proveedor hugo = proveedores("Hugo", "Calle Rivero 753", "956874146", "hugo30@gmail.com");
+    	Proveedor julio = proveedores("Julio", "Calle Beaterio 951", "956874148", "julio32@gmail.com");
+    	
+    	//INSERTANDO EQUIPOS DE ESTACIONAMIENTO
+    	equi_est("Sensores de Ocupación de Plazas", "Nedap", "SENSIT", carlos);
+    	equi_est("Plumas Automáticas", "Nice", "M-Bar", maria);
+    	equi_est("Sistemas de Videovigilancia", "Hikvision", "DS-2CD2387G2-LU", luis);
+    	equi_est("Sistemas de Reconocimiento de Matrículas (LPR)", "Tattile", "Vega Basic", jorge);
+    	equi_est("Terminales de Entrada/Salida", "Designa", "PM ABACUS", lucia);
+    	equi_est("Sistemas de Pago Móvil", "ParkMobile", "App v9.9", pedro);
+    	equi_est("Parquímetros", " Cale", "CWT Compact", sofia);
+    	equi_est("Estacionamientos Automatizados", "Wohr", "Multiparker 730", juan);
+    	equi_est("Sistemas de Protección contra Colisiones", "A-Safe", "iFlex", andrea);
+    	equi_est("Bicicletarios Automáticos", "Bikeep", "B2", miguel);
+    	equi_est("Cámaras de Monitoreo de Espacios", "Axis Communications", "P1445-LE", diana);
+    	equi_est("Lectoras de Tarjetas RFID", "HID Global", "iCLASS SE", fernando);
+    	equi_est("Señalización Digital", "Daktronics", "modelo", rodrigo);
+    	equi_est("Estaciones de Carga para Vehículos Eléctricos", "ChargePoint", "CT4000", laura);
+    	equi_est("Sistemas de Validación de Tickets", "Amano McGann", "OPUSeries", david);
+    	equi_est("Automatización de Barreras de Estacionamiento", "Magnetic Autocontrol", "Access Pro-H", claudia);
+    	equi_est("Torniquetes de Acceso", "Gunnebo", "SpeedStile FP", raul);
+    	equi_est("Software de Gestión de Estacionamientos", "TIBA Parking", "SmartPark", patricia);
+    	equi_est("Detectores de Proximidad", "Indect", "ULD", francisco);
+    	equi_est("Plataformas Elevadoras de Vehículos", "Klaus Multiparking", "TrendVario 4300", elena);
+    	equi_est("Cámaras Termográficas", "FLIR Systems", "A400/A700", antonio);
+    	equi_est("Sistemas de Bloqueo de Estacionamiento", "Parklio", "Smart Parking Barrier", gabriela);
+    	equi_est("Paneles de Información LED", "Swarco", "FUTUR LED", hugo);
+    	equi_est("Sistemas de Control de Humos y Ventilación", "Colt", "Cyclone", julio);
+    	equi_est("Sistemas de Reservas de Estacionamiento", " SpotHero", "SpotHero App", gabriela);
     }
     
-    //EQUIPOS_ESTACIONAMIENTO
-    public void insertarEquipos_Estacionamiento(Proveedor p) {
-		equi_est("tipos equipo", "marca", "modelo", p);
-		equi_est("Barreras de Estacionamiento", "FAAC", "B614", p);
-		equi_est("Sistemas de Control de Acceso", "Came", "GARD 4", p);
-		equi_est("Máquinas de Pago Automático", "Parkeon", "Strada", p);
-		equi_est("Sistemas de Guiado de Estacionamiento", "ParkHelp", "PG70", p);
-		equi_est("Sistemas de Control de Ticket", "Scheidt & Bachmann", "entervo", p);
-		equi_est("Sensores de Ocupación de Plazas", "Nedap", "SENSIT", p);
-		equi_est("Plumas Automáticas", "Nice", "M-Bar", p);
-		equi_est("Sistemas de Videovigilancia", "Hikvision", "DS-2CD2387G2-LU", p);
-		equi_est("Sistemas de Reconocimiento de Matrículas (LPR)", "Tattile", "Vega Basic", p);
-		equi_est("Terminales de Entrada/Salida", "Designa", "PM ABACUS", p);
-		equi_est("Sistemas de Pago Móvil", "ParkMobile", "App v9.9", p);
-		equi_est("Parquímetros", " Cale", "CWT Compact", p);
-		equi_est("Estacionamientos Automatizados", "Wohr", "Multiparker 730", p);
-		equi_est("Sistemas de Protección contra Colisiones", "A-Safe", "iFlex", p);
-		equi_est("Bicicletarios Automáticos", "Bikeep", "B2", p);
-		equi_est("Cámaras de Monitoreo de Espacios", "Axis Communications", "P1445-LE", p);
-		equi_est("Lectoras de Tarjetas RFID", "HID Global", "iCLASS SE", p);
-		equi_est("Señalización Digital", "Daktronics", "modelo", p);
-		equi_est("Estaciones de Carga para Vehículos Eléctricos", "ChargePoint", "CT4000", p);
-		equi_est("Sistemas de Validación de Tickets", "Amano McGann", "OPUSeries", p);
-		equi_est("Automatización de Barreras de Estacionamiento", "Magnetic Autocontrol", "Access Pro-H", p);
-		equi_est("Torniquetes de Acceso", "Gunnebo", "SpeedStile FP", p);
-		equi_est("Software de Gestión de Estacionamientos", "TIBA Parking", "SmartPark", p);
-		equi_est("Detectores de Proximidad", "Indect", "ULD", p);
-		equi_est("Plataformas Elevadoras de Vehículos", "Klaus Multiparking", "TrendVario 4300", p);
-		equi_est("Cámaras Termográficas", "FLIR Systems", "A400/A700", p);
-		equi_est("Sistemas de Bloqueo de Estacionamiento", "Parklio", "Smart Parking Barrier", p);
-		equi_est("Paneles de Información LED", "Swarco", "FUTUR LED", p);
-		equi_est("Sistemas de Control de Humos y Ventilación", "Colt", "Cyclone", p);
-		equi_est("Sistemas de Reservas de Estacionamiento", " SpotHero", "SpotHero App", p);
-    }
-    
+       
     //VEHICULO
     public void insertarVehiculos(Usuario u, Tipo_Vehiculo t_Vehi) {
     	vehiculo("marca", "modelo", "color", "fabricante", u, t_Vehi);
     }
-    
-    
-    
-    
-    
-    
-    
     
     //METODOS DE INSERCION DE DATOS
     
@@ -251,18 +238,15 @@ public class NaviepicsApplication implements CommandLineRunner{
     	Tarifas e=new Tarifas(franja_Horario,valor_Hora);
 		escribir("Objeto creado");
 		tarifas_S.saveOrUpdate(e);
-		escribir("Objeto creado");
+		System.out.println("Insercion Exitosa");
     }
    
-    
     //PROVEEDORES
     public Proveedor proveedores(String nombre,String dir, String telefono,String correo) {
     	Proveedor e=new Proveedor(nombre,dir,telefono,correo);
     	escribir("Objeto creado");
-    	//AQUI LLAMO AL METODO DIRECTAMENTE PARA QUE ADICIONEN LOS DATOS
-    	insertarEquipos_Estacionamiento(e);
-		proveedores_S.saveOrUpdate(e);
-		escribir("Objeto creado");
+   		proveedores_S.saveOrUpdate(e);
+		System.out.println("Insercion Exitosa");
 		return e;
     }
     
@@ -271,7 +255,7 @@ public class NaviepicsApplication implements CommandLineRunner{
     	Equipos_Estacionamiento e=new Equipos_Estacionamiento(tip_equip,marca,modelo,prov);
     	escribir("Objeto creado");
 		eq_est_S.saveOrUpdate(e);
-		escribir("Objeto creado");
+		System.out.println("Insercion Exitosa");
     }
     
     //RESERVACIONES
@@ -279,7 +263,7 @@ public class NaviepicsApplication implements CommandLineRunner{
     	Equipos_Estacionamiento e=new Equipos_Estacionamiento(tip_equip,marca,modelo,prov);
     	escribir("Objeto creado");
 		eq_est_S.saveOrUpdate(e);
-		escribir("Objeto creado");
+		System.out.println("Insercion Exitosa");
     }
     
     
@@ -289,7 +273,7 @@ public class NaviepicsApplication implements CommandLineRunner{
     	Vehiculo e=new Vehiculo(placa,modelo,color,fabricante,usuario,tipo_vehiculo);
     	escribir("Objeto creado");
 		vehi_S.saveOrUpdate(e);
-		escribir("Objeto creado");
+		System.out.println("Insercion Exitosa");
     }
     
      
