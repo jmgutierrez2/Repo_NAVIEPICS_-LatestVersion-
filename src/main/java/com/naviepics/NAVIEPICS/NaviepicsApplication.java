@@ -6,6 +6,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 import com.naviepics.model.MySQL.Estacionamiento;
+import com.naviepics.model.MySQL.Reporte_Incidencias;
 import com.naviepics.model.MySQL.Tarifas;
 import com.naviepics.model.MySQL.Tipo_Vehiculo;
 import com.naviepics.model.MySQL.Usuario;
@@ -46,6 +47,9 @@ public class NaviepicsApplication implements CommandLineRunner{
 	private Vehiculo_Service vehi_S;
 	@Autowired
 	private Reservaciones_Service reserv_S;
+	@Autowired
+	private Reporte_Incidencias reportS;
+
 	
 	
     public void run(String... args) throws Exception {
@@ -206,6 +210,15 @@ public class NaviepicsApplication implements CommandLineRunner{
     
     //METODOS DE INSERCION DE DATOS
     
+
+	//REPORTE INCIDENCIAS
+	public Reporte_Incidencias report(String des, String fecha_hora_incidencia) {
+		Reporte_Incidencias e=new Reporte_Incidencias(des, incidencia);
+		escribir("Objeto creado");
+		reportS.saveOrUpdate(e);
+		System.out.println("Insercion Exitosa");
+		return e;
+	}
     //ESTACIONAMIENTO
     public Estacionamiento est(String nom, String dir, Integer qEsp, String hor, boolean est, String enlace) {
 		Estacionamiento e=new Estacionamiento(nom,dir,qEsp,hor,est,enlace);
