@@ -1,18 +1,19 @@
 <!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"></html>
 <html>
 
 <head>
-  <!-- Basic -->
+
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <!-- Mobile Metas -->
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <!-- Site Metas -->
   <meta name="keywords" content="" />
   <meta name="description" content="" />
   <meta name="author" content="" />
 
   <title>Naviepics</title>
+
+  <link rel="stylesheet" href="css/usuario.css">
 
   <!-- slider stylesheet -->
   <link rel="stylesheet" type="text/css"
@@ -24,175 +25,123 @@
   <!-- fonts style -->
   <link href="https://fonts.googleapis.com/css?family=Dosis:400,500|Poppins:400,700&display=swap" rel="stylesheet">
   <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet" />
+  <link href="css/estacionamiento.css" rel="stylesheet" />
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
+
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/product/">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+    <link href="/docs/5.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+  
 </head>
 
-<body class="sub_page">
-  <div class="hero_area">
-    <!-- header section strats -->
-    <header class="header_section">
-      <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg custom_nav-container ">
-          <a class="navbar-brand" href="index.html">
-            <img src="images/logo.jpg" alt="">
-          </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
 
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <div class="d-flex mx-auto flex-column flex-lg-row align-items-center">
-              <ul class="navbar-nav  ">
-                <li class="nav-item active">  
-                  <a class="nav-link" href="index.html">Inicio<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="usuario.html">Usuario </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="vehiculo.html">Vehiculo </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="estacionamiento.html">  <em>estacionamiento</em></a>
-                </li>
-              </ul>
-              
-            </div>
-          </div>
-        </nav>
-      </div>
-    </header>
-    <!-- end header section -->
-  </div>
+<body class="sub_page">
+  
 
   <!-- service section -->
-  <section class="service_section layout_padding">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-6 offset-md-2">
-          <h2 class="custom_heading">
-            Our <span>Services</span>
-          </h2>
-          <div class="container layout_padding2">
-            <div class="row">
-              <div class="col-md-4">
-                <div class="img_box">
-                  <img src="images/s-1.png" alt="">
-                </div>
-                <div class="detail_box">
-                  <h6>
-                    Pet Care
-                  </h6>
-                  <p>
-                    onsectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                    enim ad minim veniam, quis nostrud exe
-                  </p>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="img_box">
-                  <img src="images/s-2.png" alt="">
-                </div>
-                <div class="detail_box">
-                  <h6>
-                    Pet Hotel
-                  </h6>
-                  <p>
-                    onsectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                    enim ad minim veniam, quis nostrud exe
-                  </p>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="img_box">
-                  <img src="images/s-3.png" alt="">
-                </div>
-                <div class="detail_box">
-                  <h6>
-                    Emergency
-                  </h6>
-                  <p>
-                    onsectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                    enim ad minim veniam, quis nostrud exe
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div>
-            <a href="">
-              Read More
-            </a>
-          </div>
+  <div class="container-form register">
+    <div class="information">
+        <div class="info-childs">
+            <h2> ¡Bienvenido!</h2>
+            <p>Crea una cuenta y se parte de esta gran comunidad, goza de todas las funcionalidades que tenemos.</p>
+            <input type="button" value="Crear cuenta" id="sign-in">
         </div>
-        <div class="col-md-4">
-          <img src="images/tool.png" alt="" class="w-100">
-        </div>
-      </div>
     </div>
-  </section>
+    <div class="form-information register">
+        <div class="form-information-childs">
+            <h2>Iniciar Sesión</h2>
+            <div class="icons">
+                <i class='bx bxl-google'></i>
+                <i class='bx bxl-linkedin'></i>
+            </div>
+            <p> Puedes ingresar por las siguientes cuentas</p>
+            <form class="forms">
+                <label>
+                    <i class='bx bx-envelope'></i>
+                    <input type="email" placeholder="Correo Electronico">
+                </label>
+                <label>
+                    <i class='bx bx-lock-alt'></i>
+                    <input type="password" placeholder="Contraseña">
+                </label>
+                <input type="submit" placeholder="Enviar">
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="container-form login hide">
+    <div class="information">
+        <div class="info-childs">
+            <h2>REGISTRARSE </h2>
+            
+            <p>Para unirte a nuestra comunidad por favor inicia sesión con
+                tus datos</p>
+            <input type="button" value="Inicio" id="sign-up">
+        </div>
+    </div>
+    <div class="form-information">
+        <div class="form-information-childs">
+            <h2>Crear una cuenta</h2>
+            <br>
+            <form class="form">
+                <div class="form-column">
+                    <label>
+                        <i class='bx bx-user'></i>
+                        <input type="text" placeholder="Nombre">
+                    </label>
+                    
+                    <label>
+                        <i class='bx bx-envelope'></i>
+                        <input type="email" placeholder="Correo ">
+                    </label> 
+                </div>
+                <div class="form-column">
+                    <label>
+                        <i class='bx bx-user'></i>
+                        <input type="family-name" placeholder="Apellidos">
+                    </label>
+                 
+                    <label>
+                        <i class='bx bx-lock-alt'></i>
+                        <input type="password" placeholder="Contraseña">
+                    </label>
+                </div>
+                
+            </form>
+            <div class="col-12">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                      <label class="form-check-label" for="invalidCheck">
+                        Estoy de acuerdo con los terminos y condiciones
+                      </label>
+                      <br>
+                    </div>
+                  </div>
+                <div >
+                    <input type="submit" value="Registrarse" onclick="enviarRegistro()">
+                    
+                  </div>
+
+        </div>
+    </div>
+</div>
 
   <!-- end service section -->
+  <script src="js/usuario.js"></script>
 
-
-
-  <!-- info section -->
-  <section class="info_section layout_padding2">
-    <div class="container">
-      <div class="info_items">
-        <a href="">
-          <div class="item ">
-            <div class="img-box box-1">
-              <img src="" alt="">
-            </div>
-            <div class="detail-box">
-              <p>
-                Location
-              </p>
-            </div>
-          </div>
-        </a>
-        <a href="">
-          <div class="item ">
-            <div class="img-box box-2">
-              <img src="" alt="">
-            </div>
-            <div class="detail-box">
-              <p>
-                +02 1234567890
-              </p>
-            </div>
-          </div>
-        </a>
-        <a href="">
-          <div class="item ">
-            <div class="img-box box-3">
-              <img src="" alt="">
-            </div>
-            <div class="detail-box">
-              <p>
-                demo@gmail.com
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- end info_section -->
-
-  <!-- footer section -->
-  <section class="container-fluid footer_section">
-    <p>
-      &copy; 2019 All Rights Reserved By
-      <a href="https://html.design/">Free Html Templates</a>
-    </p>
-  </section>
-  <!-- footer section -->
 
   <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.js"></script>
