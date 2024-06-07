@@ -54,7 +54,6 @@ public class Feedback {
 
 	public Feedback(long id, Date fecha, Integer calificacion, String comentario, Usuario usuario,
 			Estacionamiento estacionamiento) {
-		super();
 		this.id = id;
 		this.fecha = fecha;
 		this.calificacion = calificacion;
@@ -65,7 +64,6 @@ public class Feedback {
 
 	public Feedback(Date fecha, Integer calificacion, String comentario, Usuario usuario,
 			Estacionamiento estacionamiento) {
-		super();
 		this.fecha = fecha;
 		this.calificacion = calificacion;
 		this.comentario = comentario;
