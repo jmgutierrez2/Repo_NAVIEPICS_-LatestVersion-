@@ -28,10 +28,6 @@ public class Reporte_Incidencias {
 	@Column(name="Descripcion", nullable=false)
 	private String descripcion;
 	
-	@PrePersist
-    public void prePersist() {
-        fecha_hora_incidencia = new Date();
-    }
     @Column(name = "Fecha_Hora_Incidencia",  nullable=false)
     @DateTimeFormat(pattern = "dd-MM-yyyy hh:mm:ss")
     @Temporal(TemporalType.TIMESTAMP)
@@ -51,7 +47,6 @@ public class Reporte_Incidencias {
 
 	public Reporte_Incidencias(long id, String descripcion, Date fecha_hora_incidencia, Estacionamiento estacionamiento,
 			Usuario usuario) {
-		super();
 		this.id = id;
 		this.descripcion = descripcion;
 		this.fecha_hora_incidencia = fecha_hora_incidencia;
@@ -59,9 +54,7 @@ public class Reporte_Incidencias {
 		this.usuario = usuario;
 	}
 
-	public Reporte_Incidencias(String descripcion, Date fecha_hora_incidencia, Estacionamiento estacionamiento,
-			Usuario usuario) {
-		super();
+	public Reporte_Incidencias(String descripcion, Date fecha_hora_incidencia, Estacionamiento estacionamiento, Usuario usuario) {
 		this.descripcion = descripcion;
 		this.fecha_hora_incidencia = fecha_hora_incidencia;
 		this.estacionamiento = estacionamiento;

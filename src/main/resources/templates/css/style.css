@@ -2,7 +2,11 @@ body {
   font-family: "Poppins", sans-serif;
   color: #f5f5f5;
   background-color: #6fbfbc;
+  padding: 0;
+  margin: 0;
 }
+
+
 
 .layout_padding {
   padding: 75px 0;

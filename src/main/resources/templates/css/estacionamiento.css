@@ -1,0 +1,340 @@
+/* General styles */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+header nav {
+    display: flex;
+    justify-content: center;
+    
+    padding: 10px 0;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+header nav ul li {
+    display: inline;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+main {
+    padding: 20px;
+}
+
+/* Control panel styles */
+.control-panel h2 {
+    margin-bottom: 15px;
+}
+
+.control-panel .form-control {
+    width: 100%;
+}
+
+.control-panel .btn {
+    padding: 10px 20px;
+}
+
+/* Parking lots table styles */
+.parking-lots {
+    margin-top: 30px;
+}
+
+.parking-lots h2 {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.parking-lots table {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+.parking-lots th,
+.parking-lots td {
+    padding: 8px 16px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+.parking-lots th {
+    background-color: #f2f2f2;
+}
+
+.btn-primary {
+    background-color: rgb(240, 25, 186);
+    background: rgb(24, 117, 255);
+    border-bottom: rgb(136, 42, 8);
+}
+
+.parking-lots .btn {
+    padding: 5px 10px;
+    color: white; /* Agregamos color blanco al texto del botón */
+}
+
+.parking-lots .btn-disponible {
+    background-color: blue;
+}
+
+.btn-disponible {
+    color: rgb(248, 248, 248);
+    background-color: rgb(20, 12, 92);
+}
+
+.parking-lots .btn-no-disponible {
+    background-color: rgb(136, 9, 9);
+}
+
+.btn-no-disponible {
+    color: white;
+    background-color: rgb(141, 9, 9);
+}
+
+footer {
+    background-color: #4f98e0;
+    text-align: center;
+    padding: 5px 0;
+    bottom: 0;
+    width: 100%;
+    position: relative;
+}
+
+.full-width-footer {
+    width: 100%;
+}
+
+.additional-content {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.additional-content .card {
+    margin: 10px 0;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Estilo del texto */
+.image-text {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: #fff;
+    font-size: 24px;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Estilos añadidos para header, info section y footer */
+body {
+    font-family: "Poppins", sans-serif;
+    color: #f5f5f5;
+    background-color: #ffffff;
+    padding: 0;
+    margin: 0;
+}
+
+.hero_area {
+    height: 98vh;
+    position: relative;
+}
+
+
+.sub_page .hero_area {
+    height: auto;
+}
+
+.header_section {
+    background-color: #021323;
+    padding-top: 15px;
+}
+
+.header_section .container-fluid {
+    padding-right: 25px;
+    padding-left: 25px;
+}
+
+.header_section .nav_container {
+    margin: 0 auto;
+}
+
+.header_section .quote_btn-container a {
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+.custom_nav-container.navbar-expand-lg .navbar-nav .nav-link {
+    padding: 10px 30px;
+    color: #fdfbfb;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+a,
+a:hover,
+a:focus {
+    text-decoration: none;
+}
+
+a:hover,
+a:focus {
+    color: initial;
+}
+
+.btn,
+.btn:focus {
+    outline: none !important;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+}
+
+.navbar-brand,
+.navbar-brand:hover {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 24px;
+    color: #0b0f11;
+}
+
+.navbar-brand {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+}
+
+.navbar-brand img {
+    width: 90px;
+    margin-right: 2px;
+}
+
+.navbar-brand span {
+    font-size: 20px;
+    font-weight: 700;
+    color: #191919;
+    margin-top: 5px;
+}
+
+.custom_nav-container {
+    z-index: 99999;
+    padding: 5px 0;
+}
+
+.custom_nav-container .navbar-toggler {
+    outline: none;
+}
+
+.custom_nav-container .navbar-toggler .navbar-toggler-icon {
+    background-image: url(../images/menu.png);
+    background-size: 55px;
+}
+
+.info_section {
+    background-color: #021323;
+}
+
+.info_items {
+    width: 70%;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+}
+
+.info_items .item {
+    width: 200px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+}
+
+.info_items .item .img-box {
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.info_items .item .detail-box {
+    margin-top: 5px;
+    color: #fff;
+}
+
+.info_items {
+    position: relative;
+}
+
+.info_items a {
+    position: relative;
+}
+
+.info_items .item .img-box.box-1 {
+    background-image:
+    url(../images/location-white.png);
+}
+
+.info_items .item .img-box.box-2 {
+    background-image: url(../images/telephone-white.png);
+}
+
+.info_items .item .img-box.box-3 {
+    background-image: url(../images/envelope-white.png);
+}
+
+/* footer section*/
+.footer_section {
+    background-color: #fbfdfd;
+    padding: 20px;
+    font-weight: 500;
+}
+
+.footer_section p {
+    color: #292929;
+    margin: 0;
+    text-align: center;
+}
+
+.footer_section a {
+    color: #292929;
+}
+
+/* end footer section*/

@@ -26,12 +26,6 @@ public class Reservaciones {
     @GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "secuencia_201")	@Column(name="Id_Reserva")
     private long id;
 
-	@PrePersist
-    public void prePersist() {
-        fecha_reserva = new Date();
-        hora_reserva = new Date();
-    }
-	
     @Column(name = "Fecha_Reserva",  nullable=false)
     @DateTimeFormat(pattern = "dd-MM-yyyy")
     @Temporal(TemporalType.DATE)
