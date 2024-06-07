@@ -213,11 +213,9 @@ public class NaviepicsApplication implements CommandLineRunner{
 		Estacionamiento e=new Estacionamiento(nom,dir,qEsp,hor,est,enlace);
 		escribir("Objeto creado");
 		estS.saveOrUpdate(e);
-		System.out.println("Insercion Exitosa");
 		return e;
 	}
     
-    //USUARIO
     public Usuario usu(String nom, String ape, String email,String pass) {
 		Usuario e=new Usuario(nom,ape,email,pass);
 		escribir("Objeto creado");
