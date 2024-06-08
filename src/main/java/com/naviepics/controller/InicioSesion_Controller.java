@@ -14,25 +14,23 @@ import com.naviepics.service.Usuario_Service;
 import jakarta.servlet.http.HttpSession;
 
 @Controller
-@RequestMapping("/inicioSesion")
-public class Usuario_Controller {
+@RequestMapping("inicioSesion")
+public class InicioSesion_Controller {
 	@Autowired
 	private Usuario_Service uSvc;
 	@GetMapping
     public String verUsuario(Model model){
-		model.addAttribute("usuario1",new Usuario());
-		model.addAttribute("usuario2",new Usuario());
-        return "usuario";
+		model.addAttribute("usuarioInicioSesion",new Usuario());
+		model.addAttribute("usuarioRegistro",new Usuario());
+        return "inicioSesion.html";
     }
 	
 	@PostMapping("/iniciar")
-    public String iniciarSesion(@ModelAttribute("usuario")Usuario usuario, Model model, HttpSession session){
+    public String iniciarSesion(@ModelAttribute("usuarioInicio")Usuario usuario, Model model, HttpSession session){
         System.out.println("METODO EJECUTANDOSE");
         if(uSvc.buscarEmail(usuario)){
-            System.out.println("VALIDANDO CUENTA");
             //model.addAttribute("usuarioIniciado",uSvc.buscarXEmail(usuario));
             session.setAttribute("usuarioIniciado", uSvc.buscarXEmail(usuario));
-            System.out.println("CUENTA VALIDADA");
             return "redirect:/estacionamientos";
         }else{
             model.addAttribute("error","Credenciales incorrectas");
@@ -40,18 +38,11 @@ public class Usuario_Controller {
         }
     }
 	@PostMapping("/crear")
-    public String registrarSesion(@ModelAttribute("usuario")Usuario usuario, Model model, HttpSession session){
-        System.out.println("METODO EJECUTANDOSE");
-        if(uSvc.buscarEmail(usuario)){
-            System.out.println("VALIDANDO CUENTA");
-            //model.addAttribute("usuarioIniciado",uSvc.buscarXEmail(usuario));
-            session.setAttribute("usuarioIniciado", uSvc.buscarXEmail(usuario));
-            System.out.println("CUENTA VALIDADA");
-            return "redirect:/estacionamientos";
-        }else{
-            model.addAttribute("error","Credenciales incorrectas");
-            return "redirect:/usuario";
-        }
+    public String registrarSesion(@ModelAttribute("usuarioCreacion")Usuario usuario, Model model, HttpSession session){
+		System.out.println("Usuario ingresado");
+    	uSvc.saveOrUpdate(usuario);
+    	return "redirect:/estacionamientos";
+       
     }
 	
 }

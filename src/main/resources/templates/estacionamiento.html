@@ -40,10 +40,7 @@
                   <a class="nav-link" th:href="@{/}">inicio <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" th:href="@{/usuario}">usuario </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" th:href="@{/vehiculo}"> vehiculo</a>
+                  <a class="nav-link" th:href="@{/vehiculo}"> Vehiculos</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" th:href="@{/estacionamientos}"> <em>estacionamiento</em></a>
@@ -82,7 +79,8 @@
               <td><input type="text" id="direccion" class="form-control" th:field="*{direccion}"required autofocus="autofocus"></td>
               <td><input type="number" id="capacidad" class="form-control"  th:field="*{capacidad}" required autofocus="autofocus"></td>
               <td><input type="text" id="horario-funcionamiento" class="form-control"  th:field="*{horario_funcionamiento}" required autofocus="autofocus"></td>
-              <td><input type="checkbox" th:field="*{estado}" required autofocus="autofocus"/></td>
+              <td><span>LIBRE? </span>
+                <input type="checkbox" th:field="*{estado}" required autofocus="autofocus"/></td>
             </tr>
           </tbody>
           <button class="btn btn-primary mb-3" method="post" type="submit">Registrar nuevo</button>
@@ -105,8 +103,38 @@
       </table>
     </section>
   </main>
+  <h1 style="color: black;">FEEDBACK</h1>
 
+  <main class="container">
+    <section class="control-panel mb-4">
+      <table class="table table-bordered">
+        <!--INSERTANTO INFORMACION-->
+        <thead>
+          <tr>
+            <th>FECHA</th>
+            <th>CALIFICACION</th>
+            <th>COMENTARIO</th>
+            <th>NOMBRE DEL USUARIO</th>
+            <th>NOMBRES DEL ESTACIONAMIENTO</th>
+          </tr>
+        </thead>
+        
+    
+        <tbody>
+          <tr th:each="feedback: ${listaFeedback}">
+            <td th:text="${feedback.fecha}"></td>
+            <td th:text="${feedback.calificacion}"></td>
+            <td th:text="${feedback.comentario}"></td>
+            <td th:text="${feedback.usuario.nombre}"></td>
+            <td th:text="${feedback.estacionamiento.nombre}"></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
 
+  </main>
+
+  
   <!-- info section -->
   <section class="info_section layout_padding2">
     <div class="container">

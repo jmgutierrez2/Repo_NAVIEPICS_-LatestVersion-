@@ -49,13 +49,16 @@
                   <a class="nav-link" th:href="@{/}">Inicio <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" th:href="@{/usuario}">Usuario </a>
+                  <a class="nav-link" th:href="@{/inicioSesion}">Iniciar Sesion </a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" th:href="@{/vehiculo}"> Vehiculo</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" th:href="@{/estacionamientos}"> <em>Estacionamiento</em></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" th:text="${usu.nombre}+ ' ¡Bienvenido'"></a>
                 </li>
               </ul>             
             </div>

@@ -72,7 +72,7 @@
                 <i class='bx bxl-linkedin'></i>
             </div>
             <p> Puedes ingresar por las siguientes cuentas</p>
-            <form class="forms" th:action="@{/inicioSesion/iniciar}" th:object="${usuario}" method="post">
+            <form class="forms" th:action="@{/inicioSesion/iniciar}" th:object="${usuarioInicioSesion}" method="post">
                 <label>
                     <i class='bx bx-envelope'></i>
                     <input type="email" th:field="*{email}" placeholder="Correo Electronico"/>
@@ -104,43 +104,37 @@
         <div class="form-information-childs">
             <h2>Crear una cuenta</h2>
             <br>
-            <form class="form">
-                <div class="form-column">
+            <form class="form" th:action="@{/inicioSesion/crear}" th:object="${usuarioRegistro}" method="post">
+                <div class="form-row">
                     <label>
                         <i class='bx bx-user'></i>
-                        <input type="text" placeholder="Nombre">
+                        <input type="text" th:field="*{nombre}" placeholder="Nombre" required>
                     </label>
-                    
+
+                    <label>
+                        <i class='bx bx-user'></i>
+                        <input type="text" th:field="*{apellido}" placeholder="Apellidos" required>
+                    </label>
+
                     <label>
                         <i class='bx bx-envelope'></i>
-                        <input type="email" placeholder="Correo ">
-                    </label> 
-                </div>
-                <div class="form-column">
-                    <label>
-                        <i class='bx bx-user'></i>
-                        <input type="family-name" placeholder="Apellidos">
+                        <input type="email" th:field="*{email}" placeholder="Correo " required>
                     </label>
-                 
+                     
                     <label>
                         <i class='bx bx-lock-alt'></i>
-                        <input type="password" placeholder="Contraseña">
+                        <input type="password" th:field="*{password}" placeholder="Contraseña" required>
                     </label>
+
+                    <input type="submit" value="Registrarse">
+                    <div class="form-row">
+                       
+                    </div>
                 </div>
                 
             </form>
-            <div class="col-12">
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-                      <label class="form-check-label" for="invalidCheck">
-                        Estoy de acuerdo con los terminos y condiciones
-                      </label>
-                      <br>
-                    </div>
-                  </div>
-                <div >
-                    <input type="submit" value="Registrarse">
-                </div>
+            
+                
 
         </div>
     </div>

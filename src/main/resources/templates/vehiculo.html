@@ -28,7 +28,6 @@
   <link th:href="@{/css/responsive.css}" rel="stylesheet" />
 
   <link rel="stylesheet" th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css}">
-  <link rel="stylesheet" th:href="@{/css/usuario.css}">
 
   <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css}">
   <link rel="canonical" th:href="@{https://getbootstrap.com/docs/5.3/examples/product/}">
@@ -64,9 +63,7 @@
                 <li class="nav-item active">
                   <a class="nav-link" th:href="@{/}">Inicio <span class="sr-only">(current)</span></a>
                 </li> 
-                <li class="nav-item">
-                  <a class="nav-link" th:href="@{/usuario}">Usuario </a>
-                </li>
+                
                 <li class="nav-item">
                   <a class="nav-link" th:href="@{/vehiculo}">Vehiculo</a>
                 </li>
@@ -108,7 +105,28 @@
       </div>
     </div>
   </section>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Nombre del Dueño</th>
+        <th>Fabricante</th>
+        <th>Modelo</th>
+        <th>Color</th>
+        <th>Tipo Vehiculo</th>
+      </tr>
+    </thead>
 
+    <tbody>
+      <tr th:each="vehiculo: ${listaVehiculos}">
+        <td th:text="${vehiculo.usuario.nombre}"></td>
+        <td th:text="${vehiculo.placa}"></td>
+        <td th:text="${vehiculo.modelo}"></td>
+        <td th:text="${vehiculo.color}"></td>
+        <td th:text="${vehiculo.tipo_vehiculo.descripcion}"></td>
+      </tr>
+    </tbody>
+  </table>
+  
 
 
   <!-- end gallery section -->
@@ -160,12 +178,15 @@
   <!-- end info_section -->
 
   <!-- footer section -->
-  <section class="container-fluid footer_section">
-    <p>
-      &copy; 2019 All Rights Reserved By
-      <a th:href="@{/images/naviepics.jpeg}">NAVIEPICS</a>
-    </p>
-  </section>
+   <footer>
+    <section class="container-fluid footer_section">
+      <p>
+        &copy; 2019 All Rights Reserved By
+        <a th:href="@{/images/naviepics.jpeg}">NAVIEPICS</a>
+      </p>
+    </section>
+   </footer>
+  
   <!-- footer section -->
 
   <script type="text/javascript" th:src="@{/js/jquery-3.4.1.min.js}"></script>
