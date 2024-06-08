@@ -11,4 +11,6 @@ public interface Usuario_Service {
     Optional<Usuario>findOne(Long id);
     Usuario saveOrUpdate(Usuario e);
     void delete(Long id);
+    boolean buscarEmail(Usuario usuario);
+    Usuario buscarXEmail(Usuario usuario);
 }
